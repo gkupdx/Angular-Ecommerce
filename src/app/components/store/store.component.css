@@ -1,0 +1,23 @@
+@media screen and (max-width: 576px) {
+    .store {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .store img {
+        box-shadow: 0 2px 5px #000;
+    }
+
+    .store p {
+        font-weight: 600;
+    }
+
+    .store button {
+        width: 175px;
+        height: 35px;
+    }
+}

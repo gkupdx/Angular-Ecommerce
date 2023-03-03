@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="store" @slideIn>
     <section class="card">
         <div>
@@ -5,6 +6,11 @@
             <p>빨간 풍선 [Red Balloon]</p>
         </div>
 
+        <div class="itemQuantity">
+            <button (click)="decreaseCount()" [ngStyle]="minusIconStyle"><fa-icon [icon]="minusIcon"></fa-icon></button>
+            <span>{{ itemCount }}</span> 
+            <button (click)="increaseCount()" [ngStyle]="plusIconStyle"><fa-icon [icon]="plusIcon"></fa-icon></button>
+        </div>
         <button class="primaryBtn">카트 담기 [Add To Cart]</button>
     </section>
 
@@ -14,6 +20,11 @@
             <p>일지매 [Iljimae]</p>
         </div>
 
+        <div class="itemQuantity">
+            <button (click)="decreaseCount()" [ngStyle]="minusIconStyle"><fa-icon [icon]="minusIcon"></fa-icon></button>
+            <span>{{ itemCount }}</span> 
+            <button (click)="increaseCount()" [ngStyle]="plusIconStyle"><fa-icon [icon]="plusIcon"></fa-icon></button>
+        </div>
         <button class="primaryBtn">카트 담기 [Add To Cart]</button>
     </section>
 
@@ -23,6 +34,11 @@
             <p>야인시대 [Rustic Period]</p>
         </div>
 
+        <div class="itemQuantity">
+            <button (click)="decreaseCount()" [ngStyle]="minusIconStyle"><fa-icon [icon]="minusIcon"></fa-icon></button>
+            <span>{{ itemCount }}</span> 
+            <button (click)="increaseCount()" [ngStyle]="plusIconStyle"><fa-icon [icon]="plusIcon"></fa-icon></button>
+        </div>
         <button class="primaryBtn">카트 담기 [Add To Cart]</button>
     </section>
 </div>

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { LoginForm } from '../interfaces/Forms';
+import { LoginForm, RegForm } from '../interfaces/Forms';
 
 // Firebase imports
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,7 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 export class AuthService {
   isAuthenticated: boolean = false;
   isLoading: boolean = false;
+  isPasswordMatch: boolean = false;
 
   constructor() {}
 
@@ -29,5 +30,28 @@ export class AuthService {
       const errorMessage = error.message;
     })
     .finally(() => (this.isLoading = false))
+  }
+
+  register(form: RegForm) {
+    if (form.password !== form.passConfirm) {
+      this.isPasswordMatch = false;
+      return;
+    }
+
+    if (this.isLoading) return;
+    this.isLoading = true;
+
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, form.email, form.password)
+      .then((userCredential) => {
+        this.isAuthenticated = true;
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        this.isAuthenticated = false;
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      })
+      .finally(() => (this.isLoading = false));
   }
 }

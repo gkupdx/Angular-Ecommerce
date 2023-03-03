@@ -1,0 +1,41 @@
+<div class="registration">
+    <div>
+        <h1 @slideIn>새 회원 가입</h1>
+        <h3 @slideIn>New Member Sign Up</h3>
+    </div>
+
+    <section @slideIn>
+        <form (ngSubmit)="regSubmit()" #regForm="ngForm" class="regForm">
+            <div [ngStyle]="{'text-align': 'center' }">
+                <h2>회원 가입</h2>
+                <h4>[Register]</h4>
+            </div>
+
+            <div>
+                <label for="email">이메일 [Email]:</label>
+                <input [(ngModel)]="form.email" #emailField="ngModel" type="text" name="email" placeholder="Email"
+                    required>
+                <p *ngIf="emailField.invalid && emailField.touched" class="formError">Email is invalid.</p>
+            </div>
+
+            <div>
+                <label for="password">비밀번호 [Password]:</label>
+                <input [(ngModel)]="form.password" #pwField="ngModel" type="text" name="password" placeholder="Password"
+                    required>
+                <p *ngIf="pwField.invalid && pwField.touched" class="formError">Password is invalid.</p>
+            </div>
+
+            <div>
+                <label for="passConfirm">비밀번호 확인 [Confirm Password]:</label>
+                <input [(ngModel)]="form.passConfirm" #pcField="ngModel" type="text" name="passConfirm"
+                    placeholder="Confirm Password" required>
+                    <p *ngIf="pcField.invalid && pcField.touched" class="formError">Password does not match.</p>
+            </div>
+
+            <button [disabled]="regForm.form.invalid" class="submitBtn" type="submit">
+                <ng-container *ngIf="isLoading()">Loading...</ng-container>
+                <ng-container *ngIf="!isLoading()">Submit</ng-container>
+            </button>
+        </form>
+    </section>
+</div>

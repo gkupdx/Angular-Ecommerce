@@ -20,14 +20,14 @@
 
             <div>
                 <label for="password">비밀번호 [Password]:</label>
-                <input [(ngModel)]="form.password" #pwField="ngModel" type="text" name="password" placeholder="Password"
+                <input [(ngModel)]="form.password" #pwField="ngModel" type="password" name="password" placeholder="Password"
                     required>
                 <p *ngIf="pwField.invalid && pwField.touched" class="formError">Password is invalid.</p>
             </div>
 
             <div>
                 <label for="passConfirm">비밀번호 확인 [Confirm Password]:</label>
-                <input [(ngModel)]="form.passConfirm" #pcField="ngModel" type="text" name="passConfirm"
+                <input [(ngModel)]="form.passConfirm" #pcField="ngModel" type="password" name="passConfirm"
                     placeholder="Confirm Password" required>
                     <p *ngIf="pcField.invalid && pcField.touched" class="formError">Password does not match.</p>
             </div>

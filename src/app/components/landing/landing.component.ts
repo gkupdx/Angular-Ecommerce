@@ -3,6 +3,8 @@ import { LoginForm } from 'src/app/interfaces/Forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { fadeInSlow, slideDownSlow } from 'src/app/utilities/animations';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -18,13 +20,14 @@ export class LandingComponent {
     password: '',
   }
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   isLoading() {
     return this.authService.isLoading;
   }
 
   loginSubmit() {
-    this.authService.login(this.form);
+    // this.authService.login(this.form);
+    this.router.navigate(['store']);
   }
 }

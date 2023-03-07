@@ -3,7 +3,7 @@ import { LoginForm, RegForm } from '../interfaces/Forms';
 import { Router } from '@angular/router';
 
 // Firebase imports
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -56,5 +56,17 @@ export class AuthService {
         const errorMessage = error.message;
       })
       .finally(() => (this.isLoading = false));
+  }
+
+  logout() {
+    const auth = getAuth();
+    signOut(auth)
+    .then(() => {
+      this.isAuthenticated = false;
+      this.router.navigate(['']);
+    })
+    .catch((error) => {
+      console.log("Logout failed. Please try again.");
+    })
   }
 }

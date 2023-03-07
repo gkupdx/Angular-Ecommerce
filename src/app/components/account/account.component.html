@@ -1,0 +1,37 @@
+<div class="account">
+    <section class="cardTall" @slideIn>
+        <div [ngStyle]="{'text-align': 'center'}">
+            <h2>계정 정보</h2>
+            <h4>[Membership Details]</h4>
+        </div>
+        <div>
+            <p>Email: </p>
+            <p>Password:</p>
+            <p>Membership Status: <span [style.color]="isMembershipActive ? 'green' : 'red'">Active</span></p>
+        </div>
+
+        <div class="container">
+            <button class="primaryBtn">Change Password</button>
+            <button class="primaryBtn">Manage Membership</button>
+            <button (click)="logout()" class="dangerBtn">Log Out</button>
+        </div>
+    </section>
+
+    <!-- <form *ngIf="isFormVisible" class="card" @slideDown>
+        <h2>Change Your Password</h2>
+        <div>
+            <label for="currPassword">Current Password:</label>
+            <input type="password">
+        </div>
+        <div>
+            <label for="newPassword">New Password:</label>
+            <input type="password">
+        </div>
+        <div>
+            <label for="passConfirm">Confirm New Password:</label>
+            <input type="password">
+        </div>
+
+        <button class="submitBtn" type="submit">Submit</button>
+    </form> -->
+</div>

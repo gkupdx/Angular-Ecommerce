@@ -10,6 +10,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { StoreComponent } from './components/store/store.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LandingComponent,
     RegisterComponent,
     StoreComponent,
-    NavbarComponent
+    NavbarComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<section class="card">
+    <div>
+        <img [src]="product.imgSrc" height="150px" [alt]="product.name">
+        <p>{{ product.name }}</p>
+        <p [ngStyle]="{'font-size': '1.5rem', 'margin-top': '10px'}">{{ product.price | currency:'USD' }}</p>
+    </div>
+
+    <div class="itemQuantity">
+        <button (click)="decreaseCount()" [ngStyle]="minusIconStyle"><fa-icon [icon]="minusIcon"></fa-icon></button>
+        <span>{{ itemCount }}</span>
+        <button (click)="increaseCount()" [ngStyle]="plusIconStyle"><fa-icon [icon]="plusIcon"></fa-icon></button>
+    </div>
+    <button (click)="emitAddToCart()" [disabled]="itemCount === 0" class="primaryBtn">카트 담기 [Add To Cart]</button>
+</section>

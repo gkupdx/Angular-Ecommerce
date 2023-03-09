@@ -7,48 +7,4 @@
         align-items: center;
         flex-wrap: wrap;
     }
-
-    .store img {
-        box-shadow: 0 2px 5px #000;
-    }
-
-    .store p {
-        font-weight: 600;
-    }
-
-    .itemQuantity {
-        display: inline-flex;
-        align-items: center;
-        width: 170px;
-        height: 35px;
-    }
-
-    .itemQuantity > button {
-        cursor: pointer;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 35px;
-        height: 35px;
-        border: 1px solid lightgrey;
-    }
-
-    .itemQuantity > button:hover {
-        background-color: grey;
-    }
-
-    .itemQuantity span {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 100px;
-        height: 35px;
-        border-top: 1px solid lightgrey;
-        border-bottom: 1px solid lightgrey;
-    }
-
-    .store .primaryBtn {
-        width: 170px;
-        height: 35px;
-    }
 }

@@ -1,43 +1,5 @@
 <div class="store" @slideIn>
-    <section class="card">
-        <div>
-            <img [src]="imgSrc[0]" height="150px" alt="Red Balloon cover">
-            <p>빨간 풍선 [Red Balloon]</p>
-        </div>
-
-        <div class="itemQuantity">
-            <button (click)="decreaseCount()" [ngStyle]="minusIconStyle"><fa-icon [icon]="minusIcon"></fa-icon></button>
-            <span>{{ itemCount }}</span> 
-            <button (click)="increaseCount()" [ngStyle]="plusIconStyle"><fa-icon [icon]="plusIcon"></fa-icon></button>
-        </div>
-        <button class="primaryBtn">카트 담기 [Add To Cart]</button>
-    </section>
-
-    <section class="card">
-        <div>
-            <img [src]="imgSrc[2]" height="150px" alt="Iljimae cover">
-            <p>일지매 [Iljimae]</p>
-        </div>
-
-        <div class="itemQuantity">
-            <button (click)="decreaseCount()" [ngStyle]="minusIconStyle"><fa-icon [icon]="minusIcon"></fa-icon></button>
-            <span>{{ itemCount }}</span> 
-            <button (click)="increaseCount()" [ngStyle]="plusIconStyle"><fa-icon [icon]="plusIcon"></fa-icon></button>
-        </div>
-        <button class="primaryBtn">카트 담기 [Add To Cart]</button>
-    </section>
-
-    <section class="card">
-        <div>
-            <img [src]="imgSrc[1]" height="150px" alt="Rustic Period cover">
-            <p>야인시대 [Rustic Period]</p>
-        </div>
-
-        <div class="itemQuantity">
-            <button (click)="decreaseCount()" [ngStyle]="minusIconStyle"><fa-icon [icon]="minusIcon"></fa-icon></button>
-            <span>{{ itemCount }}</span> 
-            <button (click)="increaseCount()" [ngStyle]="plusIconStyle"><fa-icon [icon]="plusIcon"></fa-icon></button>
-        </div>
-        <button class="primaryBtn">카트 담기 [Add To Cart]</button>
-    </section>
+    <ng-container *ngFor="let product of storeItems">
+        <app-product [product]="product"></app-product>
+    </ng-container>
 </div>

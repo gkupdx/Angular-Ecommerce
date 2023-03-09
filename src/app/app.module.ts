@@ -11,6 +11,8 @@ import { StoreComponent } from './components/store/store.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccountComponent } from './components/account/account.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AccountComponent } from './components/account/account.component';
     RegisterComponent,
     StoreComponent,
     NavbarComponent,
-    AccountComponent
+    AccountComponent,
+    CartComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

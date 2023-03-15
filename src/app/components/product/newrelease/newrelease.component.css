@@ -1,0 +1,76 @@
+@media screen and (max-width: 576px) {
+    .newRelease {
+        width: 100vw;
+        height: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .newRelease img {
+        width: 100%;
+        height: 55%;
+        margin-top: 50px;
+    }
+
+    .newRelease > div {
+        width: 100%;
+        height: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: #060d0d;
+        color: #FFF;
+        padding: 6px;
+    }
+
+    .newRelease p {
+        font-size: 0.8rem;
+    }
+
+    .newRelease h4 {
+        font-size: 1.7rem;
+        align-self: flex-end;
+    }
+
+    .btnContainer {
+        align-self: flex-end;
+    }
+
+    #purchaseBtn {
+        width: 150px;
+        height: 35px;
+        font-family: 'Poppins', sans-serif;
+        color: #FFF;
+        background-color: rgba(50, 205, 50, 0.5);
+        border: 1px solid green;
+        border-radius: 5px;
+        margin: 4px;
+    }
+
+    #purchaseBtn:hover {
+        background-color: #FFF;
+        color: green;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #addBtn {
+        width: 170px;
+        height: 35px;
+        font-family: 'Poppins', sans-serif;
+        color: #FFF;
+        background-color: rgba(30, 144, 255, 0.5);
+        border: 1px solid blue;
+        border-radius: 5px;
+    }
+
+    #addBtn:hover {
+        background-color: #FFF;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

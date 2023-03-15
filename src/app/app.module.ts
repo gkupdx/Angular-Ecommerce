@@ -13,6 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccountComponent } from './components/account/account.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
+import { TopsellerComponent } from './components/product/topseller/topseller.component';
+import { NewreleaseComponent } from './components/product/newrelease/newrelease.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ProductComponent } from './components/product/product.component';
     NavbarComponent,
     AccountComponent,
     CartComponent,
-    ProductComponent
+    ProductComponent,
+    TopsellerComponent,
+    NewreleaseComponent
   ],
   imports: [
     BrowserModule,

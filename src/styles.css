@@ -90,9 +90,22 @@ body {
 }
 
 .cardWide {
-    width: 500px;
+    width: 425px;
     height: 150px;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 0 1px #000;
+    margin: 20px 20px;
+}
+
+.cardCart {
+    width: 500px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     border: 1px solid lightgrey;

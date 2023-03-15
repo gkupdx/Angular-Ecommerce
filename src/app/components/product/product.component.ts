@@ -18,20 +18,9 @@ export class ProductComponent {
     count: 0,
   };
   itemCount: number = 0;
+  isAddedToCart: boolean = false;
   minusIcon = faMinus;
   plusIcon = faPlus;
-
-  minusIconStyle = {
-    color: 'darkred',
-    borderTopLeftRadius: '5px',
-    borderBottomLeftRadius: '5px',
-  }
-
-  plusIconStyle = {
-    color: 'darkblue',
-    borderTopRightRadius: '5px',
-    borderBottomRightRadius: '5px',
-  }
 
   constructor(private cartService: CartService) {}
 
@@ -40,6 +29,8 @@ export class ProductComponent {
     this.cartProduct.price = this.product.price;
     this.cartProduct.imgSrc = this.product.imgSrc;
     this.cartProduct.count = this.itemCount;
+
+    this.isAddedToCart = true;
 
     this.cartService.addToCart(this.cartProduct);
   }

@@ -1,18 +1,22 @@
-<div class="cart">
-    <h2>카트 내용</h2>
-    <h4>[Your Cart]</h4>
+<div class="cart" @slideIn>
+    <div [ngStyle]="{'text-align': 'center'}">
+        <h2>카트 내용</h2>
+        <h4>[Your Cart]</h4>
+    </div>
 
-    <section *ngIf="getCartInfo().length > 0">
+    <div *ngIf="getCartInfo().length > 0">
         <div *ngFor="let product of getCartInfo(); let i = index;">
             <div class="cardWide">
-                <img [src]="product.imgSrc" height="100px" [alt]="product.name">
+                <img [src]="product.imgSrc" height="75px" [alt]="product.name">
                 <p>{{ product.name }} </p>
                 <p [ngStyle]="{'font-weight': 'bold'}">{{ product.price | currency:'USD' }} x{{ product.count }}</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section *ngIf="getCartInfo().length === 0">Your cart is empty.</section>
+    <div *ngIf="getCartInfo().length === 0" class="cardWide">Your cart is empty.</div>
 
-    <h4 *ngIf="getCartInfo().length > 0">Total: {{ getCartTotal() | currency:'USD' }}</h4>
+    <h3 *ngIf="getCartInfo().length > 0">Total: {{ getCartTotal() | currency:'USD' }}</h3>
+
+    <button [disabled]="getCartInfo().length === 0" class="primaryBtn">계산하러 가기 [Checkout]</button>
 </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { slideDown } from 'src/app/utilities/animations';
+import { slideDownSlow } from 'src/app/utilities/animations';
 import { faShop, faCartShopping, faUserGear } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,7 +7,7 @@ import { faShop, faCartShopping, faUserGear } from '@fortawesome/free-solid-svg-
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
   animations: [
-    slideDown,
+    slideDownSlow,
   ],
 })
 export class NavbarComponent {

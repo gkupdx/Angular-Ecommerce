@@ -1,5 +1,27 @@
-<div class="store" @slideIn>
-    <ng-container *ngFor="let product of storeItems">
-        <app-product [product]="product"></app-product>
-    </ng-container>
+<div class="store">
+    <section class="heroBanner" @slideDownSlow>
+        <img src="../../../assets/images/kbs_landscape_edit.jpg" alt="Hero banner">
+    </section>
+
+    <h2 @fadeInSlow>TOP SELLERS</h2>
+    <app-topseller></app-topseller>
+
+    <h2 @fadeInSlow>NEW RELEASE</h2>
+
+    <section class="newRelease" @fadeInSlow>
+        <img [src]="newItem.imgSrc" alt="New Release">
+        <div>
+            <h3>비밀의 여자 [Woman in a Veil]</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim doloremque repudiandae nisi eaque, eos
+                laboriosam? Quasi, ipsa. Exercitationem ullam odio pariatur mollitia. Laudantium dolorem explicabo nobis
+                nihil repellendus rerum cumque?</p>
+            <p [ngStyle]="{'font-style':'italic'}">Release date: {{ newItem.premiere }}</p>
+            
+            <h4>{{ newItem.price | currency:'USD' }}</h4>
+            <div class="btnContainer">
+                <button id="purchaseBtn">구매하기 [Purchase]</button>
+                <button id="addBtn">카트 담기 [Add To Cart]</button>
+            </div>
+        </div>
+    </section>
 </div>

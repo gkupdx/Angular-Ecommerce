@@ -11,3 +11,10 @@ export interface CartProduct {
     imgSrc: string,
     count: number,
 }
+
+export interface NewRelease {
+    name: string,
+    price: string,
+    imgSrc: string,
+    premiere: string,
+}

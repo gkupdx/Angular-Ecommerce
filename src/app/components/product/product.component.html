@@ -1,14 +1,14 @@
-<section class="card">
-    <div>
-        <img [src]="product.imgSrc" height="150px" [alt]="product.name">
+<section>
+    <div class="product">
+        <img [src]="product.imgSrc" height="100px" [alt]="product.name">
         <p>{{ product.name }}</p>
-        <p [ngStyle]="{'font-size': '1.5rem', 'margin-top': '10px'}">{{ product.price | currency:'USD' }}</p>
+        <p>{{ product.price | currency:'USD' }}</p>
     </div>
 
     <div class="itemQuantity">
-        <button (click)="decreaseCount()" [ngStyle]="minusIconStyle"><fa-icon [icon]="minusIcon"></fa-icon></button>
+        <button (click)="decreaseCount()" id="minusBtn"><fa-icon [icon]="minusIcon"></fa-icon></button>
         <span>{{ itemCount }}</span>
-        <button (click)="increaseCount()" [ngStyle]="plusIconStyle"><fa-icon [icon]="plusIcon"></fa-icon></button>
+        <button (click)="increaseCount()" id="plusBtn"><fa-icon [icon]="plusIcon"></fa-icon></button>
     </div>
-    <button (click)="emitAddToCart()" [disabled]="itemCount === 0" class="primaryBtn">카트 담기 [Add To Cart]</button>
+    <button [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'border': '1px solid green'} : null" (click)="emitAddToCart()" [disabled]="itemCount === 0" class="primaryBtn">{{ isAddedToCart ? '카트에 담긴 [Added!]' : '카트 담기 [Add To Cart]' }}</button>
 </section>

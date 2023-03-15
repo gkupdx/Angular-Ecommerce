@@ -1,0 +1,5 @@
+<section class="productGrid">
+    <ng-container *ngFor="let product of topProducts">
+        <app-product [product]="product" @fadeInSlow></app-product>
+    </ng-container>
+</section>

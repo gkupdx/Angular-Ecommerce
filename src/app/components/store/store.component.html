@@ -1,6 +1,6 @@
 <div class="store">
     <section class="heroBanner" @slideDownSlow>
-        <img src="../../../assets/images/kbs_landscape_edit.jpg" alt="Hero banner">
+        <img src="../../../assets/images/kbs_landscape_dark.jpg" alt="Hero banner">
     </section>
 
     <h2 @fadeInSlow>TOP SELLERS</h2>
@@ -8,4 +8,25 @@
 
     <h2 @fadeInSlow>NEW RELEASE</h2>
     <app-newrelease></app-newrelease>
+
+    <section class="productFilters" @fadeInSlow>
+        <h3>Browse</h3>
+        <div class="btnFilters">
+            <button (click)="togglePriceFilter()">Price <fa-icon [icon]="caretDown"></fa-icon></button>
+            <ng-container *ngIf="togglePrice">
+                <div>
+                    <p>Low -> High</p>
+                    <p>High -> Low</p>
+                </div>
+            </ng-container>
+            <button (click)="togglePopFilter()">Popularity <fa-icon [icon]="caretDown"></fa-icon></button>
+            <ng-container *ngIf="togglePop">
+                <div>
+                    <p>Trending</p>
+                    <p>Declining</p>
+                </div>
+            </ng-container>
+        </div>
+    </section>
+    <app-products></app-products>
 </div>

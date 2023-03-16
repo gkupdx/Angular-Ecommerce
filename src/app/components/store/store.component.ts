@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { fadeInSlow, slideDownSlow } from 'src/app/utilities/animations';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-store',
@@ -11,6 +12,17 @@ import { fadeInSlow, slideDownSlow } from 'src/app/utilities/animations';
   ],
 })
 export class StoreComponent {
+  caretDown = faCaretDown;
+  togglePrice: boolean = false;
+  togglePop: boolean = false;
 
   constructor() {}
+
+  togglePriceFilter() {
+    this.togglePrice = !this.togglePrice;
+  }
+
+  togglePopFilter() {
+    this.togglePop = !this.togglePop;
+  }
 }

@@ -15,6 +15,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component';
 import { TopsellerComponent } from './components/product/topseller/topseller.component';
 import { NewreleaseComponent } from './components/product/newrelease/newrelease.component';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NewreleaseComponent } from './components/product/newrelease/newrelease.
     CartComponent,
     ProductComponent,
     TopsellerComponent,
-    NewreleaseComponent
+    NewreleaseComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

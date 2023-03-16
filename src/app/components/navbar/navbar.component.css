@@ -5,7 +5,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #FFF;
+        background-color: #000;
     }
 
     nav > div {
@@ -20,13 +20,13 @@
         justify-content: center;
         align-items: center;
         width: 40px;
-        height: 75px;
-        color: #000;
+        height: 70px;
+        color: #FFF;
         text-decoration: none;
     }
 
     a:hover {
-        background-color: #000;
+        background-color: green;
         color: #FFF;
         text-decoration: underline;
     }

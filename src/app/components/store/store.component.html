@@ -10,15 +10,15 @@
     <app-newrelease></app-newrelease>
 
     <section class="productFilters" @fadeInSlow>
-        <h3>Browse</h3>
+        <h3>Browse Titles</h3>
         <div class="btnFilters">
             <button (click)="togglePriceFilter()">Price <fa-icon [icon]="caretDown"></fa-icon></button>
-            <ng-container *ngIf="togglePrice">
+            <div *ngIf="togglePrice">
                 <div>
                     <p>Low -> High</p>
                     <p>High -> Low</p>
                 </div>
-            </ng-container>
+            </div>
             <button (click)="togglePopFilter()">Popularity <fa-icon [icon]="caretDown"></fa-icon></button>
             <ng-container *ngIf="togglePop">
                 <div>

@@ -29,7 +29,7 @@ import { ProductsComponent } from './components/products/products.component';
     ProductComponent,
     TopsellerComponent,
     NewreleaseComponent,
-    ProductsComponent
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,

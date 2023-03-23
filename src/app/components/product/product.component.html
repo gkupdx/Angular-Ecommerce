@@ -3,12 +3,17 @@
         <img [src]="product.imgSrc" height="100px" [alt]="product.name">
         <p>{{ product.name }}</p>
         <p>{{ product.price | currency:'USD' }}</p>
-    </div>
 
-    <div class="itemQuantity">
-        <button (click)="decreaseCount()" id="minusBtn"><fa-icon [icon]="minusIcon"></fa-icon></button>
-        <span>{{ itemCount }}</span>
-        <button (click)="increaseCount()" id="plusBtn"><fa-icon [icon]="plusIcon"></fa-icon></button>
+        <button (click)="toggleQuantityOptions()" class="quantityBtn">Quantity: {{ quantity }} <fa-icon
+                [icon]="caretDownIcon"></fa-icon></button>
+        <div [ngStyle]="{'visibility': isVisible ? 'visible' : 'hidden'}" class="quantityOptions">
+            <p (click)="setQuantity(1)">1</p>
+            <p (click)="setQuantity(2)">2</p>
+            <p (click)="setQuantity(3)">3</p>
+        </div>
     </div>
-    <button [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'border': '1px solid green'} : null" (click)="emitAddToCart()" [disabled]="itemCount === 0" class="primaryBtn">{{ isAddedToCart ? '카트에 담긴 [Added!]' : '카트 담기 [Add To Cart]' }}</button>
+    
+    <button [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'border': '1px solid green'} : null"
+        (click)="emitAddToCart()" [disabled]="quantity === 0" class="primaryBtn">{{ isAddedToCart ? '카트에 담긴 [Added!]' :
+        '카트 담기 [Add To Cart]' }}</button>
 </section>

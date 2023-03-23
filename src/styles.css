@@ -113,3 +113,19 @@ body {
     box-shadow: 0 0 1px #000;
     margin: 20px 20px;
 }
+
+/*** FOR LATER USE ***/
+/* background: repeating-linear-gradient(45deg, red 10%, orangered 20%, orange 30%, gold 40%, 
+        yellow 50%, green 60%, blue 70%, navy 80%, indigo 90%, violet 100%);
+        background-size: 600vw 600vw;
+        background-position-x: 0%;
+        animation: rgbLoop 5s infinite linear forwards;
+        -webkit-animation: rgbLoop 5s infinite linear forwards; 
+    @keyframes rgbLoop {
+        0% {
+            background-position-x: 0%;
+        }
+        100% {
+            background-position-x: 100%;
+        }
+    }*/

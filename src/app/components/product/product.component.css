@@ -32,51 +32,40 @@
         height: 35px;
     }
 
-    .itemQuantity span {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 100px;
-        height: 35px;
-        border-top: 1px solid lightgrey;
-        border-bottom: 1px solid lightgrey;
-    }
-    
-    .itemQuantity > button {
-        cursor: pointer;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 35px;
-        height: 35px;
-        color: #FFF;
+    .quantityBtn {
+        width: 120px;
+        height: 30px;
+        font-family: 'Poppins', sans-serif;
+        background-color: #FFF;
         border: 1px solid lightgrey;
+        border-radius: 10px;
+        transition: 0.1s background-color ease;
     }
 
-    #minusBtn {
+    .quantityBtn:hover {
+        cursor: pointer;
+        background-color: lightgrey;
+        transition: 0.1s background-color ease;
+    }
+
+    .quantityOptions {
+        width: 120px;
+        height: 75px;
         background-color: #FFF;
-        color: firebrick;
-        border: 1px solid firebrick;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border: 1px solid lightgrey;
+        text-align: center;
+        visibility: hidden;
+        border-radius: 5px;
+        cursor: pointer;
     }
 
-    #minusBtn:hover {
-        background-color: firebrick;
-        color: #FFF;
-    }
-    
-    #plusBtn {
-        background-color: #FFF;
-        color: midnightblue;
-        border: 1px solid midnightblue;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+    .quantityOptions p {
+        font-weight: normal;
+        margin-top: 0;
     }
 
-    #plusBtn:hover {
-        background-color: midnightblue;
-        color: #FFF;
+    .quantityOptions p:hover {
+        background-color: lightgrey;
     }
 
     section .primaryBtn {

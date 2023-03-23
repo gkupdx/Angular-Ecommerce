@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { fadeInSlow, slideDownSlow } from 'src/app/utilities/animations';
+import { fadeIn, fadeInSlow, slideDownSlow } from 'src/app/utilities/animations';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,6 +7,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.css'], 
   animations: [
+    fadeIn,
     fadeInSlow,
     slideDownSlow,
   ],

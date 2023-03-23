@@ -9,7 +9,7 @@
             <div class="cardWide">
                 <img [src]="product.imgSrc" height="75px" [alt]="product.name">
                 <p>{{ product.name }} </p>
-                <p [ngStyle]="{'font-weight': 'bold'}">{{ product.price | currency:'USD' }} x{{ product.count }}</p>
+                <p [ngStyle]="{'font-weight': 'bold'}">{{ product.price | currency:'USD' }} <span *ngIf="product.count !== 1">x{{ product.count }}</span></p>
             </div>
         </div>
     </div>

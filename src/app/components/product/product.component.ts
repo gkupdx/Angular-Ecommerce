@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Product } from 'src/app/interfaces/Product';
 import { CartProduct } from 'src/app/interfaces/Product';
 import { CartService } from 'src/app/services/cart.service';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product',
@@ -17,30 +17,31 @@ export class ProductComponent {
     imgSrc: '',
     count: 0,
   };
-  itemCount: number = 0;
+  quantity: number = 1;
+  isVisible: boolean = false;
   isAddedToCart: boolean = false;
-  minusIcon = faMinus;
-  plusIcon = faPlus;
+  caretDownIcon = faCaretDown;
 
   constructor(private cartService: CartService) {}
+
+  toggleQuantityOptions() {
+    this.isVisible = !this.isVisible;
+  }
+
+  setQuantity(count: number) {
+    this.quantity = count;
+    this.isVisible = false;
+  }
 
   emitAddToCart() {
     this.cartProduct.name = this.product.name;
     this.cartProduct.price = this.product.price;
     this.cartProduct.imgSrc = this.product.imgSrc;
-    this.cartProduct.count = this.itemCount;
+    this.cartProduct.count = this.quantity;
 
     this.isAddedToCart = true;
 
     this.cartService.addToCart(this.cartProduct);
   }
 
-  decreaseCount() {
-    if (this.itemCount === 0) return;
-    this.itemCount -= 1;
-  }
-
-  increaseCount() {
-    this.itemCount += 1;
-  }
 }

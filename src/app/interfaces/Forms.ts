@@ -9,3 +9,9 @@ export interface RegForm {
     password: string,
     passConfirm: string,
 }
+
+export interface UpdatePassForm {
+    currPassword: string,
+    newPassword: string,
+    passConfirm: string,
+}

@@ -1,5 +1,5 @@
 <div class="store">
-    <section class="heroBanner" @fadeIn>
+    <section class="heroBanner" @fadeInSlow>
         <img src="../../../assets/images/kbs_landscape_dark.jpg" alt="Hero banner">
     </section>
 
@@ -11,22 +11,23 @@
 
     <section class="productFilters" @fadeInSlow>
         <h3>Browse Titles</h3>
-        <div class="btnFilters">
-            <button (click)="togglePriceFilter()">Price <fa-icon [icon]="caretDown"></fa-icon></button>
-            <div *ngIf="togglePrice">
-                <div>
-                    <p>Low -> High</p>
-                    <p>High -> Low</p>
+        <div class="filters">
+            <div>
+                <button (click)="toggleFilter('price')">Price <fa-icon [icon]="caretDown"></fa-icon></button>
+                <div [ngStyle]="{'visibility': togglePrice ? 'visible' : 'hidden'}" class="filterOptions">
+                    <p (click)="filterByPrice('L2H')">Low -> High</p>
+                    <p (click)="filterByPrice('H2L')">High -> Low</p>
                 </div>
             </div>
-            <button (click)="togglePopFilter()">Popularity <fa-icon [icon]="caretDown"></fa-icon></button>
-            <ng-container *ngIf="togglePop">
-                <div>
-                    <p>Trending</p>
-                    <p>Declining</p>
+            <div>
+                <button (click)="toggleFilter('pop')">Popularity <fa-icon [icon]="caretDown"></fa-icon></button>
+                <div [ngStyle]="{'visibility': togglePop ? 'visible' : 'hidden'}" class="filterOptions">
+                    <p (click)="filterByPop('up')">Trending</p>
+                    <p (click)="filterByPop('down')">Declining</p>
                 </div>
-            </ng-container>
+            </div>
         </div>
     </section>
-    <app-products></app-products>
+    <app-products [filterPrice]="filterPrice" [filterPop]="filterPop"></app-products>
+
 </div>

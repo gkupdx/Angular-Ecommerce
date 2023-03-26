@@ -16,14 +16,24 @@ export class StoreComponent {
   caretDown = faCaretDown;
   togglePrice: boolean = false;
   togglePop: boolean = false;
+  filterPrice: string = '';
+  filterPop: string = '';
 
   constructor() {}
 
-  togglePriceFilter() {
-    this.togglePrice = !this.togglePrice;
+  toggleFilter(type: string) {
+    if (type === 'price') {
+      this.togglePrice = !this.togglePrice;
+    } else {
+      this.togglePop = !this.togglePop;
+    }
   }
 
-  togglePopFilter() {
-    this.togglePop = !this.togglePop;
+  filterByPrice(direction: string) {
+    direction === 'L2H' ? this.filterPrice = 'L2H' : this.filterPrice = 'H2L';
+  }
+
+  filterByPop(trend: string) {
+    trend === 'up' ? this.filterPop = 'up' : this.filterPop = 'down';
   }
 }

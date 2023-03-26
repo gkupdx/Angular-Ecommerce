@@ -61,6 +61,7 @@
 
     .quantityOptions p {
         font-weight: normal;
+        border-radius: 5px;
         margin-top: 0;
     }
 

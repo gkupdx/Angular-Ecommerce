@@ -1,37 +1,20 @@
 <div class="account">
-    <section class="cardTall" @slideIn>
+    <section [ngClass]="membershipVal ? null : 'cardInactive'" class="cardTall" @slideIn>
+        <span [ngStyle]="{'visibility': membershipVal ? 'hidden' : 'visible'}"id="membershipNotice">INACTIVE</span>
         <div [ngStyle]="{'text-align': 'center'}">
             <h2>계정 정보</h2>
             <h4>[Membership Details]</h4>
         </div>
         <div>
             <p>Email: </p>
-            <p>Password:</p>
-            <p>Membership Status: <span [style.color]="isMembershipActive ? 'green' : 'red'">Active</span></p>
+            <p>Password: ******</p>
+            <p>Membership Status: <span [style.color]="membershipVal ? 'green' : 'red'">{{ membershipVal ? 'Active' : 'Inactive' }}</span></p>
         </div>
 
         <div class="container">
-            <button class="primaryBtn">Change Password</button>
-            <button class="primaryBtn">Manage Membership</button>
+            <button (click)="changePassword()" class="primaryBtn">Change Password</button>
+            <button (click)="changeMembership()" [ngClass]="membershipVal ? 'dangerBtn' : 'primaryBtn'">{{ membershipVal ? 'Deactivate Membership' : 'Activate Membership'}}</button>
             <button (click)="logout()" class="dangerBtn">Log Out</button>
         </div>
     </section>
-
-    <!-- <form *ngIf="isFormVisible" class="card" @slideDown>
-        <h2>Change Your Password</h2>
-        <div>
-            <label for="currPassword">Current Password:</label>
-            <input type="password">
-        </div>
-        <div>
-            <label for="newPassword">New Password:</label>
-            <input type="password">
-        </div>
-        <div>
-            <label for="passConfirm">Confirm New Password:</label>
-            <input type="password">
-        </div>
-
-        <button class="submitBtn" type="submit">Submit</button>
-    </form> -->
 </div>

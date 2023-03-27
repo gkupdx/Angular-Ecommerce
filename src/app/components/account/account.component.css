@@ -10,8 +10,25 @@
     }
 
     .cardTall {
-        background-color: #FFF;
-        z-index: 3;
+        position: relative;
+    }
+
+    .cardInactive {
+        border: 1px solid red;
+    }
+
+    #membershipNotice {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: fit-content;
+        height: fit-content;
+        background-color: red;
+        color: #FFF;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 4px;
+        margin: 5px 5px;
     }
 
     .cardTall p {
@@ -23,33 +40,5 @@
     .container button {
         width: 250px;
         height: 35px;
-    }
-    
-    form {
-        width: 350px;
-        height: 600px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid lightgrey;
-        border-radius: 10px;
-        box-shadow: 0 0 1px #000;
-        margin: 20px 20px;
-        visibility: hidden;
-        z-index: 2;
-    }
-
-    label, input {
-        width: 250px;
-        height: 35px;
-    }
-
-    form button {
-        width: 250px;
-        height: 35px;
-    }
-
-    #cancelBtn {
-        font-size: 1rem;
     }
 }

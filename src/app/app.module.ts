@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { membershipReducer } from './state/account.reducer';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -16,6 +18,7 @@ import { ProductComponent } from './components/product/product.component';
 import { TopsellerComponent } from './components/product/topseller/topseller.component';
 import { NewreleaseComponent } from './components/product/newrelease/newrelease.component';
 import { ProductsComponent } from './components/products/products.component';
+import { PasswordchangeComponent } from './components/account/passwordchange/passwordchange.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,7 @@ import { ProductsComponent } from './components/products/products.component';
     TopsellerComponent,
     NewreleaseComponent,
     ProductsComponent,
+    PasswordchangeComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,7 @@ import { ProductsComponent } from './components/products/products.component';
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule,
+    StoreModule.forRoot({ membershipState: membershipReducer }),
   ],
   providers: [],
   bootstrap: [AppComponent]

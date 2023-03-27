@@ -1,31 +1,37 @@
 import { Component } from '@angular/core';
-import { UpdatePassForm } from 'src/app/interfaces/Forms';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { fadeIn, slideIn, slideDown } from 'src/app/utilities/animations';
+import { slideIn } from 'src/app/utilities/animations';
+import { activateMembership, deactivateMembership } from 'src/app/state/account.actions';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
   animations: [
-    fadeIn,
     slideIn,
-    slideDown,
   ],
 })
 export class AccountComponent {
-  isMembershipActive: boolean = true;
-  form: UpdatePassForm = {
-    currPassword: '',
-    newPassword: '',
-    passConfirm: '',
+  membershipState$: Observable<boolean>;
+  membershipVal: boolean = false;
+
+  constructor(private store: Store<{ membershipState: boolean }>, private authService: AuthService, private router: Router) {
+    this.membershipState$ = store.select('membershipState');
+    this.membershipState$.subscribe((value: boolean) => {
+      this.membershipVal = value;
+      console.log(this.membershipVal);
+    })
   }
 
-  constructor(private authService: AuthService, private router: Router) {}
+  changePassword() {
+    this.router.navigate(['pwdchange']);
+  }
 
-  goToStore() {
-    this.router.navigate(['store']);
+  changeMembership() {
+    this.membershipVal ? this.store.dispatch(deactivateMembership()) : this.store.dispatch(activateMembership());
   }
 
   logout() {

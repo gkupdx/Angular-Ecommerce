@@ -11,13 +11,21 @@ import { slideIn } from 'src/app/utilities/animations';
   ]
 })
 export class CartComponent {
+  cartState: string = 'empty';
+
   constructor(private cartService: CartService) {}
 
   getCartInfo() {
+    this.cartState = 'non-empty';
     return this.cartService.getCart();
   }
 
   getCartTotal() {
     return this.cartService.calculateTotal();
+  }
+
+  emptyTheCart() {
+    this.cartState = 'empty';
+    return this.cartService.emptyCart();
   }
 }

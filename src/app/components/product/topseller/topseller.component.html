@@ -1,5 +1,14 @@
-<section class="productGrid">
-    <ng-container *ngFor="let product of topProducts">
-        <app-product [product]="product" @fadeInSlow></app-product>
+<section class="carousel" @fadeInSlow>
+    <ng-container *ngFor="let product of topProducts; let i = index;">
+        <div [ngClass]="activeSlide === i+1 ? 'active' : 'hidden'" class="slide">
+            <img [src]="product.imgSrc" height="175px" alt="product.name" [@slideIn]="activeSlide">
+            <p [@slideIn]="activeSlide">{{ product.name }}</p>
+            <p [ngStyle]="{'font-size': '2rem'}" [@slideIn]="activeSlide">{{ product.price | currency:'USD' }}</p>
+
+            <div id="carouselNav">
+                <button (click)="moveSlide('left')"><fa-icon [icon]="leftArrow"></fa-icon></button>
+                <button (click)="moveSlide('right')"><fa-icon [icon]="rightArrow"></fa-icon></button>
+            </div>
+        </div>
     </ng-container>
 </section>

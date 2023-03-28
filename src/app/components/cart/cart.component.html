@@ -1,4 +1,4 @@
-<div class="cart" @slideIn>
+<div class="cart" [@slideIn]="cartState">
     <div [ngStyle]="{'text-align': 'center'}">
         <h2>카트 내용</h2>
         <h4>[Your Cart]</h4>
@@ -9,7 +9,8 @@
             <div class="cardWide">
                 <img [src]="product.imgSrc" height="75px" [alt]="product.name">
                 <p>{{ product.name }} </p>
-                <p [ngStyle]="{'font-weight': 'bold'}">{{ product.price | currency:'USD' }} <span *ngIf="product.count !== 1">x{{ product.count }}</span></p>
+                <p [ngStyle]="{'font-weight': 'bold'}">{{ product.price | currency:'USD' }} <span
+                        *ngIf="product.count !== 1">x{{ product.count }}</span></p>
             </div>
         </div>
     </div>
@@ -18,5 +19,8 @@
 
     <h3 *ngIf="getCartInfo().length > 0">Total: {{ getCartTotal() | currency:'USD' }}</h3>
 
-    <button [disabled]="getCartInfo().length === 0" class="primaryBtn">계산하러 가기 [Checkout]</button>
+    <div id="cartBtnContainer">
+        <button (click)="emptyTheCart()"[disabled]="getCartInfo().length === 0" class="primaryBtn">카트 비우기 [Empty The Cart]</button>
+        <button [disabled]="getCartInfo().length === 0" class="primaryBtn">계산하러 가기 [Checkout]</button>
+    </div>
 </div>

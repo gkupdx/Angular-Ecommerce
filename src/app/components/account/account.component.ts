@@ -17,13 +17,15 @@ import { activateMembership, deactivateMembership } from 'src/app/state/account.
 export class AccountComponent {
   membershipState$: Observable<boolean>;
   membershipVal: boolean = false;
+  userEmail: string | null | undefined = '';
 
   constructor(private store: Store<{ membershipState: boolean }>, private authService: AuthService, private router: Router) {
     this.membershipState$ = store.select('membershipState');
     this.membershipState$.subscribe((value: boolean) => {
       this.membershipVal = value;
       console.log(this.membershipVal);
-    })
+    });
+    this.userEmail = this.authService.getUserEmail();
   }
 
   changePassword() {

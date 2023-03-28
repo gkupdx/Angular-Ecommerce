@@ -6,7 +6,7 @@
             <h4>[Membership Details]</h4>
         </div>
         <div>
-            <p>Email: </p>
+            <p>Email: {{ userEmail }}</p>
             <p>Password: ******</p>
             <p>Membership Status: <span [style.color]="membershipVal ? 'green' : 'red'">{{ membershipVal ? 'Active' : 'Inactive' }}</span></p>
         </div>

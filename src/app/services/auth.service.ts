@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoginForm, RegForm } from '../interfaces/Forms';
+import { LoginForm, RegForm, UpdatePassForm } from '../interfaces/Forms';
 import { Router } from '@angular/router';
 
 // Firebase imports
@@ -14,6 +14,14 @@ export class AuthService {
   isPasswordMatch: boolean = false;
 
   constructor(private router: Router) {}
+
+  getUserEmail(): string | null | undefined {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const email = user?.email;
+
+    return email;
+  }
 
   login(form: LoginForm) {
     if (this.isLoading) return;
@@ -32,6 +40,10 @@ export class AuthService {
       const errorMessage = error.message;
     })
     .finally(() => (this.isLoading = false))
+  }
+
+  updatePassword(form: UpdatePassForm) {
+
   }
 
   register(form: RegForm) {

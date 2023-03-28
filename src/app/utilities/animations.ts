@@ -1,4 +1,6 @@
-import { trigger, state, transition, style, query, animate } from '@angular/animations';
+import { trigger, state, transition, style, animate, group, query } from '@angular/animations';
+
+let browserWidth = window.innerWidth;
 
 export const fadeIn = trigger('fadeIn', [
     state('void', style({ opacity: 0 })),
@@ -9,36 +11,62 @@ export const fadeIn = trigger('fadeIn', [
 ]);
 
 export const fadeInSlow = trigger('fadeInSlow', [
-    transition('void => *', [
-        style({ opacity: 0 }),
-        animate('2s 300ms ease-in-out', style({ opacity: 1 })),
+    state('void', style({ opacity: 0 })),
+    state('end', style({ opacity: 1 })),
+    transition(':enter', [
+        animate('1s ease-in-out'),
+    ]),
+    transition('* => end', [
+        animate('1s ease-in-out'),
     ]),
 ]);
 
 export const slideIn = trigger("slideIn", [
-    transition("* => *", [
-        style({ transform: 'translateX(100%)' }),
-        animate('0.7s ease-in-out', style({ transform: 'translateX(0%)' }))
+    transition(':enter, :increment, empty => non-empty, non-empty => empty', [
+        style({ transform: `translateX(${browserWidth}px)` }),
+        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' })),
+    ]),
+    transition(':leave', [
+        animate('0.7s ease-in-out', style({ transform: `translateX(-${browserWidth}px)` })),
+    ]),
+    transition(':decrement', [
+        style({ transform: `translateX(0)`}),
+        animate('0.7s ease-in-out', style({ transform: `translateX(-${browserWidth}px)`}))
     ]),
 ]);
 
-export const slideInSlow = trigger("slideInSlow", [
-    transition("* => *", [
-        style({ transform: 'translateX(100%)'}),
-        animate('1s ease-in-out', style({ transform: 'translateX(0%)' }))
+export const slideOut = trigger("slideOut", [
+    transition(':increment', [
+        style({ transform: `translateX(0)` }),
+        animate('0.7s ease-out', style({ transform: `translateX(-${browserWidth}px)` }))
+    ]),
+    transition(':decrement', [
+        style({ transform: `translateX(0)` }),
+        animate('0.7s ease-out', style({ transform: `translateX(${browserWidth}px)` }))
     ])
 ])
 
-export const slideDown = trigger("slideDown", [
+export const slideInSlow = trigger("slideInSlow", [
     transition("* => *", [
+        style({ transform: 'translateX(100%)' }),
+        animate('1s ease-in-out', style({ transform: 'translateX(0%)' }))
+    ])
+]);
+
+export const slideDown = trigger("slideDown", [
+    transition('hidden <=> visible', [
         style({ transform: 'translateY(-100%)' }),
-        animate('0.5s ease-in-out', style({ transform: 'translateY(0%)' })),
+        animate('0.5s ease-in-out', style({ transform: 'translateY(0)' }))
+    ]),
+    transition(":enter", [
+        style({ transform: 'translateY(-100%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateY(0)' })),
     ]),
 ]);
 
 export const slideDownSlow = trigger("slideDownSlow", [
     transition("void => *", [
-        style({ transform: 'translateY(-100%)'}),
-        animate('1s ease', style({ transform: 'translateY(0%)'})),
+        style({ transform: 'translateY(-100%)' }),
+        animate('1s ease', style({ transform: 'translateY(0%)' })),
     ]),
 ]);

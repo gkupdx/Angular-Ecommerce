@@ -31,6 +31,10 @@ export class CartService {
     return this.cartItems;
   }
 
+  emptyCart() {
+    this.cartItems = [];
+  }
+
   calculateTotal() {
     let total: number = 0;
 

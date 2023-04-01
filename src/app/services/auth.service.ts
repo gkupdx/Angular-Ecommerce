@@ -93,6 +93,13 @@ export class AuthService {
       });
   }
 
+  reauthenticate() {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    user ? this.isAuthenticated = true : this.isAuthenticated = false;
+  }
+
   logout() {
     const auth = getAuth();
     signOut(auth)

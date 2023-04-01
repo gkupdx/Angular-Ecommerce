@@ -33,14 +33,16 @@ export class AuthService {
     signInWithEmailAndPassword(auth, form.email, form.password)
     .then((userCredential) => {
       this.isAuthenticated = true;
-      this.router.navigate(['store']);
     })
     .catch((error) => {
       this.isAuthenticated = false;
       const errorCode = error.code;
       const errorMessage = error.message;
     })
-    .finally(() => (this.isLoading = false))
+    .finally(() => {
+      this.isLoading = false;
+      this.router.navigate(['store']);
+    })
   }
 
   updatePassword(form: UpdatePassForm): boolean {
@@ -79,14 +81,16 @@ export class AuthService {
       .then((userCredential) => {
         this.isAuthenticated = true;
         const user = userCredential.user;
-        this.router.navigate(['store']);
       })
       .catch((error) => {
         this.isAuthenticated = false;
         const errorCode = error.code;
         const errorMessage = error.message;
       })
-      .finally(() => (this.isLoading = false));
+      .finally(() => {
+        this.isLoading = false;
+        this.router.navigate(['store']);
+      });
   }
 
   logout() {

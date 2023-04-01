@@ -27,8 +27,8 @@ export class LandingComponent {
   }
 
   loginSubmit() {
-    // this.authService.login(this.form);
-    this.authService.isAuthenticated = true;
+    this.authService.login(this.form);
+    // this.authService.isAuthenticated = true;
     this.router.navigate(['store']);
   }
 }

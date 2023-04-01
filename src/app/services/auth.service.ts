@@ -98,10 +98,9 @@ export class AuthService {
     signOut(auth)
     .then(() => {
       this.isAuthenticated = false;
-      this.router.navigate(['']);
     })
     .catch((error) => {
       console.log("Logout failed. Please try again.");
-    })
+    }).finally(() => this.router.navigate(['']));
   }
 }

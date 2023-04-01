@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     initializeApp(firebaseConfig);
   }
 
-  isAuthenticated() {
+  isSignedIn() {
     return this.authService.isAuthenticated;
   }
 }

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RegForm } from 'src/app/interfaces/Forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { slideIn } from 'src/app/utilities/animations';
+import { slideIn, slideDown } from 'src/app/utilities/animations';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-register',
@@ -9,6 +10,7 @@ import { slideIn } from 'src/app/utilities/animations';
   styleUrls: ['./register.component.css'],
   animations: [
     slideIn,
+    slideDown,
   ],
 })
 export class RegisterComponent {
@@ -17,6 +19,8 @@ export class RegisterComponent {
     password: '',
     passConfirm: '',
   }
+  doPasswordsMatch: boolean = true;
+  xmark = faXmark;
 
   constructor(private authService: AuthService) {}
 
@@ -25,6 +29,10 @@ export class RegisterComponent {
   }
 
   regSubmit() {
+    if (this.form.password !== this.form.passConfirm) {
+      this.doPasswordsMatch = false;
+      return;
+    }
     this.authService.register(this.form);
   }
 }

@@ -29,7 +29,7 @@
                 <label for="passConfirm">비밀번호 확인 [Confirm Password]:</label>
                 <input [(ngModel)]="form.passConfirm" #pcField="ngModel" type="password" name="passConfirm"
                     placeholder="Confirm Password" required>
-                    <p *ngIf="pcField.invalid && pcField.touched" class="formError">Password does not match.</p>
+                    <p *ngIf="pcField.invalid && pcField.touched" class="formError">Please confirm your password.</p>
             </div>
 
             <button [disabled]="regForm.form.invalid" class="submitBtn" type="submit">
@@ -38,4 +38,8 @@
             </button>
         </form>
     </section>
+
+    <div *ngIf="!doPasswordsMatch" id="pwdDoesNotMatch" @slideDown>
+        <fa-icon [icon]="xmark"></fa-icon> Passwords do not match.
+    </div>
 </div>

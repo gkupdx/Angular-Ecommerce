@@ -4,23 +4,30 @@
         <h4>[Your Cart]</h4>
     </div>
 
-    <div *ngIf="getCartInfo().length > 0">
+    <div id="cartItemContainer" *ngIf="getCartInfo().length > 0">
         <div *ngFor="let product of getCartInfo(); let i = index;">
-            <div class="cardWide">
-                <img [src]="product.imgSrc" height="75px" [alt]="product.name">
-                <p>{{ product.name }} </p>
-                <p [ngStyle]="{'font-weight': 'bold'}">{{ product.price | currency:'USD' }} <span
-                        *ngIf="product.count !== 1">x{{ product.count }}</span></p>
+            <div class="cartItem">
+                <div>
+                    <img [src]="product.imgSrc" height="55px" [alt]="product.name">
+                    <p>{{ product.name }} </p>
+                    <p [ngStyle]="{'font-weight': 'bold'}">{{ product.price | currency:'USD' }} <span
+                            *ngIf="product.count !== 1">x{{ product.count }}</span></p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div *ngIf="getCartInfo().length === 0" class="cardWide">Your cart is empty.</div>
+    <div *ngIf="getCartInfo().length === 0">Your cart is empty.</div>
 
     <h3 *ngIf="getCartInfo().length > 0">Total: {{ getCartTotal() | currency:'USD' }}</h3>
 
     <div id="cartBtnContainer">
-        <button (click)="emptyTheCart()"[disabled]="getCartInfo().length === 0" class="primaryBtn">카트 비우기 [Empty The Cart]</button>
-        <button [disabled]="getCartInfo().length === 0" class="primaryBtn">계산하러 가기 [Checkout]</button>
+        <button (click)="emptyTheCart()" [disabled]="getCartInfo().length === 0" id="emptyCartBtn">카트 비우기 [Empty The
+            Cart]</button>
+        <button [disabled]="getCartInfo().length === 0" id="checkoutBtn">계산하러 가기 [Checkout] <fa-icon
+                [icon]="arrowRight"></fa-icon></button>
     </div>
+
+
+    <button (click)="goToStore()" class="backBtn"><fa-icon [icon]="arrowLeft"></fa-icon> 가게로 가기 [Back to Store]</button>
 </div>

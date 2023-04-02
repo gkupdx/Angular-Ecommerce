@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { Router } from '@angular/router';
 import { slideIn } from 'src/app/utilities/animations';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-cart',
@@ -12,8 +14,10 @@ import { slideIn } from 'src/app/utilities/animations';
 })
 export class CartComponent {
   cartState: string = 'empty';
+  arrowLeft = faArrowLeft;
+  arrowRight = faArrowRight;
 
-  constructor(private cartService: CartService) {}
+  constructor(private router: Router, private cartService: CartService) {}
 
   getCartInfo() {
     this.cartState = 'non-empty';
@@ -27,5 +31,9 @@ export class CartComponent {
   emptyTheCart() {
     this.cartState = 'empty';
     return this.cartService.emptyCart();
+  }
+
+  goToStore() {
+    this.router.navigate(['store']);
   }
 }

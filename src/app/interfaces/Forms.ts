@@ -14,3 +14,9 @@ export interface UpdatePassForm {
     newPassword: string,
     passConfirm: string,
 }
+
+export interface PaymentForm {
+    cardNum: string,
+    expDate: string,
+    cvv: string,
+}

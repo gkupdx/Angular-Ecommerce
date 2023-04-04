@@ -1,0 +1,40 @@
+<div class="checkout">
+    <section class="cardTall" @slideIn>
+        <div [ngStyle]="{'text-align': 'center'}">
+            <h2>결제 정보</h2>
+            <h4>[Payment Information]</h4>
+        </div>
+        <form (ngSubmit)="paymentSubmit()" #paymentForm="ngForm">
+            <div id="creditCardIcons">
+                <fa-icon [icon]="visa"></fa-icon>
+                <fa-icon [icon]="mastercard"></fa-icon>
+                <fa-icon [icon]="discover"></fa-icon>
+                <fa-icon [icon]="amex"></fa-icon>
+            </div>
+
+            <div id="cardNumberDiv">
+                <label for="cardNum">카드 번호 [Card number]:</label>
+                <input [(ngModel)]="form.cardNum" (keyup)="onChange('cardNum')" #cardNumField="ngModel" type="text" name="cardNum" maxlength="16"
+                    placeholder="XXXXXXXXXXXXXXXX">
+                <p *ngIf="!isCardNumValid" class="formError">Card number is invalid.</p>
+            </div>
+            <section id="dateCvvDiv">
+                <div id="dateDiv">
+                    <label for="expDate">만료일 [Expiration date]:</label>
+                    <input [(ngModel)]="form.expDate" (keyup)="onChange('expDate')" #expDateField="ngModel" type="text" name="expDate" maxlength="5"
+                        placeholder="MM/YY">
+                    <p *ngIf="!isExpDateValid" class="formError">Expiration date is invalid.</p>
+                </div>
+                <div id="cvvDiv">
+                    <label for="cvv">CVV:</label>
+                    <input [(ngModel)]="form.cvv" (keyup)="onChange('cvv')" #cvvField="ngModel" type="text" name="cvv" maxlength="3"
+                        placeholder="XXX">
+                    <p *ngIf="!isCvvValid" class="formError">CVV is invalid.</p>
+                </div>
+            </section>
+
+            <button [disabled]="paymentForm.form.invalid" type="submit" class="submitBtn">Next</button>
+            <button (click)="goToPrev()" class="backBtn"><fa-icon [icon]="backArrow"></fa-icon> Back to Cart</button>
+        </form>
+    </section>
+</div>

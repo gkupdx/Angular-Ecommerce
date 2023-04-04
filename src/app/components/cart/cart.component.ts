@@ -33,6 +33,10 @@ export class CartComponent {
     return this.cartService.emptyCart();
   }
 
+  goToCheckout() {
+    this.router.navigate(['checkout']);
+  }
+
   goToStore() {
     this.router.navigate(['store']);
   }

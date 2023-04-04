@@ -4,7 +4,7 @@
         <h4>[Your Cart]</h4>
     </div>
 
-    <div id="cartItemContainer" *ngIf="getCartInfo().length > 0">
+    <div class="cartItemContainer" *ngIf="getCartInfo().length > 0">
         <div *ngFor="let product of getCartInfo(); let i = index;">
             <div class="cartItem">
                 <div>

@@ -22,9 +22,9 @@
     <h3 *ngIf="getCartInfo().length > 0">Total: {{ getCartTotal() | currency:'USD' }}</h3>
 
     <div id="cartBtnContainer">
-        <button (click)="emptyTheCart()" [disabled]="getCartInfo().length === 0" id="emptyCartBtn">카트 비우기 [Empty The
+        <button (click)="emptyTheCart()" [ngStyle]="{'cursor': getCartInfo().length === 0 ? 'not-allowed' : null}" [disabled]="getCartInfo().length === 0" id="emptyCartBtn">카트 비우기 [Empty The
             Cart]</button>
-        <button [disabled]="getCartInfo().length === 0" id="checkoutBtn">계산하러 가기 [Checkout] <fa-icon
+        <button (click)="goToCheckout()" [ngStyle]="{'cursor': getCartInfo().length === 0 ? 'not-allowed' : null}" [disabled]="getCartInfo().length === 0" id="checkoutBtn">계산하러 가기 [Checkout] <fa-icon
                 [icon]="arrowRight"></fa-icon></button>
     </div>
 

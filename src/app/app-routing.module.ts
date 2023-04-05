@@ -4,6 +4,7 @@ import { AccountComponent } from './components/account/account.component';
 import { PasswordchangeComponent } from './components/account/passwordchange/passwordchange.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/cart/checkout/checkout.component';
+import { OrdercompleteComponent } from './components/cart/checkout/revieworder/ordercomplete/ordercomplete.component';
 import { RevieworderComponent } from './components/cart/checkout/revieworder/revieworder.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'revieworder', component: RevieworderComponent },
+  { path: 'ordercomplete', component: OrdercompleteComponent },
 ];
 
 @NgModule({

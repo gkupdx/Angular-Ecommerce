@@ -14,7 +14,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
   ]
 })
 export class RevieworderComponent {
-  isPurchaseSuccessful: boolean = false;
+  isLoading: boolean = false;
   backArrow = faArrowLeft;
 
   constructor(private cartService: CartService, private location: Location, private router: Router) {}
@@ -28,8 +28,9 @@ export class RevieworderComponent {
   }
 
   purchaseConfirm() {
+    this.isLoading = true; // simulates the flow of a real transaction
+
     setTimeout(() => {
-      this.isPurchaseSuccessful = true;
       this.router.navigate(['ordercomplete']);
     }, 3000);
   }

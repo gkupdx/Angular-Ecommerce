@@ -1,0 +1,15 @@
+<div class="orderComplete">
+    <div @slideIn>
+        <img src="assets/images/confetti.svg" alt="Confetti GIF">
+        <h2>감사합니다!</h2>
+        <h4>[Thank You!]</h4>
+    </div>
+
+
+    <div [ngStyle]="{'margin-top': '60px'}" @slideIn>
+        <p>Your order purchase was successful!</p>
+        <p>You can watch your shows on your favorite platform!</p>
+
+        <button (click)="goToStore()" class="backBtn"><fa-icon [icon]="backArrow"></fa-icon> Back to Store</button>
+    </div>
+</div>

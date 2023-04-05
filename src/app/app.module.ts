@@ -19,6 +19,9 @@ import { TopsellerComponent } from './components/product/topseller/topseller.com
 import { NewreleaseComponent } from './components/product/newrelease/newrelease.component';
 import { ProductsComponent } from './components/products/products.component';
 import { PasswordchangeComponent } from './components/account/passwordchange/passwordchange.component';
+import { CheckoutComponent } from './components/cart/checkout/checkout.component';
+import { RevieworderComponent } from './components/cart/checkout/revieworder/revieworder.component';
+import { OrdercompleteComponent } from './components/cart/checkout/revieworder/ordercomplete/ordercomplete.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { PasswordchangeComponent } from './components/account/passwordchange/pas
     NewreleaseComponent,
     ProductsComponent,
     PasswordchangeComponent,
+    CheckoutComponent,
+    RevieworderComponent,
+    OrdercompleteComponent,
   ],
   imports: [
     BrowserModule,

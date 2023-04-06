@@ -12,22 +12,21 @@
     <section class="productFilters" @fadeInSlow>
         <h3>Browse Titles</h3>
         <div class="filters">
+            <span>sort by:</span>
             <div>
-                <button (click)="toggleFilter('price')">Price <fa-icon [icon]="caretDown"></fa-icon></button>
+                <button (click)="toggleFilter()">{{ filterPrice }} <fa-icon *ngIf="filterPrice === 'Price'"
+                        [icon]="caretDown"></fa-icon></button>
                 <div [ngStyle]="{'visibility': togglePrice ? 'visible' : 'hidden'}" class="filterOptions">
-                    <p (click)="filterByPrice('L2H')">Low -> High</p>
-                    <p (click)="filterByPrice('H2L')">High -> Low</p>
+                    <p (click)="filterByPrice('L2H')">Low -> Hi</p>
+                    <p (click)="filterByPrice('H2L')">Hi -> Low</p>
                 </div>
             </div>
             <div>
-                <button (click)="toggleFilter('pop')">Popularity <fa-icon [icon]="caretDown"></fa-icon></button>
-                <div [ngStyle]="{'visibility': togglePop ? 'visible' : 'hidden'}" class="filterOptions">
-                    <p (click)="filterByPop('up')">Trending</p>
-                    <p (click)="filterByPop('down')">Declining</p>
-                </div>
+                <input type="text" placeholder="Search...">
+                <button id="searchBtn"><fa-icon [icon]="searchIcon"></fa-icon></button>
             </div>
         </div>
     </section>
-    <app-products [filterPrice]="filterPrice" [filterPop]="filterPop"></app-products>
+    <app-products [filterPrice]="filterPrice"></app-products>
 
 </div>

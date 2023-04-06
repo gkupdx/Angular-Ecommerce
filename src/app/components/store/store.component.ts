@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { fadeIn, fadeInSlow, slideDownSlow } from 'src/app/utilities/animations';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-store',
@@ -13,27 +13,24 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
   ],
 })
 export class StoreComponent {
-  caretDown = faCaretDown;
   togglePrice: boolean = false;
-  togglePop: boolean = false;
-  filterPrice: string = '';
-  filterPop: string = '';
+  filterPrice: string = 'Price';
+  caretDown = faCaretDown;
+  searchIcon = faMagnifyingGlass;
 
   constructor() {}
 
-  toggleFilter(type: string) {
-    if (type === 'price') {
-      this.togglePrice = !this.togglePrice;
-    } else {
-      this.togglePop = !this.togglePop;
-    }
+  toggleFilter() {
+    this.togglePrice = !this.togglePrice;
   }
 
   filterByPrice(direction: string) {
-    direction === 'L2H' ? this.filterPrice = 'L2H' : this.filterPrice = 'H2L';
-  }
-
-  filterByPop(trend: string) {
-    trend === 'up' ? this.filterPop = 'up' : this.filterPop = 'down';
+    if (direction === 'L2H') {
+      this.filterPrice = 'Low -> Hi';
+      this.togglePrice = false;
+    } else {
+      this.filterPrice = 'Hi -> Low';
+      this.togglePrice = false;
+    } 
   }
 }

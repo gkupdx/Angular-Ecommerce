@@ -1,4 +1,4 @@
-import { trigger, state, transition, style, animate, group, query } from '@angular/animations';
+import { trigger, state, transition, style, animate, sequence, group, query } from '@angular/animations';
 
 let browserWidth = window.innerWidth;
 
@@ -22,16 +22,25 @@ export const fadeInSlow = trigger('fadeInSlow', [
 ]);
 
 export const slideIn = trigger("slideIn", [
-    transition(':enter, :increment, empty => non-empty, non-empty => empty', [
+    transition(':enter, empty => non-empty, non-empty => empty', [
         style({ transform: `translateX(${browserWidth}px)` }),
-        animate('0.7s ease-in-out', style({ transform: 'translateX(0)' })),
+        animate('0.7s ease-in-out', style({ transform: `translateX(0)`})),
     ]),
     transition(':leave', [
+        style({ transform: `translateX(0)`}),
         animate('0.7s ease-in-out', style({ transform: `translateX(-${browserWidth}px)` })),
     ]),
+    transition(':increment', [
+        sequence([
+            animate('0.7s ease-in-out', style({ transform: `translateX(0)`})),
+            animate('0.7s 2700ms ease-in-out', style({ transform: `translateX(-${browserWidth}px)`}))
+        ])
+    ]),
     transition(':decrement', [
-        style({ transform: `translateX(0)`}),
-        animate('0.7s ease-in-out', style({ transform: `translateX(-${browserWidth}px)`}))
+        sequence([
+            animate('0.7s ease-in-out', style({ transform: `translateX(0)`})),
+            animate('0.7s 2700ms ease-in-out', style({ transform: `translateX(${browserWidth}px)`}))
+        ])
     ]),
 ]);
 

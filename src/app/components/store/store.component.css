@@ -40,27 +40,27 @@
         padding: 10px;
     }
 
-    .filters {
+    .filter {
         position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    .filters span {
+    .filter span {
         font-size: 0.7rem;
         margin-right: 5px;
     }
 
-    .filters > div {
+    .filter > div {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .filters button {
+    .filter button {
         width: 75px;
-        height: 30px;
+        height: 25px;
         background-color: #FFF;
         font-family: 'Poppins', sans-serif;
         border: 1px solid lightgrey;
@@ -70,7 +70,7 @@
         transition: 0.1s background-color ease;
     }
 
-    .filters button:hover {
+    .filter button:hover {
         background-color: lightgrey;
         transition: 0.1s background-color ease;
     }
@@ -78,22 +78,22 @@
     .filterOptions {
         position: absolute;
         width: 75px;
-        height: 60px;
+        height: 50px;
         background-color: #FFF;
         text-align: center;
         visibility: hidden;
         border: 1px solid lightgrey;
         border-radius: 5px;
-        margin-top: 30px;
+        margin-top: 25px;
         margin-right: 10px;
         z-index: 3;
     }
 
     .filterOptions > p {
-        height: 30px;
+        height: 25px;
         font-size: 0.8rem;
         border-radius: 5px;
-        padding-top: 5px;
+        padding-top: 4px;
     }
 
     .filterOptions > p:hover {
@@ -108,7 +108,7 @@
         font-size: 0.8rem;
         border: 1px solid lightgrey;
         border-radius: 10px;
-        padding: 5px;
+        padding: 7px;
     }
 
     .productFilters input:focus {

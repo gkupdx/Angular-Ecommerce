@@ -61,24 +61,4 @@ export class TopsellerComponent implements OnInit, OnDestroy {
     }
     this.resetTimer();
   }
-
-  // toggleQuantityOptions(index: number) {
-  //   this.isVisible[index] = !this.isVisible[index];
-  // }
-
-  // setQuantity(index: number, count: number) {
-  //   this.quantity[index] = count;
-  //   this.isVisible[index] = false;
-  // }
-
-  // emitAddToCart(index: number) {
-  //   this.cartProduct.name = this.topProducts[index].name;
-  //   this.cartProduct.price = this.topProducts[index].price;
-  //   this.cartProduct.imgSrc = this.topProducts[index].imgSrc;
-  //   this.cartProduct.count = this.quantity[index];
-
-  //   this.isAddedToCart[index] = true;
-
-  //   this.cartService.addToCart(this.cartProduct);
-  // }
 }

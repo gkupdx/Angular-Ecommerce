@@ -36,11 +36,16 @@ export class StoreComponent {
     } 
   }
 
+  detectInputClear(event: KeyboardEvent) {
+    if (event.key === 'Backspace' || event.key === 'Delete') {
+      if (this.searchVal === '') this.productName = '';
+    }
+  }
+
   searchForProduct() {
     if (this.searchVal === '') {
       return;
     }
-    console.log(this.searchVal);
     this.productName = this.searchVal;
   }
 }

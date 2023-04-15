@@ -13,6 +13,9 @@ import { fadeInSlow } from 'src/app/utilities/animations';
 })
 export class ProductsComponent implements OnChanges {
   @Input() filterPrice: string;
+  @Input() productName: string;
+  searchedForProduct: Product;
+  doesProductExist: boolean = false;
   products: Product[] = [];
 
   constructor(private productService: ProductService) {
@@ -20,10 +23,27 @@ export class ProductsComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['filterPrice'].currentValue === 'Low -> Hi') {
-      this.products = this.productService.getSortedProducts('L2H');
-    } else if (changes['filterPrice'].currentValue === 'Hi -> Low') {
-      this.products = this.productService.getSortedProducts('H2L');
+    for(let prop in changes) {
+      if (changes.hasOwnProperty(prop)) {
+        switch (prop) {
+          case 'filterPrice':
+            if (changes['filterPrice'].currentValue === 'Low -> Hi') {
+              this.products = this.productService.getSortedProducts('L2H');
+            } else if (changes['filterPrice'].currentValue === 'Hi -> Low') {
+              this.products = this.productService.getSortedProducts('H2L');
+            }
+            break;
+          case 'productName':
+            if (changes['productName'].currentValue !== '') {
+              this.productName.toLowerCase();
+              this.searchedForProduct = this.productService.getProductByName(this.productName);
+              if (this.searchedForProduct.name !== '') this.doesProductExist = true;
+            }
+            break;
+          default:
+            return;
+        }
+      }
     }
   }
 }

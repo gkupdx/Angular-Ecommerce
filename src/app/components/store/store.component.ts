@@ -15,6 +15,8 @@ import { faCaretDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icon
 export class StoreComponent {
   togglePrice: boolean = false;
   filterPrice: string = 'Price';
+  searchVal: string = '';
+  productName: string = '';
   caretDown = faCaretDown;
   searchIcon = faMagnifyingGlass;
 
@@ -32,5 +34,13 @@ export class StoreComponent {
       this.filterPrice = 'Hi -> Low';
       this.togglePrice = false;
     } 
+  }
+
+  searchForProduct() {
+    if (this.searchVal === '') {
+      return;
+    }
+    console.log(this.searchVal);
+    this.productName = this.searchVal;
   }
 }

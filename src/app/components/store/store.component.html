@@ -11,7 +11,7 @@
 
     <section class="productFilters" @fadeInSlow>
         <h3>Browse Titles</h3>
-        <div class="filters">
+        <div class="filter">
             <span>sort by:</span>
             <div>
                 <button (click)="toggleFilter()">{{ filterPrice }} <fa-icon *ngIf="filterPrice === 'Price'"
@@ -22,11 +22,10 @@
                 </div>
             </div>
             <div>
-                <input type="text" placeholder="Search...">
-                <button id="searchBtn"><fa-icon [icon]="searchIcon"></fa-icon></button>
+                <input [(ngModel)]="searchVal" type="text" placeholder="Search...">
+                <button (click)="searchForProduct()" id="searchBtn"><fa-icon [icon]="searchIcon"></fa-icon></button>
             </div>
         </div>
     </section>
-    <app-products [filterPrice]="filterPrice"></app-products>
-
+    <app-products [filterPrice]="filterPrice" [productName]="productName"></app-products>
 </div>

@@ -2,9 +2,10 @@
     .carousel {
         position: relative;
         width: 100vw;
-        height: 550px;
+        height: 500px;
         display: flex;
         align-items: center;
+        background: linear-gradient(170deg, #FFF 20%, grey 40%, #333 60%, #060d0d 80%, #000 100%);
         border-bottom: 1px solid lightgrey;
         margin-top: 30px;
     }
@@ -12,7 +13,7 @@
     .slide {
         position: absolute;
         width: 100vw;
-        height: 550px;
+        height: 500px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -45,6 +46,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-left: 2.5%;
     }
 
     #carouselNav button {
@@ -60,53 +62,29 @@
         color: #FFF;
     }
 
-    .itemQuantity {
-        display: inline-flex;
-        align-items: center;
-        width: 170px;
-        height: 35px;
-    }
-
-    .quantityBtn {
-        width: 120px;
-        height: 30px;
-        font-family: 'Poppins', sans-serif;
-        background-color: #FFF;
-        border: 1px solid lightgrey;
-        border-radius: 10px;
-        transition: 0.1s background-color ease;
-    }
-
-    .quantityBtn:hover {
-        cursor: pointer;
-        background-color: lightgrey;
-        transition: 0.1s background-color ease;
-    }
-
-    .quantityOptions {
-        width: 120px;
-        height: 75px;
-        background-color: #FFF;
-        border: 1px solid lightgrey;
-        text-align: center;
-        visibility: hidden;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .quantityOptions p {
-        font-weight: normal;
-        font-size: 1rem;
-        color: #000;
-        margin-top: 0;
-    }
-
-    .quantityOptions p:hover {
-        background-color: lightgrey;
-    }
-
     section .primaryBtn {
         width: 170px;
         height: 35px;
+    }
+}
+
+@media screen and (min-width: 577px) {
+    .carousel {
+        position: relative;
+        width: 100vw;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(170deg, #FFF 20%, grey 40%, #333 60%, #060d0d 80%, #000 100%);
+        border-bottom: 1px solid lightgrey;
+        margin-top: 30px;
+    }
+    
+    .active {
+        visibility: visible;
+    }
+
+    .hidden {
+        visibility: hidden;
     }
 }

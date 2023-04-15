@@ -1,11 +1,15 @@
 <section class="productGrid">
+    <!-- by default, load all products -->
     <ng-container *ngIf="productName === ''">
         <ng-container *ngFor="let product of products">
             <app-product [product]="product" @fadeInSlow></app-product>
         </ng-container>
     </ng-container>
 
+    <!-- when user searches for a product -->
     <ng-container *ngIf="productName !== ''">
-        <app-product [product]="searchedForProduct"></app-product>
+        <app-product *ngIf="doesProductExist" [product]="searchedForProduct" @fadeInSlow></app-product>
+
+        <p *ngIf="!doesProductExist" [ngStyle]="{'margin': 'auto', 'text-align': 'center'}" @fadeInSlow>Sorry, we could not find that product in our catalog.</p>
     </ng-container>
 </section>

@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div>
-                <input [(ngModel)]="searchVal" type="text" placeholder="Search...">
+                <input [(ngModel)]="searchVal" (keyup)="detectInputClear($event)" type="text" placeholder="Search...">
                 <button (click)="searchForProduct()" id="searchBtn"><fa-icon [icon]="searchIcon"></fa-icon></button>
             </div>
         </div>

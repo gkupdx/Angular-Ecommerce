@@ -15,11 +15,17 @@ export class ProductsComponent implements OnChanges {
   @Input() filterPrice: string;
   @Input() productName: string;
   searchedForProduct: Product;
-  doesProductExist: boolean = false;
+  doesProductExist: boolean;
   products: Product[] = [];
 
   constructor(private productService: ProductService) {
     this.products = this.productService.getProducts();
+    this.searchedForProduct = {
+      name: '',
+      price: '',
+      imgSrc: '',
+    }
+    this.doesProductExist = false;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -38,6 +44,11 @@ export class ProductsComponent implements OnChanges {
               this.productName.toLowerCase();
               this.searchedForProduct = this.productService.getProductByName(this.productName);
               if (this.searchedForProduct.name !== '') this.doesProductExist = true;
+            } else {
+              this.searchedForProduct.name = '',
+              this.searchedForProduct.price = '',
+              this.searchedForProduct.imgSrc = '',
+              this.doesProductExist = false;
             }
             break;
           default:

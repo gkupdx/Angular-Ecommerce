@@ -1,5 +1,5 @@
 /* MOBILE BREAKPOINT */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 767px) {
    .landing {
       width: 100vw;
       height: auto;

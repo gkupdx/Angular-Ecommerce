@@ -9,8 +9,7 @@
         
         <h4>{{ newProduct.price | currency:'USD' }}</h4>
         <div class="btnContainer">
-            <button id="purchaseBtn">구매하기 [Purchase]</button>
-            <button id="addBtn">카트 담기 [Add To Cart]</button>
+            <button [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'border': '1px solid green'} : null" (click)="emitAddToCart()" id="addBtn">카트 담기 [Add To Cart]</button>
         </div>
     </div>
 </section>

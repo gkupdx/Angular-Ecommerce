@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { slideIn } from 'src/app/utilities/animations';
 import { activateMembership, deactivateMembership } from 'src/app/state/account.actions';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-account',
@@ -18,6 +19,7 @@ export class AccountComponent {
   membershipState$: Observable<boolean>;
   membershipVal: boolean = false;
   userEmail: string | null | undefined = '';
+  arrowLeft = faArrowLeft;
 
   constructor(private store: Store<{ membershipState: boolean }>, private authService: AuthService, private router: Router) {
     this.membershipState$ = store.select('membershipState');
@@ -40,5 +42,9 @@ export class AccountComponent {
     // this.authService.logout();
     this.authService.isAuthenticated = false;
     this.router.navigate(['']);
+  }
+
+  goToStore() {
+    this.router.navigate(['store']);
   }
 }

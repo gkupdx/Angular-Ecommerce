@@ -5,4 +5,13 @@
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 1fr;
     }
+
+    .productNotFound {
+        height: 425px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

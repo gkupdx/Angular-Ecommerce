@@ -43,9 +43,6 @@ export class StoreComponent {
   }
 
   searchForProduct() {
-    if (this.searchVal === '') {
-      return;
-    }
-    this.productName = this.searchVal;
+    if (this.searchVal !== '') this.productName = this.searchVal; 
   }
 }

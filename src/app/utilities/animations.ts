@@ -31,16 +31,12 @@ export const slideIn = trigger("slideIn", [
         animate('0.7s ease-in-out', style({ transform: `translateX(-${browserWidth}px)` })),
     ]),
     transition(':increment', [
-        sequence([
-            animate('0.7s ease-in-out', style({ transform: `translateX(0)`})),
-            animate('0.7s 2700ms ease-in-out', style({ transform: `translateX(-${browserWidth}px)`}))
-        ])
+        style({ transform: `translateX(${browserWidth}px)`}),
+        animate('0.7s ease-in-out', style({ transform: `translateX(0)`})),
     ]),
     transition(':decrement', [
-        sequence([
-            animate('0.7s ease-in-out', style({ transform: `translateX(0)`})),
-            animate('0.7s 2700ms ease-in-out', style({ transform: `translateX(${browserWidth}px)`}))
-        ])
+        style({ transform: `translateX(-${browserWidth}px)`}),
+        animate('0.7s ease-in-out', style({ transform: `translateX(0)`})),
     ]),
 ]);
 

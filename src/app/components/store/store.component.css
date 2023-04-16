@@ -21,7 +21,8 @@
 
     .heroBanner img {
         width: 100%;
-        height: 300px;
+        min-height: 300px;
+        height: calc(width/2);
     }
 
     .store h2 {

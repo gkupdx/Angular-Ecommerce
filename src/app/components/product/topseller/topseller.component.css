@@ -1,4 +1,75 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 539px) {
+    .carousel {
+        position: relative;
+        width: 100vw;
+        height: 450px;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(170deg, #FFF 20%, grey 40%, #333 60%, #060d0d 80%, #000 100%);
+        border-bottom: 1px solid lightgrey;
+        margin-top: 30px;
+    }
+
+    .slide {
+        position: absolute;
+        width: 100vw;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background: linear-gradient(170deg, #FFF 20%, grey 40%, #333 60%, #060d0d 80%, #000 100%);
+    }
+
+    .active {
+        visibility: visible;
+    }
+    
+    .hidden { 
+        visibility: hidden;
+    }
+
+    .slide img {
+        height: 130px;
+        box-shadow: 0 2px 5px #000;
+    }
+
+    .slide p {
+        margin-top: 10px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #FFF;
+    }
+
+    #carouselNav {
+        position: absolute;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 2.5%;
+    }
+
+    #carouselNav button {
+        width: 30px;
+        height: fit-content;
+        background: none;
+        font-size: 1.5rem;
+        border: none;
+    }
+
+    #carouselNav button:hover {
+        cursor: pointer;
+        color: #FFF;
+    }
+
+    section .primaryBtn {
+        width: 170px;
+        height: 35px;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 767px) {
     .carousel {
         position: relative;
         width: 100vw;
@@ -30,6 +101,7 @@
     }
 
     .slide img {
+        height: 175px;
         box-shadow: 0 2px 5px #000;
     }
 

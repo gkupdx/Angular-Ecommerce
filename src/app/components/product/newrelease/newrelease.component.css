@@ -20,8 +20,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        background-color: #060d0d;
-        color: #FFF;
+        background-color: #222;
+        color: #f2f2f2;
         padding: 10px;
     }
 
@@ -75,8 +75,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        background-color: #060d0d;
-        color: #FFF;
+        background-color: #222;
+        color: #f2f2f2;
         padding: 10px;
     }
 

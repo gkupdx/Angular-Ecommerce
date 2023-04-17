@@ -21,6 +21,7 @@
 }
 
 body {
+    background-color: #f2f2f2;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
@@ -72,8 +73,8 @@ body {
     width: fit-content;
     height: fit-content;
     font-family: 'Poppins', sans-serif;
-    background-color: #FFF;
-    color: #000;
+    background-color: #f2f2f2;
+    color: #222;
     border: none;
     text-decoration: underline;
     align-self: center;
@@ -160,19 +161,3 @@ body {
     align-items: center;
     padding: 10px;
 }
-
-/*** FOR LATER USE ***/
-/* background: repeating-linear-gradient(45deg, red 10%, orangered 20%, orange 30%, gold 40%, 
-        yellow 50%, green 60%, blue 70%, navy 80%, indigo 90%, violet 100%);
-        background-size: 600vw 600vw;
-        background-position-x: 0%;
-        animation: rgbLoop 5s infinite linear forwards;
-        -webkit-animation: rgbLoop 5s infinite linear forwards; 
-    @keyframes rgbLoop {
-        0% {
-            background-position-x: 0%;
-        }
-        100% {
-            background-position-x: 100%;
-        }
-    }*/

@@ -8,8 +8,7 @@
         <p [ngStyle]="{'font-style':'italic'}">Release date: {{ newProduct.premiere }}</p>
         
         <h4>{{ newProduct.price | currency:'USD' }}</h4>
-        <div class="btnContainer">
-            <button [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'border': '1px solid green'} : null" (click)="emitAddToCart()" id="addBtn">카트 담기 [Add To Cart]</button>
-        </div>
+
+        <button [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'border': '1px solid green'} : null" (click)="emitAddToCart()" id="addBtn">카트 담기 [Add To Cart]</button>
     </div>
 </section>

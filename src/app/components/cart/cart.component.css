@@ -31,35 +31,55 @@
         margin: 20px 0;
     }
 
-    #emptyCartBtn {
+    .emptyCartBtn {
         width: 220px;
         height: 35px;
-        background-color: var(--bg-blue);
         font-family: 'Poppins', sans-serif;
         font-size: 0.8rem;
-        border: 1px solid var(--font-blue);
+        font-weight: bold;
+        color: dodgerblue;
+        border: 1px solid dodgerblue;
         border-radius: 5px;
     }
 
-    #emptyCartBtn:hover {
+    .emptyCartBtn:hover {
         cursor: pointer;
         background-color: var(--hover-blue);
+        border: none;
         color: #FFF;
     }
 
-    #checkoutBtn {
+    .checkoutBtn {
         width: 220px;
         height: 35px;
-        background-color: var(--bg-green);
         font-family: 'Poppins', sans-serif;
         font-size: 0.8rem;
-        border: 1px solid var(--font-green);
+        font-weight: bold;
+        color: green;
+        border: 1px solid green;
         border-radius: 5px;
     }
 
-    #checkoutBtn:hover {
+    .checkoutBtn:hover {
         cursor: pointer;
-        background-color: var(--hover-green);
+        background-color: green;
+        border: none;
         color: #FFF;
+    }
+
+    .btnNotAllowed {
+        cursor: not-allowed;
+        width: 220px;
+        height: 35px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: lightgrey;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+    }
+
+    .btnNotAllowed:hover {
+        background-color: none;
     }
 }

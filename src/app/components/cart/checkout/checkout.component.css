@@ -6,6 +6,7 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        color: #222;
     }
 
     .checkout > div {
@@ -21,6 +22,19 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+    }
+
+    form input {
+        background-color: #f2f2f2;
+        border: 1px solid grey;
+        border-radius: 2px;
+        padding: 4px;
+    }
+
+    form input:focus {
+        background-color: #fff;
+        border: 1px solid var(--hover-blue);
+        outline: none;
     }
 
     form input::placeholder {
@@ -54,7 +68,6 @@
         height: 35px;
         font-family: 'Poppins', sans-serif;
         font-size: 1rem;
-        padding: 5px;
     }
 
     #dateCvvDiv {
@@ -87,7 +100,6 @@
         height: 30px;
         font-family: 'Poppins', sans-serif;
         font-size: 1rem;
-        padding: 5px;
     }
 
     form button {

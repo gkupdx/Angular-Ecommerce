@@ -126,7 +126,7 @@
 
     .filter input:focus {
         background-color: #fff;
-        border: 1px solid var(--hover-blue);
+        border: 1px solid green;
         outline: none;
     }
 
@@ -137,14 +137,14 @@
         width: 25px;
         height: 25px;
         background-color: #f2f2f2;
-        color: var(--hover-blue);
+        color: green;
         font-size: 0.8rem;
         border: none;
         cursor: pointer;
     }
 
     #searchBtn:hover {
-        background-color: var(--hover-blue);
+        background-color: green;
         color: #FFF;
         transition: 0.1s background-color ease;
     }
@@ -268,7 +268,7 @@
 
     .filter input:focus {
         background-color: #fff;
-        border: 1px solid var(--hover-blue);
+        border: 1px solid green;
         outline: none;
     }
 
@@ -279,14 +279,14 @@
         width: 25px;
         height: 25px;
         background-color: #f2f2f2;
-        color: var(--hover-blue);
+        color: green;
         font-size: 0.8rem;
         border: none;
         cursor: pointer;
     }
 
     #searchBtn:hover {
-        background-color: var(--hover-blue);
+        background-color: green;
         color: #FFF;
         transition: 0.1s background-color ease;
     }

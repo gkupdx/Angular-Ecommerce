@@ -20,7 +20,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        background-color: #222;
+        background-color: var(--luxury-black);
         color: #f2f2f2;
         padding: 10px;
     }
@@ -35,21 +35,22 @@
     }
 
     #addBtn {
-        width: 80%;
-        height: 40px;
+        width: 100%;
+        height: 45px;
         font-family: 'Poppins', sans-serif;
+        font-weight: bold;
         color: #FFF;
-        background-color: rgba(30, 144, 255, 0.5);
-        border: 1px solid blue;
+        background-color: #0f3d3e;
         border-radius: 5px;
         align-self: center;
+        transition: background-color 0.1s ease;
     }
 
     #addBtn:hover {
+        cursor: pointer;
         background-color: #FFF;
         color: #000;
-        font-weight: bold;
-        cursor: pointer;
+        transition: background-color 0.1s ease;
     }
 }
 
@@ -75,7 +76,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        background-color: #222;
+        background-color: var(--luxury-black);
         color: #f2f2f2;
         padding: 10px;
     }
@@ -90,21 +91,21 @@
     }
 
     #addBtn {
-        width: 170px;
-        height: 35px;
+        width: 195px;
+        height: 45px;
         font-family: 'Poppins', sans-serif;
+        font-weight: bold;
         color: #FFF;
-        background-color: rgba(30, 144, 255, 0.5);
-        border: 1px solid blue;
+        background-color: #0f3d3e;
         border-radius: 5px;
-        margin-left: 4px;
         align-self: flex-end;
+        transition: background-color 0.1s ease;
     }
 
     #addBtn:hover {
         background-color: #FFF;
         color: #000;
-        font-weight: bold;
         cursor: pointer;
+        transition: background-color 0.1s ease;
     }
 }

@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
+    --luxury-black: #060d00;
+    --faded-black: #222;
+    --green-on-dark: #0f3d3e;
     --bg-green: rgba(50, 205, 50, 0.5);
     --font-green: green;
     --hover-green: forestgreen;
@@ -43,13 +46,14 @@ body {
 .primaryBtn {
     font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
-    background-color: rgba(30, 144, 255, 0.5);
-    border: 1px solid blue;
+    font-weight: bold;
+    color: green;
+    border: 1px solid green;
     border-radius: 5px;
 }
 
 .primaryBtn:hover {
-    background-color: rgba(0, 0, 255, 0.8);
+    background-color: green;
     color: #FFF;
     cursor: pointer;
 }
@@ -58,8 +62,8 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
     font-weight: bold;
-    background-color: rgba(225, 0, 0, 0.5);
-    border: 1px solid red;
+    color: crimson;
+    border: 1px solid crimson;
     border-radius: 5px;
 }
 

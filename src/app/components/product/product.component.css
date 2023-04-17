@@ -1,4 +1,85 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 519px) {
+    section { 
+        width: 100vw;
+        height: 375px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .product {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .product img {
+        height: 110px;
+        box-shadow: 0 2px 5px #000;
+    }
+
+    .product p {
+        margin-top: 10px;
+        font-weight: 600;
+    }
+
+    .itemQuantity {
+        display: inline-flex;
+        align-items: center;
+        width: 170px;
+        height: 35px;
+    }
+
+    .quantityBtn {
+        width: 120px;
+        height: 30px;
+        font-family: 'Poppins', sans-serif;
+        background-color: #FFF;
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+        margin-top: 10px;
+        transition: 0.1s background-color ease;
+    }
+
+    .quantityBtn:hover {
+        cursor: pointer;
+        background-color: lightgrey;
+        transition: 0.1s background-color ease;
+    }
+
+    .quantityOptions {
+        position: absolute;
+        margin-top: 290px;
+        width: 120px;
+        height: 75px;
+        background-color: #FFF;
+        border: 1px solid lightgrey;
+        text-align: center;
+        visibility: hidden;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .quantityOptions p {
+        font-weight: normal;
+        border-radius: 5px;
+        margin-top: 0;
+    }
+
+    .quantityOptions p:hover {
+        background-color: lightgrey;
+    }
+
+    section .primaryBtn {
+        width: 170px;
+        height: 35px;
+    }
+}
+
+@media screen and (min-width: 520px) and (max-width: 767px) {
     section { 
         min-width: 250px;
         height: 425px;
@@ -17,6 +98,7 @@
     }
 
     .product img {
+        height: 100px;
         box-shadow: 0 2px 5px #000;
     }
 

@@ -139,19 +139,21 @@
 
     .quantityOptions {
         position: absolute;
-        margin-top: 285px;
         width: 120px;
         height: 75px;
-        background-color: #FFF;
+        background-color: #f2f2f2;
         border: 1px solid lightgrey;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         text-align: center;
         visibility: hidden;
         cursor: pointer;
     }
 
     .quantityOptions p {
+        height: 25px;
         font-weight: normal;
-        border-radius: 5px;
+        border-bottom: 1px solid lightgrey;
         margin-top: 0;
     }
 

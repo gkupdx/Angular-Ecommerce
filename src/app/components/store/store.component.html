@@ -12,16 +12,18 @@
     <section class="productFilters" @fadeInSlow>
         <h3>Browse Titles</h3>
         <div class="filter">
-            <span>sort by:</span>
-            <div>
-                <button (click)="toggleFilter()">{{ filterPrice }} <fa-icon *ngIf="filterPrice === 'Price'"
-                        [icon]="caretDown"></fa-icon></button>
-                <div [ngStyle]="{'visibility': togglePrice ? 'visible' : 'hidden'}" class="filterOptions">
-                    <p (click)="filterByPrice('L2H')">Low -> Hi</p>
-                    <p (click)="filterByPrice('H2L')">Hi -> Low</p>
+            <div id="sort">
+                <span>sort by:</span>
+                <div>
+                    <button (click)="toggleFilter()">{{ filterPrice }} <fa-icon *ngIf="filterPrice === 'Price'"
+                            [icon]="caretDown"></fa-icon></button>
+                    <div [ngStyle]="{'visibility': togglePrice ? 'visible' : 'hidden'}" class="filterOptions">
+                        <p (click)="filterByPrice('L2H')">Low -> Hi</p>
+                        <p (click)="filterByPrice('H2L')">Hi -> Low</p>
+                    </div>
                 </div>
             </div>
-            <div>
+            <div id="searchField">
                 <input [(ngModel)]="searchVal" (keyup)="detectInputClear($event)" type="text" placeholder="Search...">
                 <button (click)="searchForProduct()" id="searchBtn"><fa-icon [icon]="searchIcon"></fa-icon></button>
             </div>

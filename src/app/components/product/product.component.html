@@ -15,7 +15,8 @@
         </div>
     </div>
 
-    <button [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'border': '1px solid green'} : null"
-        (click)="emitAddToCart()" [disabled]="quantity === 0" class="primaryBtn">{{ isAddedToCart ? '카트에 담긴 [Added!]' :
-        '카트 담기 [Add To Cart]' }}</button>
+    <button [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'color': '#FFF', 'border': 'none'} : null" (click)="emitAddToCart()" [disabled]="quantity === 0" class="primaryBtn">
+        <ng-container *ngIf="isAddedToCart"><fa-icon [icon]="checkmark"></fa-icon> 카트에 담긴 [Added]</ng-container>
+        <ng-container *ngIf="!isAddedToCart">카트 담기 [Add To Cart]</ng-container>
+    </button>
 </section>

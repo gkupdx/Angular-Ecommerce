@@ -13,7 +13,8 @@
 
             <div>
                 <label for="email">이메일 [Email]:</label>
-                <input [(ngModel)]="form.email" #emailField="ngModel" type="email" name="email" placeholder="Email" required>
+                <input [(ngModel)]="form.email" #emailField="ngModel" type="email" name="email" placeholder="Email"
+                    required>
                 <p *ngIf="emailField.invalid && emailField.touched" class="formError">Email is invalid.</p>
             </div>
 
@@ -24,12 +25,15 @@
                 <p *ngIf="pwField.invalid && pwField.touched" class="formError">Password is invalid.</p>
             </div>
 
-            <button [disabled]="loginForm.form.invalid" class="submitBtn" type="submit">
+            <button [ngClass]="loginForm.form.invalid ? 'btnNotAllowed' : 'submitBtn'" type="submit">
                 <ng-container *ngIf="isLoading()">Loading...</ng-container>
                 <ng-container *ngIf="!isLoading()">Submit</ng-container>
             </button>
 
-            <p id="signUpLink">아직 계정이 없으신가요? [Don't have an account?] <a routerLink="register">회원 가입 [Sign Up]</a></p>
+            <div id="signUpInfo">
+                <p>아직 계정이 없으신가요?<br />Don't have an account?</p>
+                <a routerLink="register">회원 가입 [Sign Up]</a>
+            </div>
         </form>
     </section>
 

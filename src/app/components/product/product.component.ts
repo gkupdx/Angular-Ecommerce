@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/interfaces/Product';
 import { CartProduct } from 'src/app/interfaces/Product';
 import { CartService } from 'src/app/services/cart.service';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product',
@@ -21,6 +21,7 @@ export class ProductComponent {
   isVisible: boolean = false;
   isAddedToCart: boolean = false;
   caretDownIcon = faCaretDown;
+  checkmark = faCheck;
 
   constructor(private cartService: CartService) {}
 

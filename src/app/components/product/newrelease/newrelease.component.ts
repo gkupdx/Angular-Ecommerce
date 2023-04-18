@@ -4,6 +4,7 @@ import { CartProduct } from 'src/app/interfaces/Product';
 import { ProductService } from 'src/app/services/product.service';
 import { CartService } from 'src/app/services/cart.service';
 import { fadeInSlow } from 'src/app/utilities/animations';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-newrelease',
@@ -27,6 +28,7 @@ export class NewreleaseComponent {
     premiere: '',
   }
   isAddedToCart: boolean = false;
+  checkmark = faCheck;
 
   constructor(private productService: ProductService, private cartService: CartService) {
     this.newProduct = this.productService.getNewRelease();

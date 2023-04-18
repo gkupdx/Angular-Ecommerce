@@ -1,3 +1,26 @@
+@media screen and (max-width: 519px) {
+    .productGrid {
+        min-height: 425px;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .productNotFound {
+        height: 425px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .productNotFound p {
+        width: 75%;
+        text-align: center;
+    }
+}
+
 @media screen and (min-width: 520px) and (max-width: 767px) {
     .productGrid {
         min-height: 425px;
@@ -13,5 +36,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .productNotFound p {
+        width: 75%;
+        text-align: center;
     }
 }

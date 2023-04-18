@@ -33,7 +33,7 @@
 
     form input:focus {
         background-color: #fff;
-        border: 1px solid var(--hover-blue);
+        border: 1px solid green;
         outline: none;
     }
 

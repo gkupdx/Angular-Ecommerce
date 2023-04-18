@@ -10,7 +10,7 @@
     }
 
     .orderComplete img {
-        width: 250px;
+        min-width: 175px;
     }
 
     .orderComplete > div {

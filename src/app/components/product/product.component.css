@@ -75,7 +75,7 @@
     }
 
     section .primaryBtn {
-        width: 225px;
+        width: 210px;
         height: 40px;
         transition: 0.1s background-color ease;
     }

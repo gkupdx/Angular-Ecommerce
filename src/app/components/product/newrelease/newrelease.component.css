@@ -19,7 +19,7 @@
 
     .newRelease {
         width: 100%;
-        height: 650px;
+        height: 550px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -88,6 +88,7 @@
         background-color: #222;
         padding-top: 30px;
         padding-bottom: 30px;
+        border-bottom: 1px solid grey;
     }
 
     #sectionHeader h2 {
@@ -120,10 +121,16 @@
         background-color: #222;
         color: #f2f2f2;
         padding: 15px;
+        border-top: 1px solid grey;
     }
 
     .newRelease p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .newRelease h3 {
+        font-size: 1.5rem;
     }
 
     .newRelease h4 {

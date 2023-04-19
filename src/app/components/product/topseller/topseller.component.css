@@ -20,7 +20,7 @@
     .carousel {
         position: relative;
         width: 100vw;
-        height: 450px;
+        height: 550px;
         display: flex;
         align-items: center;
         border-bottom: 1px solid lightgrey;
@@ -29,12 +29,12 @@
     .slide {
         position: absolute;
         width: 100vw;
-        height: 450px;
+        height: 550px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background: #f2f2f2;
+        background: linear-gradient(170deg, #f2f2f2 10%, grey 50%, dimgrey 60%, grey 70%, #f2f2f2 100%);
     }
 
     .active {
@@ -50,11 +50,20 @@
         box-shadow: 0 2px 5px #000;
     }
 
+    .slide h3 {
+        margin-top: 10px;
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: #f2f2f2;
+        text-shadow: 2px 2px green;
+    }
+
     .slide p {
         margin-top: 10px;
-        font-size: 1.3rem;
+        font-size: 2.5rem;
         font-weight: 600;
-        color: #222;
+        color: #f2f2f2;
+        text-shadow: 2px 2px green;
     }
 
     #carouselNav {
@@ -107,7 +116,7 @@
     .carousel {
         position: relative;
         width: 100vw;
-        height: 500px;
+        height: 625px;
         display: flex;
         align-items: center;
         border-bottom: 1px solid lightgrey;
@@ -116,12 +125,12 @@
     .slide {
         position: absolute;
         width: 100vw;
-        height: 500px;
+        height: 625px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background: #f2f2f2;
+        background: linear-gradient(170deg, #f2f2f2 10%, grey 50%, dimgrey 60%, grey 70%, #f2f2f2 100%);
     }
 
     .active {
@@ -137,11 +146,20 @@
         box-shadow: 0 2px 5px #000;
     }
 
+    .slide h3 {
+        margin-top: 10px;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #f2f2f2;
+        text-shadow: 2px 2px green;
+    }
+
     .slide p {
         margin-top: 10px;
-        font-size: 1.4rem;
+        font-size: 3rem;
         font-weight: 600;
-        color: #222;
+        color: #f2f2f2;
+        text-shadow: 2px 2px green;
     }
 
     #carouselNav {

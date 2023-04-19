@@ -6,8 +6,8 @@
         <ng-container *ngFor="let product of topProducts; let i = index;">
             <div [ngClass]="activeSlide === i+1 ? 'active' : 'hidden'" class="slide">
                 <img [src]="product.imgSrc" alt="product.name" [@slideIn]="activeSlide">
-                <p [@slideIn]="activeSlide">{{ product.name }}</p>
-                <p [ngStyle]="{'font-size': '2rem', 'color': 'green'}" [@slideIn]="activeSlide">{{ product.price | currency:'USD' }}</p>
+                <h3 [@slideIn]="activeSlide">{{ product.name }}</h3>
+                <p [@slideIn]="activeSlide">{{ product.price | currency:'USD' }}</p>
             </div>
     
             <div id="carouselNav">

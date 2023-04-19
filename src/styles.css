@@ -77,7 +77,6 @@ body {
     width: fit-content;
     height: fit-content;
     font-family: 'Poppins', sans-serif;
-    background-color: #f2f2f2;
     color: #222;
     border: none;
     text-decoration: underline;
@@ -165,3 +164,9 @@ body {
     align-items: center;
     padding: 10px;
 }
+
+.formError {
+    width: 250px;
+    font-size: 0.8rem;
+    color: red;
+ }

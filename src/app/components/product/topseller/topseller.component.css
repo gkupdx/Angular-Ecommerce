@@ -1,13 +1,29 @@
 @media screen and (max-width: 539px) {
+    #sectionHeader {
+        width: 100vw;
+        height: 125px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f2f2f2;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid grey;
+    }
+
+    #sectionHeader h2 {
+        color: #222;
+        border: 1px solid grey;
+        padding: 10px;
+    }
+
     .carousel {
         position: relative;
         width: 100vw;
         height: 450px;
         display: flex;
         align-items: center;
-        background: linear-gradient(170deg, #FFF 20%, grey 40%, #333 60%, #060d0d 80%, #000 100%);
         border-bottom: 1px solid lightgrey;
-        margin-top: 30px;
     }
 
     .slide {
@@ -18,7 +34,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background: linear-gradient(170deg, #f2f2f2 20%, grey 40%, #333 60%, #060d0d 80%, #000 100%);
+        background: #f2f2f2;
     }
 
     .active {
@@ -38,7 +54,7 @@
         margin-top: 10px;
         font-size: 1.3rem;
         font-weight: 600;
-        color: #f2f2f2;
+        color: #222;
     }
 
     #carouselNav {
@@ -70,15 +86,31 @@
 }
 
 @media screen and (min-width: 540px) and (max-width: 767px) {
+    #sectionHeader {
+        width: 100vw;
+        height: 125px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f2f2f2;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid grey;
+    }
+
+    #sectionHeader h2 {
+        color: #222;
+        border: 1px solid grey;
+        padding: 10px;
+    }
+
     .carousel {
         position: relative;
         width: 100vw;
         height: 500px;
         display: flex;
         align-items: center;
-        background: linear-gradient(170deg, #f2f2f2 20%, grey 40%, #333 60%, #060d0d 80%, #222 100%);
         border-bottom: 1px solid lightgrey;
-        margin-top: 30px;
     }
 
     .slide {
@@ -89,7 +121,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background: linear-gradient(170deg, #f2f2f2 20%, grey 40%, #333 60%, #060d0d 80%, #222 100%);
+        background: #f2f2f2;
     }
 
     .active {
@@ -109,7 +141,7 @@
         margin-top: 10px;
         font-size: 1.4rem;
         font-weight: 600;
-        color: #f2f2f2;
+        color: #222;
     }
 
     #carouselNav {

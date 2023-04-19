@@ -4,7 +4,6 @@
         height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
         background-color: #f2f2f2;
         overflow-x: hidden;
@@ -24,18 +23,6 @@
         width: 100%;
         min-height: 300px;
         height: calc(width/2);
-    }
-
-    .store h2 {
-        color: #222;
-        border: 1px solid grey;
-        padding: 10px;
-        margin-top: 50px;
-    }
-
-    .store h3 {
-        color: #222;
-        font-size: 1.3rem;
     }
 
     .productFilters {
@@ -157,7 +144,6 @@
         height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
         overflow-x: hidden;
     }
@@ -176,12 +162,6 @@
         width: 100%;
         min-height: 300px;
         height: calc(width/2);
-    }
-
-    .store h2 {
-        border: 1px solid grey;
-        padding: 10px;
-        margin-top: 50px;
     }
 
     .productFilters {

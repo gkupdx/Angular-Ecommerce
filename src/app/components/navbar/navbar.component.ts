@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { slideDownSlow } from 'src/app/utilities/animations';
-import { faShop, faCartShopping, faUserGear } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faUserGear } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,16 @@ import { faShop, faCartShopping, faUserGear } from '@fortawesome/free-solid-svg-
   ],
 })
 export class NavbarComponent {
-  storeIcon = faShop;
+  cartItemLength: number = 0;
   cartIcon = faCartShopping;
   userGearIcon = faUserGear;
+
+  constructor(private cartService: CartService) {
+    this.cartItemLength = this.cartService.getCartLength();
+  }
+
+  isCartNonEmpty() {
+    this.cartItemLength = this.cartService.cartItems.length;
+    return this.cartItemLength;
+  }
 }

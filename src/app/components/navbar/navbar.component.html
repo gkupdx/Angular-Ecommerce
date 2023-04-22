@@ -1,9 +1,12 @@
 <nav @slideDownSlow>
     <div>
-        <a routerLink="/store"><fa-icon [icon]="storeIcon"></fa-icon></a>
+        <a routerLink="/store"><img src="../../../assets/images/logo.png" alt="Logo"></a>
     </div>
     <div>
-        <a routerLink="/cart"><fa-icon [icon]="cartIcon"></fa-icon></a>
+        <div>
+            <a routerLink="/cart"><fa-icon [icon]="cartIcon"></fa-icon></a>
+            <p *ngIf="isCartNonEmpty() > 0">{{ cartItemLength }}</p>
+        </div>        
         <a routerLink="/account"><fa-icon [icon]="userGearIcon"></fa-icon></a>
     </div>
 </nav>

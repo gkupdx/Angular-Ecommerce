@@ -1,15 +1,19 @@
 @media screen and (max-width: 767px) {
     nav {
+        position: fixed;
         width: 100%;
-        height: 70px;
+        height: 75px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: var(--luxury-black);
+        box-shadow: 0 1px 10px 1px  #060d00;
+        z-index: 3;
     }
 
     nav > div {
         width: 100px;
+        height: 75px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -20,7 +24,7 @@
         justify-content: center;
         align-items: center;
         width: 40px;
-        height: 70px;
+        height: 75px;
         color: #FFF;
         text-decoration: none;
     }
@@ -31,7 +35,27 @@
         text-decoration: underline;
     }
 
+    img {
+        height: 75px;
+    }
+
     fa-icon {
         font-size: 1.5rem;
+    }
+
+    p {
+        position: absolute;
+        top: 0;
+        margin-top: 10px;
+        margin-left: 30px;
+        width: fit-content;
+        height: fit-content;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9rem;
+        font-weight: bold;
+        background-color: green;
+        color: #f2f2f2;
+        border-radius: 50%;
+        padding: 4px;
     }
 }

@@ -17,7 +17,6 @@
         justify-content: center;
         align-items: center;
         color: #f2f2f2;
-        margin-top: 70px; /* to offset navbar height */
     }
 
     .heroBanner img {
@@ -157,7 +156,6 @@
         justify-content: center;
         align-items: center;
         color: #f2f2f2;
-        margin-top: 70px; /* to offset navbar height */
     }
 
     .heroBanner img {

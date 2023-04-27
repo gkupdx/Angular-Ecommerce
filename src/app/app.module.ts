@@ -22,6 +22,7 @@ import { PasswordchangeComponent } from './components/account/passwordchange/pas
 import { CheckoutComponent } from './components/cart/checkout/checkout.component';
 import { RevieworderComponent } from './components/cart/checkout/revieworder/revieworder.component';
 import { OrdercompleteComponent } from './components/cart/checkout/revieworder/ordercomplete/ordercomplete.component';
+import { PanelComponent } from './components/navbar/panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { OrdercompleteComponent } from './components/cart/checkout/revieworder/o
     CheckoutComponent,
     RevieworderComponent,
     OrdercompleteComponent,
+    PanelComponent,
   ],
   imports: [
     BrowserModule,

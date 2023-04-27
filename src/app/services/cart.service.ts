@@ -5,7 +5,7 @@ import { CartProduct } from '../interfaces/Product';
   providedIn: 'root'
 })
 export class CartService {
-  isInCart: boolean = false;
+  isInCart: boolean = false; // flag to check & see if product was added to cart before
   cartItems: CartProduct[] = [];
 
   constructor() { }
@@ -19,8 +19,7 @@ export class CartService {
       }
     })
 
-    if (this.isInCart) return;
-    this.cartItems.push(product);
+    this.isInCart === false ? this.cartItems.push(product) : this.isInCart = false;
   }
 
   removeFromCart(product: CartProduct) {

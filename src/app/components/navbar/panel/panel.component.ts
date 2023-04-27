@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { slideDownSlow } from 'src/app/utilities/animations';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +16,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 export class PanelComponent {
   cancelIcon = faXmark;
 
-  constructor(private menuService: MenuService, private router: Router) {}
+  constructor(private menuService: MenuService, private authService: AuthService, private router: Router) {}
 
   hideMenuPanel() {
     this.menuService.toggleMenuPanel();
@@ -24,5 +25,12 @@ export class PanelComponent {
   goToAccount() {
     this.menuService.toggleMenuPanel();
     this.router.navigate(['account']);
+  }
+
+  logout() {
+    // this.authService.logout();
+    this.authService.isAuthenticated = false;
+    this.menuService.toggleMenuPanel();
+    this.router.navigate([''])
   }
 }

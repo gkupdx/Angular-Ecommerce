@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { MenuService } from './services/menu.service';
 
 /* Firebase config imports */
 import { firebaseConfig } from 'firebase.config';
@@ -13,7 +14,7 @@ import { initializeApp } from 'firebase/app';
 export class AppComponent implements OnInit {
   title = 'k-ecommerce';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private menuService: MenuService) {}
 
   ngOnInit(): void {
     initializeApp(firebaseConfig);
@@ -21,5 +22,9 @@ export class AppComponent implements OnInit {
 
   isSignedIn() {
     return this.authService.isAuthenticated;
+  }
+
+  isMenuOpen() {
+    return this.menuService.getMenuStatus();
   }
 }

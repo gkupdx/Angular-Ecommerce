@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
+import { MenuService } from 'src/app/services/menu.service';
 import { slideDownSlow } from 'src/app/utilities/animations';
-import { faCartShopping, faUserGear } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCartShopping, faUserGear } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -12,12 +14,22 @@ import { faCartShopping, faUserGear } from '@fortawesome/free-solid-svg-icons';
   ],
 })
 export class NavbarComponent {
+  browserWidth: number = window.innerWidth;
   cartItemLength: number = 0;
+  menuIcon = faBars;
   cartIcon = faCartShopping;
   userGearIcon = faUserGear;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private menuService: MenuService, private router: Router) {
     this.cartItemLength = this.cartService.getCartLength();
+  }
+
+  showMenuPanel() {
+    this.menuService.toggleMenuPanel();
+  }
+
+  showCart() {
+    this.router.navigate(['cart']);
   }
 
   isCartNonEmpty() {

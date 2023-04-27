@@ -64,4 +64,19 @@
         background-color: lightgrey;
         transition: 0.1s background-color ease;
     }
+
+    #logoutBtn {
+        width: 100%;
+        height: 75px;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        background-color: #f2f2f2;
+        color: crimson;
+        border: none;
+        border-bottom: 1px solid lightgrey;
+        transition: 0.1s background-color ease;
+    }
 }

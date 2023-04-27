@@ -9,9 +9,11 @@ import { RevieworderComponent } from './components/cart/checkout/revieworder/rev
 import { LandingComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
 import { StoreComponent } from './components/store/store.component';
+import { PanelComponent } from './components/navbar/panel/panel.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
+  { path: 'menu', component: PanelComponent},
   { path: 'register', component: RegisterComponent },
   { path: 'store', component: StoreComponent },
   { path: 'account', component: AccountComponent },

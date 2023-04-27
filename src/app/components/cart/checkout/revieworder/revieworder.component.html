@@ -20,7 +20,7 @@
 
     <button id="purchaseBtn" (click)="purchaseConfirm()">
         <ng-container *ngIf="isLoading">Loading...</ng-container>
-        <ng-container *ngIf="!isLoading">구매 [Purchase]</ng-container> 
+        <ng-container *ngIf="!isLoading">구매 하기 [Purchase]</ng-container> 
     </button>
     <button (click)="goToPrev()" class="backBtn"><fa-icon [icon]="backArrow"></fa-icon> Back to Payment</button>
 </div>

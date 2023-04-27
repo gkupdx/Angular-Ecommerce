@@ -28,9 +28,11 @@ export class RevieworderComponent {
   }
 
   purchaseConfirm() {
-    this.isLoading = true; // simulates the flow of a real transaction
+    // to simulate the flow of a real transaction, use a setTimeout()
+    this.isLoading = true;
 
     setTimeout(() => {
+      this.cartService.emptyCart();
       this.router.navigate(['ordercomplete']);
     }, 3000);
   }

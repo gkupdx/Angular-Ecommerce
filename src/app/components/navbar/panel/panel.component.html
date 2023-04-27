@@ -1,9 +1,9 @@
-<div class="panel" @slideIn>
+<div class="panel" @slideDownSlow>
     <section id="hidePanel">
-        <button><fa-icon [icon]="cancelIcon"></fa-icon></button>
+        <button (click)="hideMenuPanel()"><fa-icon [icon]="cancelIcon"></fa-icon></button>
     </section>
     <section id="routes">
-        <button>Your Account</button>
+        <button (click)="goToAccount()">Your Account</button>
         <button>About Us</button>
         <button>Contact Us</button>
     </section>

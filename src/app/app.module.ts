@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { membershipReducer } from './state/account.reducer';
@@ -23,6 +25,7 @@ import { CheckoutComponent } from './components/cart/checkout/checkout.component
 import { RevieworderComponent } from './components/cart/checkout/revieworder/revieworder.component';
 import { OrdercompleteComponent } from './components/cart/checkout/revieworder/ordercomplete/ordercomplete.component';
 import { PanelComponent } from './components/navbar/panel/panel.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -42,10 +45,13 @@ import { PanelComponent } from './components/navbar/panel/panel.component';
     RevieworderComponent,
     OrdercompleteComponent,
     PanelComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
     AppRoutingModule,
     FormsModule,
     FontAwesomeModule,

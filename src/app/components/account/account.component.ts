@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { slideIn } from 'src/app/utilities/animations';
-import { activateMembership, deactivateMembership } from 'src/app/state/account.actions';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-account',
@@ -21,11 +23,10 @@ export class AccountComponent {
   userEmail: string | null | undefined = '';
   arrowLeft = faArrowLeft;
 
-  constructor(private store: Store<{ membershipState: boolean }>, private authService: AuthService, private router: Router) {
+  constructor(private store: Store<{ membershipState: boolean }>, private authService: AuthService, private router: Router, private dialog: MatDialog) {
     this.membershipState$ = store.select('membershipState');
     this.membershipState$.subscribe((value: boolean) => {
       this.membershipVal = value;
-      console.log(this.membershipVal);
     });
     this.userEmail = this.authService.getUserEmail();
   }
@@ -35,16 +36,28 @@ export class AccountComponent {
   }
 
   changeMembership() {
-    this.membershipVal ? this.store.dispatch(deactivateMembership()) : this.store.dispatch(activateMembership());
+    this.openModal();
+  }
+
+  openModal() {
+    let dialogRef = this.dialog.open(ModalComponent, {
+      width: '350px',
+      height: '200px',
+      panelClass: 'modal',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    })
+  }
+
+  goToStore() {
+    this.router.navigate(['store']);
   }
 
   logout() {
     // this.authService.logout();
     this.authService.isAuthenticated = false;
     this.router.navigate(['']);
-  }
-
-  goToStore() {
-    this.router.navigate(['store']);
   }
 }

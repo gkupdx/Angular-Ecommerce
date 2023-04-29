@@ -70,8 +70,12 @@ export const slideDown = trigger("slideDown", [
 ]);
 
 export const slideDownSlow = trigger("slideDownSlow", [
-    transition("void => *", [
+    transition(":enter", [
         style({ transform: 'translateY(-100%)' }),
         animate('1s ease', style({ transform: 'translateY(0%)' })),
+    ]),
+    transition(":leave", [
+        style({ transform: 'translateY(0)' }),
+        animate('1s ease', style({ transform: 'translateY(-100%)' })),
     ]),
 ]);

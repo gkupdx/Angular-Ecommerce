@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
 import { MenuService } from 'src/app/services/menu.service';
 import { slideDownSlow } from 'src/app/utilities/animations';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
+import { ModalComponent } from '../../modal/modal.component';
 
 @Component({
   selector: 'app-panel',
@@ -16,7 +18,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 export class PanelComponent {
   cancelIcon = faXmark;
 
-  constructor(private menuService: MenuService, private authService: AuthService, private router: Router) {}
+  constructor(private menuService: MenuService, private router: Router, private dialog: MatDialog) {}
 
   hideMenuPanel() {
     this.menuService.toggleMenuPanel();
@@ -27,10 +29,20 @@ export class PanelComponent {
     this.router.navigate(['account']);
   }
 
-  logout() {
-    // this.authService.logout();
-    this.authService.isAuthenticated = false;
-    this.menuService.toggleMenuPanel();
-    this.router.navigate([''])
+  requestLogout() {
+    this.openModal();
+  }
+
+  openModal() {
+    let dialogRef = this.dialog.open(ModalComponent, {
+      width: '350px',
+      height: '200px',
+      data: { logout: false },
+      panelClass: 'modal',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    })
   }
 }

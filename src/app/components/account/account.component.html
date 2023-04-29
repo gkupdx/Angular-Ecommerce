@@ -13,8 +13,7 @@
 
         <div class="container">
             <button (click)="changePassword()" class="primaryBtn">Change Password</button>
-            <button (click)="changeMembership()" [ngClass]="membershipVal ? 'dangerBtn' : 'primaryBtn'">{{ membershipVal ? 'Deactivate Membership' : 'Activate Membership'}}</button>
-            <button (click)="logout()" class="dangerBtn">Log Out</button>
+            <button (click)="requestMembershipChange()" [ngClass]="membershipVal ? 'dangerBtn' : 'primaryBtn'">{{ membershipVal ? 'Deactivate Membership' : 'Activate Membership'}}</button>
         </div>
 
         <button (click)="goToStore()" class="backBtn"><fa-icon [icon]="arrowLeft"></fa-icon> 가게로 가기 [Back to Store]</button>

@@ -35,7 +35,7 @@ export class AccountComponent {
     this.router.navigate(['pwdchange']);
   }
 
-  changeMembership() {
+  requestMembershipChange() {
     this.openModal();
   }
 
@@ -53,11 +53,5 @@ export class AccountComponent {
 
   goToStore() {
     this.router.navigate(['store']);
-  }
-
-  logout() {
-    // this.authService.logout();
-    this.authService.isAuthenticated = false;
-    this.router.navigate(['']);
   }
 }

@@ -1,20 +1,37 @@
-<div class="modal">
-    <section *ngIf="membershipVal">
-        <h1 mat-dialog-title>Are you sure you want to deactivate your membership?</h1>
-        <p mat-dialog-content>
-            Deactivation will prevent you access to the store until you reactivate.
-        </p>
-    </section>
-    <section *ngIf="!membershipVal">
-        <h1 mat-dialog-title>Are you sure you want to reactivate your membership?</h1>
-        <p mat-dialog-content>
-            You will once again have access to all of our products.
-        </p>
-    </section>
-    
-    <div>
-        <button *ngIf="membershipVal" (click)="deactivate()" mat-button>Deactivate</button>
-        <button *ngIf="!membershipVal" (click)="activate()" mat-button>Activate</button>
-        <button (click)="closeModal()" mat-button>Cancel</button>
+<ng-container *ngIf="!data">
+    <div class="modal">
+        <section *ngIf="membershipVal">
+            <h1 mat-dialog-title>Are you sure you want to deactivate your membership?</h1>
+            <p mat-dialog-content>
+                Deactivation will prevent you access to the store until you reactivate.
+            </p>
+        </section>
+        <section *ngIf="!membershipVal">
+            <h1 mat-dialog-title>Are you sure you want to reactivate your membership?</h1>
+            <p mat-dialog-content>
+                You will once again have access to all of our products.
+            </p>
+        </section>
+        
+        <div>
+            <button *ngIf="membershipVal" (click)="deactivate()" mat-button>Deactivate</button>
+            <button *ngIf="!membershipVal" (click)="activate()" mat-button>Activate</button>
+            <button (click)="closeModal()" mat-button>Cancel</button>
+        </div>
     </div>
-</div>
+</ng-container>
+<ng-container *ngIf="data">
+    <div class="modal">
+        <section>
+            <h1 mat-dialog-title>Are you sure you want to log out?</h1>
+            <p mat-dialog-content>
+                You will have to sign back in to gain access to the store.
+            </p>
+        </section>
+        
+        <div>
+            <button (click)="confirmLogout()" mat-button>Log Out</button>
+            <button (click)="closeModal()" mat-button>Cancel</button>
+        </div>
+    </div>
+</ng-container>

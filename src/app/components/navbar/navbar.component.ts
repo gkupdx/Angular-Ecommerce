@@ -24,6 +24,10 @@ export class NavbarComponent {
     this.cartItemLength = this.cartService.getCartLength();
   }
 
+  isPanelOpen() {
+    return this.menuService.isMenuOpened;
+  }
+
   showMenuPanel() {
     this.menuService.toggleMenuPanel();
   }

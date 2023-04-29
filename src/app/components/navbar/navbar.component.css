@@ -9,6 +9,7 @@
         align-items: center;
         background-color: var(--luxury-black);
         box-shadow: 0 1px 10px 1px  #060d00;
+        z-index: 2;
     }
 
     nav > div {

@@ -38,8 +38,12 @@
         margin-top: 10px;
     }
 
+    .container {
+        height: 100px;
+    }
+
     .container button {
         width: 250px;
-        height: 35px;
+        height: 40px;
     }
 }

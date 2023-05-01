@@ -87,6 +87,7 @@
 
 @media screen and (min-width: 520px) and (max-width: 767px) {
     section { 
+        width: 50vw;
         min-width: 250px;
         height: 425px;
         display: flex;
@@ -169,5 +170,17 @@
 
     section .primaryBtn {
         transition: 0.1s background-color ease;
+    }
+}
+
+@media screen and (min-width: 570px) and (max-width: 660px) {
+    .product img {
+        height: 110px;
+    }
+}
+
+@media screen and (min-width: 661px) and (max-width: 767px) {
+    .product img {
+        height: 130px;
     }
 }

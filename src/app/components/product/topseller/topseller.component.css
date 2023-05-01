@@ -189,3 +189,25 @@
         height: 35px;
     }
 }
+
+@media screen and (min-width: 661px) and (max-width: 767px) {
+    .carousel {
+        height: 650px;
+    }
+
+    .slide {
+        height: 650px;
+    }
+
+    .slide img {
+        height: 190px;
+    }
+
+    .slide h3 {
+        font-size: 2.2rem;
+    }
+
+    .slide p {
+        font-size: 3.2rem;
+    }
+}

@@ -6,7 +6,6 @@
         flex-direction: column;
         align-items: center;
         background-color: #f2f2f2;
-        overflow-x: hidden;
     }
 
     .heroBanner {
@@ -22,7 +21,6 @@
     .heroBanner img {
         width: 100%;
         min-height: 300px;
-        height: calc(width/2);
     }
 
     .productFilters {
@@ -145,7 +143,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        overflow-x: hidden;
     }
 
     .heroBanner {
@@ -270,5 +267,11 @@
     #searchBtn:hover {
         background-color: green;
         color: #FFF;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .productFilters {
+        height: 100px;
     }
 }

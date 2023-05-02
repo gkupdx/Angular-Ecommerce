@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { Product } from 'src/app/interfaces/Product';
 import { ProductService } from 'src/app/services/product.service';
@@ -15,6 +15,7 @@ import { faChevronLeft, faChevronRight, faCaretDown } from '@fortawesome/free-so
   ]
 })
 export class TopsellerComponent implements OnInit, OnDestroy {
+  browserWidth: number = window.innerWidth;
   topProducts: Product[] = [];
   subscription: Subscription; // for subscribing to auto slideshow events
   activeSlide: number = 1;
@@ -25,6 +26,11 @@ export class TopsellerComponent implements OnInit, OnDestroy {
   constructor(private productService: ProductService) {
     this.topProducts = this.productService.getTopProducts();
   }
+
+  @HostListener('window:resize', ['$event'])
+    detectResize(event: any) {
+      this.browserWidth = event.target.innerWidth;
+    }
 
   ngOnInit(): void {
     this.subscription = interval(4000).subscribe(() => {

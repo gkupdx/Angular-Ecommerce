@@ -2,18 +2,31 @@
     <section id="sectionHeader">
         <h2>TOP SELLERS</h2>
     </section>
-    <section class="carousel">
-        <ng-container *ngFor="let product of topProducts; let i = index;">
-            <div [ngClass]="activeSlide === i+1 ? 'active' : 'hidden'" class="slide">
-                <img [src]="product.imgSrc" alt="product.name" [@slideIn]="activeSlide">
-                <h3 [@slideIn]="activeSlide">{{ product.name }}</h3>
-                <p [@slideIn]="activeSlide">{{ product.price | currency:'USD' }}</p>
-            </div>
-    
-            <div id="carouselNav">
-                <button (click)="moveSlide('left')"><fa-icon [icon]="leftArrow"></fa-icon></button>
-                <button (click)="moveSlide('right')"><fa-icon [icon]="rightArrow"></fa-icon></button>
-            </div>
-        </ng-container>
-    </section>
+    <ng-container *ngIf="browserWidth < 768">
+        <section class="carousel">
+            <ng-container *ngFor="let product of topProducts; let i = index;">
+                <div [ngClass]="activeSlide === i+1 ? 'active' : 'hidden'" class="slide">
+                    <img [src]="product.imgSrc" alt="product.name" [@slideIn]="activeSlide">
+                    <h3 [@slideIn]="activeSlide">{{ product.name }}</h3>
+                    <p [@slideIn]="activeSlide">{{ product.price | currency:'USD' }}</p>
+                </div>
+        
+                <div id="carouselNav">
+                    <button (click)="moveSlide('left')"><fa-icon [icon]="leftArrow"></fa-icon></button>
+                    <button (click)="moveSlide('right')"><fa-icon [icon]="rightArrow"></fa-icon></button>
+                </div>
+            </ng-container>
+        </section>
+    </ng-container>
+    <ng-container *ngIf="browserWidth >= 768">
+        <section id="grid">
+            <ng-container *ngFor="let product of topProducts;">
+                <div>
+                    <img [src]="product.imgSrc" alt="product.name">
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.price | currency:'USD' }}</p>
+                </div>
+            </ng-container>
+        </section>
+    </ng-container>
 </div>

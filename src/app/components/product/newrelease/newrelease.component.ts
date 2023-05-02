@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NewRelease } from 'src/app/interfaces/Product';
 import { CartProduct } from 'src/app/interfaces/Product';
 import { ProductService } from 'src/app/services/product.service';
@@ -15,6 +15,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
   ]
 })
 export class NewreleaseComponent {
+  browserWidth: number = window.innerWidth;
   cartProduct: CartProduct = {
     name: '',
     price: '',
@@ -33,6 +34,11 @@ export class NewreleaseComponent {
   constructor(private productService: ProductService, private cartService: CartService) {
     this.newProduct = this.productService.getNewRelease();
   }
+
+  @HostListener('window:resize', ['$event'])
+    detectResize(event: any) {
+      this.browserWidth = event.target.innerWidth;
+    }
 
   emitAddToCart() {
     this.cartProduct.name = this.newProduct.name;

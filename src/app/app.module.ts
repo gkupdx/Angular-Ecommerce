@@ -26,6 +26,7 @@ import { RevieworderComponent } from './components/cart/checkout/revieworder/rev
 import { OrdercompleteComponent } from './components/cart/checkout/revieworder/ordercomplete/ordercomplete.component';
 import { PanelComponent } from './components/navbar/panel/panel.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ModalComponent } from './components/modal/modal.component';
     OrdercompleteComponent,
     PanelComponent,
     ModalComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

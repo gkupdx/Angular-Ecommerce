@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { slideDownSlow } from 'src/app/utilities/animations';
-import { faBars, faCartShopping, faUserGear } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCartShopping, faUserGear, faHeadset, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -18,11 +18,18 @@ export class NavbarComponent {
   cartItemLength: number = 0;
   menuIcon = faBars;
   cartIcon = faCartShopping;
-  userGearIcon = faUserGear;
+  userIcon = faUserGear;
+  contactIcon = faHeadset;
+  logoutIcon = faArrowRightFromBracket;
 
   constructor(private cartService: CartService, private menuService: MenuService, private router: Router) {
     this.cartItemLength = this.cartService.getCartLength();
   }
+
+  @HostListener('window:resize', ['$event'])
+    detectResize(event: any) {
+      this.browserWidth = event.target.innerWidth;
+    }
 
   isPanelOpen() {
     return this.menuService.isMenuOpened;
@@ -32,8 +39,20 @@ export class NavbarComponent {
     this.menuService.toggleMenuPanel();
   }
 
-  showCart() {
+  goToCart() {
     this.router.navigate(['cart']);
+  }
+
+  goToAccount() {
+    this.router.navigate(['account']);
+  }
+
+  goToContact() {
+    this.router.navigate(['contact']);
+  }
+
+  requestLogout() {
+    
   }
 
   isCartNonEmpty() {

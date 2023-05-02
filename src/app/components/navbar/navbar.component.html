@@ -1,21 +1,25 @@
 <nav @slideDownSlow>
-    <div>
+    <div id="logoContainer">
         <a routerLink="/store"><img src="../../../assets/images/logo2.png" alt="Logo"></a>
     </div>
     <div>
-        <ng-template [ngIf]="browserWidth < 1024">
+        <ng-template [ngIf]="browserWidth < 768">
             <div>
-                <button (click)="showCart()"><fa-icon [icon]="cartIcon"></fa-icon></button>
+                <button (click)="goToCart()"><fa-icon [icon]="cartIcon"></fa-icon></button>
                 <p *ngIf="isCartNonEmpty() > 0">{{ cartItemLength }}</p>
             </div>
             <button (click)="showMenuPanel()"><fa-icon [icon]="menuIcon"></fa-icon></button>
         </ng-template>
-        <ng-template [ngIf]="browserWidth >= 1024">
-            <div>
-                <a routerLink="/cart"><fa-icon [icon]="cartIcon"></fa-icon></a>
-                <p *ngIf="isCartNonEmpty() > 0">{{ cartItemLength }}</p>
+        <ng-template [ngIf]="browserWidth >= 768">
+            <div id="btnContainer">
+                <div>
+                    <button (click)="goToCart()"><fa-icon [icon]="cartIcon"></fa-icon> Cart</button>
+                    <p *ngIf="isCartNonEmpty() > 0">{{ cartItemLength }}</p>
+                </div>
+                <button (click)="goToAccount()"><fa-icon [icon]="userIcon"></fa-icon> Account</button>
+                <button (click)="goToContact()"><fa-icon [icon]="contactIcon"></fa-icon> Contact Us</button>
+                <button (click)="requestLogout()"><fa-icon [icon]="logoutIcon"></fa-icon> Log Out</button>
             </div>
-            <a routerLink="/account"><fa-icon [icon]="userGearIcon"></fa-icon></a>
         </ng-template>
     </div>
 </nav>

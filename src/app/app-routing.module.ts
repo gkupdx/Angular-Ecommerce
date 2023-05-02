@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './components/account/account.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { PasswordchangeComponent } from './components/account/passwordchange/passwordchange.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/cart/checkout/checkout.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'store', component: StoreComponent },
   { path: 'account', component: AccountComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'pwdchange', component: PasswordchangeComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },

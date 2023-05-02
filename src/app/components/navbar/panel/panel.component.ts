@@ -29,6 +29,11 @@ export class PanelComponent {
     this.router.navigate(['account']);
   }
 
+  goToContact() {
+    this.menuService.toggleMenuPanel();
+    this.router.navigate(['contact']);
+  }
+
   requestLogout() {
     this.openModal();
   }

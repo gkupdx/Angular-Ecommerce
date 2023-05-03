@@ -1,6 +1,6 @@
 @media screen and (max-width: 539px) {
     #sectionHeader {
-        width: 100vw;
+        width: 100%;
         height: 125px;
         display: flex;
         justify-content: center;
@@ -40,7 +40,7 @@
         justify-content: space-around;
         background-color: #222;
         color: #f2f2f2;
-        padding: 15px;
+        padding: 30px;
         border-top: 1px solid grey;
     }
 
@@ -80,7 +80,7 @@
 
 @media screen and (min-width: 540px) and (max-width: 767px) {
     #sectionHeader {
-        width: 100vw;
+        width: 100%;
         height: 125px;
         display: flex;
         justify-content: center;
@@ -120,7 +120,7 @@
         justify-content: space-around;
         background-color: #222;
         color: #f2f2f2;
-        padding: 15px;
+        padding: 30px;
         border-top: 1px solid grey;
     }
 
@@ -171,7 +171,7 @@
 
 @media screen and (min-width: 768px) {
     #sectionHeader {
-        width: 100vw;
+        width: 100%;
         height: 125px;
         display: flex;
         justify-content: center;
@@ -201,6 +201,7 @@
         grid-row: 1 / span 3;
         height: 220px;
         margin-top: 40px;
+        margin-left: 30px;
         box-shadow: 0 1px 10px 1px #000;
     }
 
@@ -212,12 +213,12 @@
     }
 
     .newRelease p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         margin-top: 20px;
     }
 
     .newRelease h3 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     .newRelease h4 {
@@ -228,6 +229,7 @@
         font-size: 2.5rem;
         text-align: center;
         border-radius: 50%;
+        box-shadow: 0 1px 10px 0 #000;
         margin: auto;
     }
 
@@ -239,8 +241,8 @@
         font-family: 'Poppins', sans-serif;
         font-weight: bold;
         color: #f2f2f2;
-        background-color: green;
-        border: none;
+        background-color: rgba(50, 205, 50, 0.3);
+        border: 1px solid green;
         border-radius: 5px;
         margin: auto;
         transition: background-color 0.1s ease;
@@ -251,5 +253,11 @@
         color: #000;
         cursor: pointer;
         transition: background-color 0.1s ease;
+    }
+}
+
+@media screen and (min-width: 790px) {
+    .newRelease p {
+        font-size: 0.9rem;
     }
 }

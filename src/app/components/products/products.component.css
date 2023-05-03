@@ -23,11 +23,35 @@
 
 @media screen and (min-width: 520px) and (max-width: 767px) {
     .productGrid {
-        width: 100vw;
+        width: 100%;
         min-height: 425px;
         display: grid;
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .productNotFound {
+        height: 425px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .productNotFound p {
+        width: 75%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .productGrid {
+        width: 100%;
+        min-height: 425px;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .productNotFound {

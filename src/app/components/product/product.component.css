@@ -87,8 +87,7 @@
 
 @media screen and (min-width: 520px) and (max-width: 767px) {
     section { 
-        width: 50%;
-        min-width: 250px;
+        width: 50vw;
         height: 425px;
         display: flex;
         flex-direction: column;
@@ -187,7 +186,7 @@
 
 @media screen and (min-width: 768px) {
     section { 
-        width: 33.3%;
+        width: 33.3vw;
         min-width: 250px;
         height: 425px;
         display: flex;

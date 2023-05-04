@@ -1,6 +1,6 @@
 @media screen and (max-width: 539px) {
     #sectionHeader {
-        width: 100%;
+        width: 100vw;
         height: 125px;
         display: flex;
         justify-content: center;
@@ -19,7 +19,7 @@
 
     .carousel {
         position: relative;
-        width: 100%;
+        width: 100vw;
         height: 550px;
         display: flex;
         align-items: center;
@@ -96,7 +96,7 @@
 
 @media screen and (min-width: 540px) and (max-width: 767px) {
     #sectionHeader {
-        width: 100%;
+        width: 100vw;
         height: 125px;
         display: flex;
         justify-content: center;
@@ -115,7 +115,7 @@
 
     .carousel {
         position: relative;
-        width: 100%;
+        width: 100vw;
         height: 625px;
         display: flex;
         align-items: center;
@@ -198,7 +198,7 @@
 
 @media screen and (min-width: 768px) {
     #sectionHeader {
-        width: 100%;
+        width: 100vw;
         height: 125px;
         display: flex;
         justify-content: center;
@@ -216,7 +216,7 @@
     }
 
     #grid {
-        width: 100%;
+        width: 100vw;
         height: 700px;
         display: grid;
         grid-template-columns: 50% 50%;

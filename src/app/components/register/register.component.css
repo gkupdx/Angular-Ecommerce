@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 390px) {
     .registration {
         width: 100vw;
         height: auto;
@@ -14,11 +14,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: lightgrey;
+        background: linear-gradient(180deg, #060d00, #222, #0f3d3e);
+        color: #f2f2f2;
     }
 
     section {
-        background-color: #FFF;
+        background-color: #f2f2f2;
         z-index: 3;
     }
 
@@ -29,7 +30,8 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        border: 1px solid green;
+        border: 1px solid lightgrey;
+        box-shadow: 0 0 1px 1px #000;
         border-radius: 10px;
         margin-top: 50px;
     }
@@ -44,17 +46,39 @@
         width: 250px;
         font-size: 0.9rem;
         font-weight: 500;
+        color: #222;
     }
 
     .regForm input {
         width: 250px;
         height: 35px;
+        background-color: #f2f2f2;
+        font-family: 'Poppins', sans-serif;
+        border: 1px solid #222;
+        border-radius: 4px;
+        padding: 5px;
     }
+
+    .regForm input:focus {
+        background-color: #FFF;
+        border: 1px solid green;
+        outline: none;
+     }
 
     .regForm button {
         width: 250px;
         height: 35px;
     }
+
+    .btnNotAllowed {
+        cursor: not-allowed;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        font-weight: bold;
+        color: grey;
+        border: 1px solid grey;
+        border-radius: 5px;
+     }
 
     .formError {
         width: 250px;

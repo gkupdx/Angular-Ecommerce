@@ -14,6 +14,7 @@ import { activateMembership, deactivateMembership } from 'src/app/state/account.
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent {
+  isMenuOpened: boolean = false;
   membershipState$: Observable<boolean>;
   membershipVal: boolean;
 
@@ -38,7 +39,10 @@ export class ModalComponent {
   confirmLogout() {
     // this.authService.logout();
     this.authService.isAuthenticated = false;
-    this.menuService.toggleMenuPanel();
+    this.isMenuOpened = this.menuService.getMenuStatus();
+    if (this.isMenuOpened) {
+      this.menuService.toggleMenuPanel();
+    }
     this.dialogRef.close();
     this.router.navigate(['']);
   }

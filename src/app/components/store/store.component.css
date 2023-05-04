@@ -6,6 +6,7 @@
         flex-direction: column;
         align-items: center;
         background-color: #f2f2f2;
+        overflow-x: hidden;
     }
 
     .heroBanner {
@@ -143,6 +144,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        overflow-x: hidden;
     }
 
     .heroBanner {
@@ -161,7 +163,7 @@
     }
 
     .productFilters {
-        width: 100%;
+        width: 100vw;
         height: 75px;
         display: flex;
         justify-content: space-between;
@@ -304,6 +306,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        overflow-x: hidden;
     }
 
     .heroBanner {
@@ -321,7 +324,7 @@
     }
 
     .productFilters {
-        width: 100%;
+        width: 100vw;
         height: 120px;
         display: flex;
         justify-content: space-between;

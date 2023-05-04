@@ -32,7 +32,7 @@
                     <p *ngIf="pcField.invalid && pcField.touched" class="formError">Please confirm your password.</p>
             </div>
 
-            <button [disabled]="regForm.form.invalid" class="submitBtn" type="submit">
+            <button [ngClass]="regForm.form.invalid ? 'btnNotAllowed' : 'submitBtn'" type="submit">
                 <ng-container *ngIf="isLoading()">Loading...</ng-container>
                 <ng-container *ngIf="!isLoading()">Submit</ng-container>
             </button>

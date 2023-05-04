@@ -13,14 +13,13 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
   ]
 })
 export class CartComponent {
-  cartState: string = 'empty';
+  cartState: string = 'non-empty';
   arrowLeft = faArrowLeft;
   arrowRight = faArrowRight;
 
   constructor(private router: Router, private cartService: CartService) {}
 
   getCartInfo() {
-    this.cartState = 'non-empty';
     return this.cartService.getCart();
   }
 

@@ -68,3 +68,13 @@
         text-align: center;
     }
 }
+
+@media screen and (min-width: 1280px) {
+    .productGrid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .productNotfound {
+        height: 450px;
+    }
+}

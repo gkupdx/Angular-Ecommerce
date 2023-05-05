@@ -82,12 +82,17 @@
         color: grey;
         border: 1px solid grey;
         border-radius: 5px;
-     }
+    }
 
     .formError {
         width: 250px;
         font-size: 0.8rem;
         color: red;
+    }
+
+    .backBtn {
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 
     #pwdDoesNotMatch {

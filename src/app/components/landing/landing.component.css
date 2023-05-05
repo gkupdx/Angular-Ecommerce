@@ -111,10 +111,20 @@
 }
 
 @media screen and (min-width: 768px) {
+   .landing > div {
+      height: 350px;
+   }
+
+   .landing h1 {
+      font-size: 2.5rem;
+   }
+
+   .landing h3 {
+      font-size: 1.5rem;
+   }
+
    .loginForm {
       width: 380px;
       height: 550px;
    }
-
-
 }

@@ -18,6 +18,10 @@
         color: #f2f2f2;
     }
 
+    h3 {
+        margin-top: 20px;
+    }
+
     section {
         background-color: #f2f2f2;
         z-index: 3;
@@ -98,5 +102,24 @@
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         z-index: 2;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .registration > div {
+        height: 350px;
+    }
+
+    .registration h1 {
+        font-size: 2.5rem;
+    }
+
+    .registration h3 {
+        font-size: 1.5rem;
+    }
+
+    .regForm {
+        width: 380px;
+        height: 550px;
     }
 }

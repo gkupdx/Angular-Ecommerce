@@ -1,6 +1,6 @@
 @media screen and (max-width: 767px) {
     .revieworder {
-        width: 90vw;
+        width: 80vw;
         height: auto;
         min-height: 600px;
         display: flex;
@@ -17,9 +17,41 @@
         padding: 60px;
     }
 
+    .cartItem {
+        width: 75vw;
+        height: 100px;
+        margin-top: 10px;
+    }
+    
+    .cartItem img {
+        border-radius: 5px;
+    }
+    
+    .cartItem p {
+        font-size: 0.8rem;
+    }
+    
+    .cartItem::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: lightgrey;
+        margin: auto;
+    }
+    
+    .cartItem > div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
     #purchaseBtn {
-        width: 220px;
-        height: 35px;
+        width: 85%;
+        max-width: 250px;
+        height: 40px;
         background-color: var(--bg-green);
         font-family: 'Poppins', sans-serif;
         font-size: 0.8rem;

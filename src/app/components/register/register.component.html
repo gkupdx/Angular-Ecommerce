@@ -42,4 +42,6 @@
     <div *ngIf="!doPasswordsMatch" id="pwdDoesNotMatch" @slideDown>
         <fa-icon [icon]="xmark"></fa-icon> Passwords do not match.
     </div>
+
+    <button (click)="goToHome()" class="backBtn" @slideIn><fa-icon [icon]="arrowLeft"></fa-icon> 뒤로 가기 [Back to Home]</button>
 </div>

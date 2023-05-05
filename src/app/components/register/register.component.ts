@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RegForm } from 'src/app/interfaces/Forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { slideIn, slideDown } from 'src/app/utilities/animations';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-register',
@@ -20,9 +21,10 @@ export class RegisterComponent {
     passConfirm: '',
   }
   doPasswordsMatch: boolean = true;
+  arrowLeft = faArrowLeft;
   xmark = faXmark;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   isLoading() {
     return this.authService.isLoading;
@@ -34,5 +36,9 @@ export class RegisterComponent {
       return;
     }
     this.authService.register(this.form);
+  }
+
+  goToHome() {
+    this.router.navigate(['']);
   }
 }

@@ -42,6 +42,7 @@
     }
 
     #chat h2, #email h2, #phone h2 {
+        color: forestgreen;
         font-size: 1.2rem;
     }
 

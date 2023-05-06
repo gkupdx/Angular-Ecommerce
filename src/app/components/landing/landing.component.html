@@ -25,6 +25,8 @@
                 <p *ngIf="pwField.invalid && pwField.touched" class="formError">Password is invalid.</p>
             </div>
 
+            <span [ngClass]="!isLoginSuccess ? 'loginFail' : 'hidden'">Incorrect email or password.</span>
+
             <button [ngClass]="loginForm.form.invalid ? 'btnNotAllowed' : 'submitBtn'" type="submit">
                 <ng-container *ngIf="isLoading()">Loading...</ng-container>
                 <ng-container *ngIf="!isLoading()">Submit</ng-container>

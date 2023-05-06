@@ -19,6 +19,7 @@ export class LandingComponent {
     email: '',
     password: '',
   }
+  isLoginSuccess: boolean = true;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -27,8 +28,11 @@ export class LandingComponent {
   }
 
   loginSubmit() {
-    this.authService.login(this.form);
-    // this.authService.isAuthenticated = true;
-    // this.router.navigate(['store']);
+    // this.authService.login(this.form);
+    // this.isLoginSuccess = this.authService.isAuthenticated;
+
+    /* FOR TESTING PURPOSES */
+    this.authService.isAuthenticated = true;
+    this.router.navigate(['store']);
   }
 }

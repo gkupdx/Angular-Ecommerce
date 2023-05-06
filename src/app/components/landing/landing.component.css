@@ -22,7 +22,8 @@
       margin-top: 20px;
    }
 
-   h2, h4 {
+   h2,
+   h4 {
       color: #222;
    }
 
@@ -73,6 +74,20 @@
       height: 35px;
    }
 
+   .loginFail {
+      visibility: visible;
+      width: 250px;
+      height: 5px;
+      font-size: 0.9rem;
+      color: red;
+      text-align: center;
+   }
+
+   .hidden {
+      visibility: hidden;
+      height: 5px;
+   }
+
    #signUpInfo {
       width: 250px;
       font-size: 0.8rem;
@@ -110,7 +125,7 @@
 }
 
 @media screen and (min-width: 768px) {
-   .landing > div {
+   .landing>div {
       height: 300px;
    }
 
@@ -129,7 +144,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-   .landing > div {
+   .landing>div {
       height: 350px;
    }
 

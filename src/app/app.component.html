@@ -1,6 +1,6 @@
 <!-- <app-navbar *ngIf="isSignedIn()"></app-navbar> -->
 <app-panel *ngIf="isMenuOpen()"></app-panel>
 <ng-container *ngIf="!isMenuOpen()">
-    <app-navbar></app-navbar>
+    <app-navbar *ngIf="isSignedIn()"></app-navbar>
     <router-outlet></router-outlet>
 </ng-container>

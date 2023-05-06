@@ -14,14 +14,15 @@
                 <p [ngStyle]="{'font-style':'italic'}">Release date: {{ newProduct.premiere }}</p>
 
                 <h4>{{ newProduct.price | currency:'USD' }}</h4>
-
-                <button
-                    [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'color': '#FFF', 'border': 'none'} : null"
-                    (click)="emitAddToCart()" id="addBtn">
-                    <ng-container *ngIf="isAddedToCart"><fa-icon [icon]="checkmark"></fa-icon> 카트에 담긴
-                        [Added]</ng-container>
-                    <ng-container *ngIf="!isAddedToCart">카트 담기 [Add To Cart]</ng-container>
-                </button>
+                <ng-container *ngIf="isAddedToCart && isMembershipActive">
+                    <button (click)="emitAddToCart()" [ngStyle]="{'background-color': 'limegreen', 'color': '#FFF', 'border': 'none'}" id="addBtn"><fa-icon [icon]="checkmark"></fa-icon>카트에 담긴 [Added]</button>
+                </ng-container>
+                <ng-container *ngIf="!isAddedToCart && isMembershipActive">
+                    <button (click)="emitAddToCart()" id="addBtn">카트 담기 [Add To Cart]</button>
+                </ng-container>
+                <ng-container *ngIf="!isMembershipActive">
+                    <button id="membershipDisabled">멤버십 비활성<br/>[Membership Inactive]</button>
+                </ng-container>
             </div>
         </section>
     </ng-container>
@@ -39,12 +40,15 @@
             </div>
 
             <h4>{{ newProduct.price | currency:'USD' }}</h4>
-            <button
-                [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'color': '#FFF', 'border': 'none'} : null"
-                (click)="emitAddToCart()" id="addBtn">
-                <ng-container *ngIf="isAddedToCart"><fa-icon [icon]="checkmark"></fa-icon> 카트에 담긴 [Added]</ng-container>
-                <ng-container *ngIf="!isAddedToCart">카트 담기 [Add To Cart]</ng-container>
-            </button>
+            <ng-container *ngIf="isAddedToCart && isMembershipActive">
+                <button (click)="emitAddToCart()" [ngStyle]="{'background-color': 'limegreen', 'color': '#FFF', 'border': 'none'}" id="addBtn"><fa-icon [icon]="checkmark"></fa-icon>카트에 담긴 [Added]</button>
+            </ng-container>
+            <ng-container *ngIf="!isAddedToCart && isMembershipActive">
+                <button (click)="emitAddToCart()" id="addBtn">카트 담기 [Add To Cart]</button>
+            </ng-container>
+            <ng-container *ngIf="!isMembershipActive">
+                <button id="membershipDisabled">멤버십 비활성<br/>[Membership Inactive]</button>
+            </ng-container>
         </section>
     </ng-container>
 </div>

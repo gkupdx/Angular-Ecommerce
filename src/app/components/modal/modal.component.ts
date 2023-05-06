@@ -26,13 +26,15 @@ export class ModalComponent {
     })
   }
 
-  activate() {
-    this.store.dispatch(activateMembership());
+  deactivate() {
+    this.store.dispatch(deactivateMembership());
+    this.authService.deactivation();
     this.dialogRef.close();
   }
 
-  deactivate() {
-    this.store.dispatch(deactivateMembership());
+  activate() {
+    this.store.dispatch(activateMembership());
+    this.authService.reactivation();
     this.dialogRef.close();
   }
 

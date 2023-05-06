@@ -13,6 +13,7 @@ export class AuthService {
   isLoading: boolean = false;
   isPasswordMatch: boolean = false;
   isPasswordUpdated: boolean = false;
+  isMembershipActive: boolean = true;
 
   constructor(private router: Router) {}
 
@@ -98,6 +99,14 @@ export class AuthService {
     const user = auth.currentUser;
 
     user ? this.isAuthenticated = true : this.isAuthenticated = false;
+  }
+
+  deactivation() {
+    this.isMembershipActive = false;
+  }
+
+  reactivation() {
+    this.isMembershipActive =true;
   }
 
   logout() {

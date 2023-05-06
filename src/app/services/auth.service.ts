@@ -39,6 +39,7 @@ export class AuthService {
       this.router.navigate(['store']);
     })
     .catch((error) => {
+      this.isLoading = false;
       this.isAuthenticated = false;
       const errorCode = error.code;
       const errorMessage = error.message;

@@ -74,6 +74,19 @@
         background-color: #fff;
     }
 
+    .membershipDisabled {
+        cursor: not-allowed;
+        width: 200px;
+        height: 45px;
+        background-color: #f2f2f2;
+        color: grey;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border: 1px solid grey;
+        border-radius: 5px;
+    }
+
     section .primaryBtn {
         width: 210px;
         height: 40px;
@@ -159,6 +172,19 @@
 
     .quantityOptions p:hover {
         background-color: lightgrey;
+    }
+
+    .membershipDisabled {
+        cursor: not-allowed;
+        width: 200px;
+        height: 45px;
+        background-color: #f2f2f2;
+        color: grey;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border: 1px solid grey;
+        border-radius: 5px;
     }
 
     section .primaryBtn {
@@ -258,6 +284,19 @@
 
     .quantityOptions p:hover {
         background-color: lightgrey;
+    }
+
+    .membershipDisabled {
+        cursor: not-allowed;
+        width: 200px;
+        height: 45px;
+        background-color: #f2f2f2;
+        color: grey;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.8rem;
+        font-weight: bold;
+        border: 1px solid grey;
+        border-radius: 5px;
     }
 
     section .primaryBtn {

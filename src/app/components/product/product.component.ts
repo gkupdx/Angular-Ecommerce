@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/interfaces/Product';
 import { CartProduct } from 'src/app/interfaces/Product';
 import { CartService } from 'src/app/services/cart.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { faCaretDown, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -20,10 +21,13 @@ export class ProductComponent {
   quantity: number = 1;
   isVisible: boolean = false;
   isAddedToCart: boolean = false;
+  isMembershipActive: boolean;
   caretDownIcon = faCaretDown;
   checkmark = faCheck;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private authService: AuthService) {
+    this.isMembershipActive = this.authService.isMembershipActive;
+  }
 
   toggleQuantityOptions() {
     this.isVisible = !this.isVisible;

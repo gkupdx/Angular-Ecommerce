@@ -15,8 +15,13 @@
         </div>
     </div>
 
-    <button [ngStyle]="isAddedToCart ? {'background-color': 'limegreen', 'color': '#FFF', 'border': 'none'} : null" (click)="emitAddToCart()" [disabled]="quantity === 0" class="primaryBtn">
-        <ng-container *ngIf="isAddedToCart"><fa-icon [icon]="checkmark"></fa-icon> 카트에 담긴 [Added]</ng-container>
-        <ng-container *ngIf="!isAddedToCart">카트 담기 [Add To Cart]</ng-container>
-    </button>
+    <ng-container *ngIf="isAddedToCart && isMembershipActive">
+        <button [ngStyle]="{'background-color': 'limegreen', 'color': '#FFF', 'border': 'none'}" (click)="emitAddToCart()" class="primaryBtn"><fa-icon [icon]="checkmark"></fa-icon> 카트에 담긴 [Added]</button>
+    </ng-container>
+    <ng-container *ngIf="!isAddedToCart && isMembershipActive">
+        <button (click)="emitAddToCart()" class="primaryBtn">카트 담기 [Add To Cart]</button>
+    </ng-container>
+    <ng-container *ngIf="!isMembershipActive">
+        <button class="membershipDisabled">멤버십 비활성<br/>[Membership Inactive]</button>
+    </ng-container>
 </section>

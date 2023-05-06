@@ -112,6 +112,25 @@
 
 @media screen and (min-width: 768px) {
     .registration > div {
+        height: 300px;
+    }
+
+    .registration h1 {
+        font-size: 2.2rem;
+    }
+
+    .registration h3 {
+        font-size: 1.2rem;
+    }
+
+    .regForm {
+        width: 380px;
+        height: 550px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .registration > div {
         height: 350px;
     }
 
@@ -121,10 +140,5 @@
 
     .registration h3 {
         font-size: 1.5rem;
-    }
-
-    .regForm {
-        width: 380px;
-        height: 550px;
     }
 }

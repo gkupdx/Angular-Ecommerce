@@ -316,3 +316,9 @@
         height: 450px;
     }
 }
+
+@media screen and (min-width: 1450px) {
+    .product img {
+        height: 150px;
+    }
+}

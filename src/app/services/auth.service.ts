@@ -34,16 +34,14 @@ export class AuthService {
     signInWithEmailAndPassword(auth, form.email, form.password)
     .then((userCredential) => {
       const user = userCredential.user;
+      this.isLoading = false;
+      this.isAuthenticated = true;
+      this.router.navigate(['store']);
     })
     .catch((error) => {
       this.isAuthenticated = false;
       const errorCode = error.code;
       const errorMessage = error.message;
-    })
-    .finally(() => {
-      this.isLoading = false;
-      this.isAuthenticated = true;
-      this.router.navigate(['store']);
     })
   }
 

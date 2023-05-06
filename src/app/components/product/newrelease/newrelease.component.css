@@ -195,6 +195,7 @@
         display: grid;
         background-color: #222;
         color: #f2f2f2;
+        padding: 20px 0;
     }
 
     .newRelease img {
@@ -214,13 +215,13 @@
         margin-right: 30px;
     }
 
+    .newRelease h3 {
+        font-size: 1.1rem;
+    }
+
     .newRelease p {
         font-size: 0.8rem;
         margin-top: 20px;
-    }
-
-    .newRelease h3 {
-        font-size: 1.3rem;
     }
 
     .newRelease h4 {
@@ -258,8 +259,43 @@
     }
 }
 
-@media screen and (min-width: 790px) {
+@media screen and (min-width: 845px) {
+    .newRelease h3 {
+        font-size: 1.2rem;
+    }
+
     .newRelease p {
         font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .newRelease {
+        height: 700px;
+    }
+
+    .newRelease img {
+        grid-column: 1 / span 2;
+        height: 270px;
+    }
+
+    .newRelease > div {
+        grid-column: 3;
+    }
+
+    .newRelease h3 {
+        font-size: 1.3rem;
+    }
+
+    .newRelease p {
+        font-size: 1rem;
+    }
+
+    .newReleae h4 {
+        grid-column: 1 / span 3;
+    }
+
+    #addBtn {
+        grid-column: 1 / span 3;
     }
 }

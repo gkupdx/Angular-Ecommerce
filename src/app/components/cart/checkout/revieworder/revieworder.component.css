@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 390px) {
     .revieworder {
         width: 80vw;
         height: auto;
@@ -63,5 +63,12 @@
         cursor: pointer;
         background-color: var(--hover-green);
         color: #FFF;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .revieworder {
+        width: 700px;
+        height: 750px;
     }
 }

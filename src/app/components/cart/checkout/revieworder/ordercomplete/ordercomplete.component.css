@@ -19,14 +19,28 @@
         margin-bottom: 40px;
     }
 
+    .orderComplete p {
+        width: 80vw;
+    }
+
+    .orderComplete h3 {
+        margin-top: 40px;
+    }
+
     .orderComplete button {
         margin-top: 60px;
     }
 }
 
+@media screen and (min-width: 768px) {
+    .orderComplete img {
+        width: 300px;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .orderComplete img {
-        width: 60%;
+        width: 320px;
     }
 
     .orderComplete h2 {
@@ -36,6 +50,10 @@
     .orderComplete h4 {
         font-size: 1rem;
     }
+
+    .orderComplete h3 {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (min-width: 1280px) {
@@ -44,7 +62,7 @@
     }
 
     .orderComplete img {
-        width: 70%;
+        width: 400px;
     }
 
     .orderComplete h2 {

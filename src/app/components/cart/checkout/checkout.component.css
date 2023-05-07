@@ -95,6 +95,7 @@
         height: auto;
         display: flex;
         justify-content: space-between;
+        margin-top: 20px;
     }
 
     #dateCvvDiv label {
@@ -131,23 +132,20 @@
         margin-top: 30px;
     }
 
-    .submitBtn {
-        width: 85%;
-        max-width: 300px;
-        height: 40px;
-    }
-
     .btnNotAllowed {
         width: 85%;
         max-width: 300px;
         height: 40px;
         cursor: not-allowed;
         font-family: 'Poppins', sans-serif;
-        font-size: 1rem;
-        font-weight: bold;
+        font-size: 0.9rem;
         color: grey;
         border: 1px solid grey;
         border-radius: 5px;
+    }
+
+    .primaryBtn {
+        font-size: 0.9rem;
     }
 
     .formError {

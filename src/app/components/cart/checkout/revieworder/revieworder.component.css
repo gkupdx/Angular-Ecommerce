@@ -71,4 +71,8 @@
         width: 700px;
         height: 750px;
     }
+
+    .cartItem {
+        max-width: 650px;
+    }
 }

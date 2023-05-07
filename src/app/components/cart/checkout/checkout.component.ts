@@ -32,6 +32,13 @@ export class CheckoutComponent {
 
   constructor(private location: Location, private router: Router) {}
 
+  inputFieldsEmpty() {
+    if (this.form.cardNum.length === 0 || this.form.expDate.length === 0 || this.form.cvv.length === 0) {
+      return true;
+    }
+    return false;
+  }
+
   onChange(fieldName: string) {
     if (fieldName === 'cardNum') {
       this.isCardNumValid = true;

@@ -18,7 +18,7 @@
 
     <h3>Total: {{ getCartTotal() | currency:'USD' }}</h3>
 
-    <button id="purchaseBtn" (click)="purchaseConfirm()">
+    <button id="purchaseBtn" class="primaryBtn" (click)="purchaseConfirm()">
         <ng-container *ngIf="isLoading">Loading...</ng-container>
         <ng-container *ngIf="!isLoading">구매 하기 [Purchase]</ng-container> 
     </button>

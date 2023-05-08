@@ -50,19 +50,9 @@
 
     #purchaseBtn {
         width: 85%;
-        max-width: 250px;
+        max-width: 300px;
         height: 40px;
-        background-color: var(--bg-green);
-        font-family: 'Poppins', sans-serif;
-        font-size: 0.8rem;
-        border: 1px solid var(--font-green);
         border-radius: 5px;
-    }
-
-    #purchaseBtn:hover {
-        cursor: pointer;
-        background-color: var(--hover-green);
-        color: #FFF;
     }
 }
 

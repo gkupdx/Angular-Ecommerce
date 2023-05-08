@@ -39,13 +39,22 @@ export class CheckoutComponent {
     return false;
   }
 
-  onChange(fieldName: string) {
-    if (fieldName === 'cardNum') {
-      this.isCardNumValid = true;
-    } else if (fieldName === 'expDate') {
-      this.isExpDateValid = true;
-    } else {
-      this.isCvvValid = true;
+  onChange(fieldName: string, event: any) {
+    switch (fieldName) {
+      case 'cardNum': 
+        this.isCardNumValid = true;
+        break;
+      case 'expDate':
+        this.isExpDateValid = true;
+        if (this.form.expDate.length === 2 && event.key !== 'Backspace') {
+          this.form.expDate += '/';
+        }
+        break;
+      case 'cvv':
+        this.isCvvValid = true;
+        break;
+      default: 
+        return;
     }
   }
 
@@ -58,7 +67,10 @@ export class CheckoutComponent {
 
   validateExpDate() {
     let dateLength: number = this.form.expDate.length;
-    let expDate: number = Number(this.form.expDate);
+    let expDateArray = Array.from(this.form.expDate);
+    expDateArray.splice(2,1); // to remove the '/'
+    let expDateStr: string = expDateArray.join('');
+    let expDate: number = Number(expDateStr);
 
     dateLength < 5 || isNaN(expDate) ? this.isExpDateValid = false : this.isExpDateValid = true;
   }

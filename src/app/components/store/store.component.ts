@@ -38,7 +38,7 @@ export class StoreComponent {
 
   detectInputClear(event: KeyboardEvent) {
     if (event.key === 'Backspace' || event.key === 'Delete') {
-      if (this.searchVal === '') this.productName = '';
+      if (this.searchVal === '') this.productName = ''; // resets search criteria
     }
   }
 

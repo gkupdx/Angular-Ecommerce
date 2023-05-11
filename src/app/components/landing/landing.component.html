@@ -11,14 +11,14 @@
                 <h4>[Login]</h4>
             </div>
 
-            <div>
+            <div class="formInput">
                 <label for="email">이메일 [Email]:</label>
                 <input [(ngModel)]="form.email" #emailField="ngModel" type="email" name="email" placeholder="Email"
                     required>
                 <p *ngIf="emailField.invalid && emailField.touched" class="formError">Email is invalid.</p>
             </div>
 
-            <div>
+            <div class="formInput">
                 <label for="password">비밀번호 [Password]:</label>
                 <input [(ngModel)]="form.password" #pwField="ngModel" type="password" name="password"
                     placeholder="Password" required>
@@ -32,7 +32,12 @@
                 <ng-container *ngIf="!isLoading()">Submit</ng-container>
             </button>
 
-            <div id="signUpInfo">
+            <div class="additionalLinks">
+                <p>비밀번호를 잊으셨나요?<br />Forgot your password?</p>
+                <a routerLink="passwordreset">비밀번호 초기화 [Reset Password]</a>
+            </div>
+
+            <div class="additionalLinks">
                 <p>아직 계정이 없으신가요?<br />Don't have an account?</p>
                 <a routerLink="register">회원 가입 [Sign Up]</a>
             </div>

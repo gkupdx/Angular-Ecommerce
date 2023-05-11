@@ -7,21 +7,6 @@
         align-items: center;
     }
 
-    .registration>div {
-        width: 100vw;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(180deg, #060d00, #222, #0f3d3e);
-        color: #f2f2f2;
-    }
-
-    h3 {
-        margin-top: 20px;
-    }
-
     section {
         background-color: #f2f2f2;
         z-index: 3;
@@ -111,34 +96,8 @@
 }
 
 @media screen and (min-width: 768px) {
-    .registration > div {
-        height: 300px;
-    }
-
-    .registration h1 {
-        font-size: 2.2rem;
-    }
-
-    .registration h3 {
-        font-size: 1.2rem;
-    }
-
     .regForm {
         width: 380px;
         height: 550px;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .registration > div {
-        height: 350px;
-    }
-
-    .registration h1 {
-        font-size: 2.5rem;
-    }
-
-    .registration h3 {
-        font-size: 1.5rem;
     }
 }

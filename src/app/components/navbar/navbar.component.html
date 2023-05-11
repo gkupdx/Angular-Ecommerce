@@ -13,12 +13,12 @@
         <ng-template [ngIf]="browserWidth >= 768">
             <div id="btnContainer">
                 <div>
-                    <button (click)="goToCart()"><fa-icon [icon]="cartIcon"></fa-icon>카트<br/>Cart</button>
+                    <button (click)="goToCart()"><fa-icon [icon]="cartIcon"></fa-icon>Cart</button>
                     <p *ngIf="isCartNonEmpty() > 0">{{ cartItemLength }}</p>
                 </div>
-                <button (click)="goToAccount()"><fa-icon [icon]="userIcon"></fa-icon>계정<br/>Account</button>
-                <button (click)="goToContact()"><fa-icon [icon]="contactIcon"></fa-icon>문의하기<br/>Contact Us</button>
-                <button (click)="requestLogout()"><fa-icon [icon]="logoutIcon"></fa-icon>로그아웃<br/>Log Out</button>
+                <button (click)="goToAccount()"><fa-icon [icon]="userIcon"></fa-icon>Account</button>
+                <button (click)="goToContact()"><fa-icon [icon]="contactIcon"></fa-icon>Contact Us</button>
+                <button (click)="requestLogout()"><fa-icon [icon]="logoutIcon"></fa-icon>Log Out</button>
             </div>
         </ng-template>
     </div>

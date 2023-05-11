@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegForm } from 'src/app/interfaces/Forms';
 import { AuthService } from 'src/app/services/auth.service';
@@ -15,6 +15,7 @@ import { faXmark, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
   ],
 })
 export class RegisterComponent {
+  @Output() formUpdateEmitter = new EventEmitter<string>;
   form: RegForm = {
     email: '',
     password: '',
@@ -39,6 +40,6 @@ export class RegisterComponent {
   }
 
   goToHome() {
-    this.router.navigate(['']);
+    this.formUpdateEmitter.emit('Login');
   }
 }

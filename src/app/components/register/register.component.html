@@ -1,9 +1,4 @@
 <div class="registration">
-    <div>
-        <h1 @slideIn>새 회원 가입</h1>
-        <h3 @slideIn>New Member Sign Up</h3>
-    </div>
-
     <section @slideIn>
         <form (ngSubmit)="regSubmit()" #regForm="ngForm" class="regForm">
             <div [ngStyle]="{'text-align': 'center' }">
@@ -43,5 +38,5 @@
         <fa-icon [icon]="xmark"></fa-icon> Passwords do not match.
     </div>
 
-    <button (click)="goToHome()" class="backBtn" @slideIn><fa-icon [icon]="arrowLeft"></fa-icon> 뒤로 가기 [Back to Home]</button>
+    <button (click)="goToHome()" class="backBtn" @slideIn><fa-icon [icon]="arrowLeft"></fa-icon> 홈페이지로 이동 [Back to Home]</button>
 </div>

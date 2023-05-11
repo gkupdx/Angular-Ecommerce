@@ -19,12 +19,21 @@ export class LandingComponent {
     email: '',
     password: '',
   }
+  currentForm: string = 'Login';
   isLoginSuccess: boolean = true;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   isLoading() {
     return this.authService.isLoading;
+  }
+
+  showForm(form: string) {
+    this.currentForm = form;
+  }
+
+  formUpdateHandler(newValue: any) {
+    this.currentForm = newValue;
   }
 
   loginSubmit() {

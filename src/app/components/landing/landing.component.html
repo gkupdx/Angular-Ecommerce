@@ -4,45 +4,51 @@
         <h3>Welcome to the Korean Store</h3>
     </div>
 
-    <section @fadeInSlow>
-        <form (ngSubmit)="loginSubmit()" #loginForm="ngForm" class="loginForm">
-            <div [ngStyle]="{'text-align': 'center'}">
-                <h2>로그인</h2>
-                <h4>[Login]</h4>
-            </div>
+    <ng-container *ngIf="currentForm === 'Login'">
+        <section @fadeInSlow>
+            <form (ngSubmit)="loginSubmit()" #loginForm="ngForm" class="loginForm">
+                <div [ngStyle]="{'text-align': 'center'}">
+                    <h2>로그인</h2>
+                    <h4>[Login]</h4>
+                </div>
+    
+                <div class="formInput">
+                    <label for="email">이메일 [Email]:</label>
+                    <input [(ngModel)]="form.email" #emailField="ngModel" type="email" name="email" placeholder="Email"
+                        required>
+                    <p *ngIf="emailField.invalid && emailField.touched" class="formError">Email is invalid.</p>
+                </div>
+    
+                <div class="formInput">
+                    <label for="password">비밀번호 [Password]:</label>
+                    <input [(ngModel)]="form.password" #pwField="ngModel" type="password" name="password"
+                        placeholder="Password" required>
+                    <p *ngIf="pwField.invalid && pwField.touched" class="formError">Password is invalid.</p>
+                </div>
+    
+                <span [ngClass]="!isLoginSuccess ? 'loginFail' : 'hidden'">Incorrect email or password.</span>
+    
+                <button [ngClass]="loginForm.form.invalid ? 'btnNotAllowed' : 'submitBtn'" type="submit">
+                    <ng-container *ngIf="isLoading()">Loading...</ng-container>
+                    <ng-container *ngIf="!isLoading()">Submit</ng-container>
+                </button>
+    
+                <div class="additionalLinks">
+                    <p>비밀번호를 잊으셨나요?<br />Forgot your password?</p>
+                    <a routerLink="passwordreset">비밀번호 초기화 [Reset Password]</a>
+                </div>
+    
+                <div class="additionalLinks">
+                    <p>아직 계정이 없으신가요?<br />Don't have an account?</p>
+                    <a (click)="showForm('Register')">회원 가입 [Sign Up]</a>
+                </div>
+            </form>
+        </section>
+    </ng-container>
 
-            <div class="formInput">
-                <label for="email">이메일 [Email]:</label>
-                <input [(ngModel)]="form.email" #emailField="ngModel" type="email" name="email" placeholder="Email"
-                    required>
-                <p *ngIf="emailField.invalid && emailField.touched" class="formError">Email is invalid.</p>
-            </div>
-
-            <div class="formInput">
-                <label for="password">비밀번호 [Password]:</label>
-                <input [(ngModel)]="form.password" #pwField="ngModel" type="password" name="password"
-                    placeholder="Password" required>
-                <p *ngIf="pwField.invalid && pwField.touched" class="formError">Password is invalid.</p>
-            </div>
-
-            <span [ngClass]="!isLoginSuccess ? 'loginFail' : 'hidden'">Incorrect email or password.</span>
-
-            <button [ngClass]="loginForm.form.invalid ? 'btnNotAllowed' : 'submitBtn'" type="submit">
-                <ng-container *ngIf="isLoading()">Loading...</ng-container>
-                <ng-container *ngIf="!isLoading()">Submit</ng-container>
-            </button>
-
-            <div class="additionalLinks">
-                <p>비밀번호를 잊으셨나요?<br />Forgot your password?</p>
-                <a routerLink="passwordreset">비밀번호 초기화 [Reset Password]</a>
-            </div>
-
-            <div class="additionalLinks">
-                <p>아직 계정이 없으신가요?<br />Don't have an account?</p>
-                <a routerLink="register">회원 가입 [Sign Up]</a>
-            </div>
-        </form>
-    </section>
+    <ng-container *ngIf="currentForm === 'Register'">
+        <app-register (formUpdateEmitter)="formUpdateHandler($event)"></app-register>
+    </ng-container>
 
     <p id="copyright" @fadeInSlow>&copy; 2023 Grady J. Ku</p>
 </div>

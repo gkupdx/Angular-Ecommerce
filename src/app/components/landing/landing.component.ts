@@ -37,11 +37,11 @@ export class LandingComponent {
   }
 
   loginSubmit() {
-    // this.authService.login(this.form);
-    // this.isLoginSuccess = this.authService.isAuthenticated;
+    this.authService.login(this.form);
+    this.isLoginSuccess = this.authService.isAuthenticated;
 
-    /* FOR TESTING PURPOSES */
-    this.authService.isAuthenticated = true;
-    this.router.navigate(['store']);
+    // /* FOR TESTING PURPOSES */
+    // this.authService.isAuthenticated = true;
+    // this.router.navigate(['store']);
   }
 }

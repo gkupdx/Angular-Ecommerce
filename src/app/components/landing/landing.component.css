@@ -27,6 +27,11 @@
       color: #222;
    }
 
+   section {
+      background-color: #f2f2f2;
+      z-index: 3;
+   }
+
    .loginForm {
       width: 320px;
       height: 550px;
@@ -74,20 +79,6 @@
       height: 35px;
    }
 
-   .loginFail {
-      visibility: visible;
-      width: 250px;
-      height: 5px;
-      font-size: 0.9rem;
-      color: red;
-      text-align: center;
-   }
-
-   .hidden {
-      visibility: hidden;
-      height: 5px;
-   }
-
    .additionalLinks {
       width: 250px;
       display: flex;
@@ -122,6 +113,21 @@
       border-radius: 5px;
    }
 
+   #incorrectLogin {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      height: 50px;
+      background-color: rgba(225, 0, 0, 0.2);
+      color: red;
+      font-size: 0.9rem;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom: 1px solid red;
+      z-index: 2;
+   }
+
    #copyright {
       margin-top: 50px;
       margin-bottom: 50px;
@@ -154,7 +160,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-   .landing > div {
+   .landing>div {
       height: 425px;
    }
 

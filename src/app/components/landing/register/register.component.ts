@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { RegForm } from 'src/app/interfaces/Forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { slideIn, slideDown } from 'src/app/utilities/animations';
-import { faXmark, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +22,6 @@ export class RegisterComponent {
   }
   doPasswordsMatch: boolean = true;
   arrowLeft = faArrowLeft;
-  xmark = faXmark;
 
   constructor(private authService: AuthService) {}
 

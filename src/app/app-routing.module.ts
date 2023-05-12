@@ -8,12 +8,10 @@ import { CheckoutComponent } from './components/cart/checkout/checkout.component
 import { OrdercompleteComponent } from './components/cart/checkout/revieworder/ordercomplete/ordercomplete.component';
 import { RevieworderComponent } from './components/cart/checkout/revieworder/revieworder.component';
 import { LandingComponent } from './components/landing/landing.component';
-import { RegisterComponent } from './components/register/register.component';
 import { StoreComponent } from './components/store/store.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
-  { path: 'register', component: RegisterComponent },
   { path: 'store', component: StoreComponent },
   { path: 'account', component: AccountComponent },
   { path: 'contact', component: ContactComponent },

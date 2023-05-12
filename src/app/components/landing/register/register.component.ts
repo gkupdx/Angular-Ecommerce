@@ -1,5 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { RegForm } from 'src/app/interfaces/Forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { slideIn, slideDown } from 'src/app/utilities/animations';
@@ -25,7 +24,7 @@ export class RegisterComponent {
   arrowLeft = faArrowLeft;
   xmark = faXmark;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   isLoading() {
     return this.authService.isLoading;

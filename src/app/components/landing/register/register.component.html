@@ -1,7 +1,7 @@
 <div class="registration">
     <section @slideIn>
         <form (ngSubmit)="regSubmit()" #regForm="ngForm" class="regForm">
-            <div>
+            <div [ngStyle]="{'text-align': 'center' }">
                 <h2>회원 가입</h2>
                 <h4>[Register]</h4>
             </div>

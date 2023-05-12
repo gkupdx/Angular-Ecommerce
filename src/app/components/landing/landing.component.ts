@@ -38,7 +38,9 @@ export class LandingComponent {
 
   loginSubmit() {
     this.authService.login(this.form);
-    this.isLoginSuccess = this.authService.isAuthenticated;
+    if (this.authService.isAuthenticated === true) {
+      this.isLoginSuccess = true;
+    }
 
     // /* FOR TESTING PURPOSES */
     // this.authService.isAuthenticated = true;

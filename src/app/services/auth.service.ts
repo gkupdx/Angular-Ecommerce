@@ -2,8 +2,12 @@ import { Injectable } from '@angular/core';
 import { LoginForm, RegForm, UpdatePassForm } from '../interfaces/Forms';
 import { Router } from '@angular/router';
 
+interface PwdResetForm {
+  email: string,
+}
+
 // Firebase imports
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updatePassword, signOut } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updatePassword, signOut, sendPasswordResetEmail } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +45,19 @@ export class AuthService {
     .catch((error) => {
       this.isLoading = false;
       this.isAuthenticated = false;
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    })
+  }
+
+  resetPassword(form: PwdResetForm) {
+    const auth = getAuth();
+    sendPasswordResetEmail(auth, form.email)
+    .then(() => {
+      this.isLoading = false;
+    })
+    .catch((error) => {
+      this.isLoading = false;
       const errorCode = error.code;
       const errorMessage = error.message;
     })

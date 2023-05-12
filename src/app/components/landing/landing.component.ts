@@ -41,6 +41,8 @@ export class LandingComponent {
     this.authService.login(this.form);
     if (this.authService.isAuthenticated === true) {
       this.isLoginSuccess = true;
+    } else {
+      this.isLoginSuccess = false;
     }
 
     // /* FOR TESTING PURPOSES */

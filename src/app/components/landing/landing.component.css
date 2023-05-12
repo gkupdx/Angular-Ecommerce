@@ -93,16 +93,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-size: 0.75rem;
+      font-size: 0.77rem;
+      color: #222;
    }
 
    .additionalLinks p {
-      color: dimgrey;
+      font-weight: bold;
    }
 
    .additionalLinks a {
       font-family: 'Poppins', sans-serif;
-      color: #222;
+      text-decoration: underline;
+      margin-top: 5px;
    }
 
    .additionalLinks a:hover {

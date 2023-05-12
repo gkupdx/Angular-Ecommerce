@@ -10,7 +10,7 @@ import { membershipReducer } from './state/account.reducer';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterComponent } from './components/landing/register/register.component';
 import { StoreComponent } from './components/store/store.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -27,6 +27,7 @@ import { OrdercompleteComponent } from './components/cart/checkout/revieworder/o
 import { PanelComponent } from './components/navbar/panel/panel.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { PasswordresetComponent } from './components/landing/passwordreset/passwordreset.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ContactComponent } from './components/contact/contact.component';
     PanelComponent,
     ModalComponent,
     ContactComponent,
+    PasswordresetComponent,
   ],
   imports: [
     BrowserModule,

@@ -230,7 +230,7 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        background: linear-gradient(180deg, #f2f2f2 10%, #222 100%);
+        background: linear-gradient(170deg, #f2f2f2 10%, grey 50%, dimgrey 60%, grey 100%);
         border: 1px solid lightgrey;
     }
 
@@ -241,17 +241,17 @@
 
     #grid h3 {
         margin-top: 10px;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         font-weight: bold;
-        color: #222;
-        text-shadow: 1px 1px green;
+        color: #f2f2f2;
+        text-shadow: 2px 2px green;
     }
 
     #grid p {
         margin-top: 10px;
         font-size: 2rem;
         font-weight: 600;
-        color: #222;
-        text-shadow: 1px 1px green;
+        color: #f2f2f2;
+        text-shadow: 2px 2px green;
     }
 }

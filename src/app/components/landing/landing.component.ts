@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginForm } from 'src/app/interfaces/Forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { fadeInSlow, slideDownSlow } from 'src/app/utilities/animations';
+import { fadeInSlow, slideDown, slideDownSlow } from 'src/app/utilities/animations';
 
 import { Router } from '@angular/router';
 
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing.component.css'],
   animations: [
     fadeInSlow,
+    slideDown,
     slideDownSlow,
   ],
 })

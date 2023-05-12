@@ -9,7 +9,7 @@
 
    .landing>div {
       width: 100vw;
-      height: 200px;
+      height: 230px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -58,7 +58,7 @@
       height: 35px;
       background-color: #f2f2f2;
       font-family: 'Poppins', sans-serif;
-      border: 1px solid #222;
+      border: 1px solid dimgrey;
       border-radius: 4px;
       padding: 5px;
    }
@@ -130,15 +130,15 @@
 
 @media screen and (min-width: 768px) {
    .landing>div {
-      height: 300px;
+      height: 350px;
    }
 
    .landing h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
    }
 
    .landing h3 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
    }
 
    .loginForm {
@@ -151,12 +151,23 @@
    .landing>div {
       height: 350px;
    }
+}
+
+@media screen and (min-width: 1280px) {
+   .landing > div {
+      height: 425px;
+   }
 
    .landing h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
    }
 
    .landing h3 {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
+   }
+
+   .loginForm {
+      width: 420px;
+      height: 600px;
    }
 }

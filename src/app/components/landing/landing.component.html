@@ -35,7 +35,7 @@
     
                 <div class="additionalLinks">
                     <p>비밀번호를 잊으셨나요?<br />Forgot your password?</p>
-                    <a routerLink="passwordreset">비밀번호 초기화 [Reset Password]</a>
+                    <a (click)="showForm('Password Reset')">비밀번호 초기화 [Reset Password]</a>
                 </div>
     
                 <div class="additionalLinks">
@@ -48,6 +48,10 @@
 
     <ng-container *ngIf="currentForm === 'Register'">
         <app-register (formUpdateEmitter)="formUpdateHandler($event)"></app-register>
+    </ng-container>
+
+    <ng-container *ngIf="currentForm === 'Password Reset'">
+        <app-passwordreset (formUpdateEmitter)="formUpdateHandler($event)"></app-passwordreset>
     </ng-container>
 
     <p id="copyright" @fadeInSlow>&copy; 2023 Grady J. Ku</p>

@@ -14,6 +14,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, up
 })
 export class AuthService {
   isAuthenticated: boolean = false;
+  isLoginSuccess: boolean = true;
   isLoading: boolean = false;
   isPasswordMatch: boolean = false;
   isPasswordUpdated: boolean = false;
@@ -31,7 +32,6 @@ export class AuthService {
 
   login(form: LoginForm) {
     if (this.isLoading) return;
-
     this.isLoading = true;
 
     const auth = getAuth();
@@ -44,6 +44,7 @@ export class AuthService {
       })
       .catch((error) => {
         this.isLoading = false;
+        this.isLoginSuccess = false;
         this.isAuthenticated = false;
         const errorCode = error.code;
         const errorMessage = error.message;

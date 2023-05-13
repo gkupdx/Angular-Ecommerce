@@ -152,12 +152,12 @@
     }
 
     #addBtn {
-        width: 195px;
-        height: 45px;
+        width: 215px;
+        height: 50px;
         font-family: 'Poppins', sans-serif;
         font-weight: bold;
         color: #f2f2f2;
-        background-color: darkgreen;
+        background-color: green;
         border: none;
         border-radius: 5px;
         align-self: flex-end;
@@ -173,8 +173,8 @@
 
     #membershipDisabled {
         cursor: not-allowed;
-        width: 195px;
-        height: 45px;
+        width: 215px;
+        height: 50px;
         font-family: 'Poppins', sans-serif;
         font-weight: bold;
         color: grey;
@@ -251,26 +251,26 @@
     }
 
     .newRelease h4 {
-        width: 200px;
+        width: 350px;
         grid-column: 1 / span 2;
         grid-row: 3;
-        background-color: green;
+        background-color: #222;
         font-size: 2.5rem;
         text-align: center;
-        border-radius: 50%;
-        box-shadow: 0 1px 10px 0 #000;
+        box-shadow: 0 3px 5px 0 #000;
         margin: auto;
     }
 
     #addBtn {
         grid-column: 1 / span 2;
         grid-row: 4;
-        width: calc(100% - 60px);
+        width: 350px;
         height: 55px;
         font-family: 'Poppins', sans-serif;
         font-weight: bold;
+        font-size: 1rem;
         color: #f2f2f2;
-        background-color: darkgreen;
+        background-color: #222;
         border: 1px solid green;
         border-radius: 5px;
         margin: auto;
@@ -288,10 +288,11 @@
         grid-column: 1 / span 2;
         grid-row: 4;
         cursor: not-allowed;
-        width: calc(100% - 60px);
+        width: 350px;
         height: 55px;
         font-family: 'Poppins', sans-serif;
         font-weight: bold;
+        font-size: 1rem;
         color: grey;
         background-color: inherit;
         border: 1px solid grey;
@@ -376,5 +377,24 @@
 
     #membershipDisabled {
         grid-column: 1 / span 4;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    div {
+        width: 100vw;
+        /* background-color: #222; */
+    }
+
+    .newRelease {
+        max-width: 1366px;
+    }
+
+    #addBtn {
+        max-width: 1306px;
+    }
+
+    #membershipDisabled {
+        max-width: 1306px;
     }
 }

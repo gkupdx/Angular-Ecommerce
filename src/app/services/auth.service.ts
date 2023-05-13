@@ -51,6 +51,9 @@ export class AuthService {
   }
 
   resetPassword(form: PwdResetForm) {
+    if (this.isLoading) return;
+    this.isLoading = true;
+
     const auth = getAuth();
     sendPasswordResetEmail(auth, form.email)
       .then(() => {
@@ -61,6 +64,7 @@ export class AuthService {
         const errorCode = error.code;
         const errorMessage = error.message;
       })
+
   }
 
   updatePassword(form: UpdatePassForm): boolean {

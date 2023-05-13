@@ -39,6 +39,7 @@ export class AuthService {
       .then((userCredential) => {
         const user = userCredential.user;
         this.isLoading = false;
+        if (this.isLoginSuccess === false) this.isLoginSuccess = true;
         this.isAuthenticated = true;
         this.router.navigate(['store']);
       })

@@ -102,6 +102,7 @@ export class AuthService {
         this.isAuthenticated = false;
         const errorCode = error.code;
         const errorMessage = error.message;
+        console.log(errorMessage);
       })
   }
 

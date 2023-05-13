@@ -23,7 +23,7 @@ export class PasswordresetComponent {
   isLinkSent: boolean = false;
   arrowLeft = faArrowLeft;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
 
   isLoading() {
     return this.authService.isLoading;

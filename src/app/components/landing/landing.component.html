@@ -43,7 +43,7 @@
             </form>
         </section>
 
-        <section *ngIf="!isLoginSuccess" id="incorrectLogin" @slideDown>
+        <section *ngIf="!isLoginSuccess()" id="incorrectLogin" @slideDown>
             Incorrect email or password.
         </section>
     </ng-container>

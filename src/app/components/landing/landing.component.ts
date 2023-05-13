@@ -21,12 +21,15 @@ export class LandingComponent {
     password: '',
   }
   currentForm: string = 'Login';
-  isLoginSuccess: boolean = true;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   isLoading() {
     return this.authService.isLoading;
+  }
+
+  isLoginSuccess() {
+    return this.authService.isLoginSuccess;
   }
 
   showForm(form: string) {
@@ -39,11 +42,6 @@ export class LandingComponent {
 
   loginSubmit() {
     this.authService.login(this.form);
-    if (this.authService.isAuthenticated === true) {
-      this.isLoginSuccess = true;
-    } else {
-      this.isLoginSuccess = false;
-    }
 
     // /* FOR TESTING PURPOSES */
     // this.authService.isAuthenticated = true;

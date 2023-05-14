@@ -313,7 +313,7 @@
 
 @media screen and (min-width: 1024px) {
     .newRelease {
-        height: 700px;
+        height: 650px;
     }
 
     .newRelease img {
@@ -334,15 +334,17 @@
     }
 
     .newRelease h4 {
-        width: 300px;
+        width: 400px;
         grid-column: 1 / span 3;
     }
 
     #addBtn {
+        width: 400px;
         grid-column: 1 / span 3;
     }
 
     #membershipDisabled {
+        width: 400px;
         grid-column: 1 / span 3;
     }
 }
@@ -358,6 +360,10 @@
 }
 
 @media screen and (min-width: 1190px) {
+    .newRelease {
+        height: 700px;
+    }
+    
     .newRelease img {
         grid-column: 1 / span 3;
         height: 350px;
@@ -380,10 +386,10 @@
     }
 }
 
-@media screen and (min-width: 1366px) {
+/* @media screen and (min-width: 1366px) {
     div {
         width: 100vw;
-        /* background-color: #222; */
+        background-color: #222;
     }
 
     .newRelease {
@@ -397,4 +403,4 @@
     #membershipDisabled {
         max-width: 1306px;
     }
-}
+} */

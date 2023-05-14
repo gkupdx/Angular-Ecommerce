@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoginForm, RegForm, UpdatePassForm } from '../interfaces/Forms';
+import { database } from 'firebase.config';
+import { ref, set } from 'firebase/database';
 import { Router } from '@angular/router';
 
 interface PwdResetForm {
@@ -99,6 +101,15 @@ export class AuthService {
     createUserWithEmailAndPassword(auth, form.email, form.password)
       .then((userCredential) => {
         const user = userCredential.user;
+        
+        // Create a reference to our database
+        const reference = ref(database, 'users/');
+        // Write to our database using the created reference
+        set(reference, {
+          email: form.email,
+          password: form.password, 
+        });
+
         this.isLoading = false;
         this.isAuthenticated = true;
         this.router.navigate(['store']);

@@ -12,7 +12,7 @@ export const firebaseConfig = {
   storageBucket: "angular-ecommerce-22bbe.appspot.com",
   messagingSenderId: "306952987659",
   appId: "1:306952987659:web:235a0f120a9f8b5018930e",
-  databaseURL: "https://angular-ecommerce-22bbe-default-rtdb.firebaseio.com",
+  databaseURL: "https://angular-ecommerce-22bbe.firebaseio.com",
 };
 
 // Initialize Firebase

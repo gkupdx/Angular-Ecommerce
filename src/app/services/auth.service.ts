@@ -114,6 +114,9 @@ export class AuthService {
             this.isAuthenticated = true;
             this.router.navigate(['store']);
           })
+          .catch((error) => {
+            alert(error);
+          })
       })
       .catch((error) => {
         this.isLoading = false;

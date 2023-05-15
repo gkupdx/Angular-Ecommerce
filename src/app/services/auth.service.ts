@@ -115,7 +115,7 @@ export class AuthService {
             this.router.navigate(['store']);
           })
           .catch((error) => {
-            alert(error);
+            console.log(error);
           })
       })
       .catch((error) => {

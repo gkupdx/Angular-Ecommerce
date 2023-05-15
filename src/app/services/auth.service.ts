@@ -101,18 +101,19 @@ export class AuthService {
     createUserWithEmailAndPassword(auth, form.email, form.password)
       .then((userCredential) => {
         const user = userCredential.user;
-        
+
         // Create a reference to our database
-        const reference = ref(database, 'users/');
+        const reference = ref(database, 'users/' + user.uid);
         // Write to our database using the created reference
         set(reference, {
           email: form.email,
-          password: form.password, 
-        });
-
-        this.isLoading = false;
-        this.isAuthenticated = true;
-        this.router.navigate(['store']);
+          password: form.password,
+        })
+          .then(() => {
+            this.isLoading = false;
+            this.isAuthenticated = true;
+            this.router.navigate(['store']);
+          })
       })
       .catch((error) => {
         this.isLoading = false;

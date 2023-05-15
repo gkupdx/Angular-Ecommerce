@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoginForm, RegForm, UpdatePassForm } from '../interfaces/Forms';
 import { database } from 'firebase.config';
-import { ref, set } from 'firebase/database';
+import { ref, update } from 'firebase/database';
 import { Router } from '@angular/router';
 
 interface PwdResetForm {
@@ -105,7 +105,7 @@ export class AuthService {
         // Create a reference to our database
         const reference = ref(database, 'users/' + user.uid);
         // Write to our database using the created reference
-        set(reference, {
+        update(reference, {
           email: form.email,
           password: form.password,
         })

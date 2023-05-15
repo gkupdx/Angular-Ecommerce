@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoginForm, RegForm, UpdatePassForm } from '../interfaces/Forms';
 import { database } from 'firebase.config';
-import { ref, update } from 'firebase/database';
+import { ref, set, update } from 'firebase/database';
 import { Router } from '@angular/router';
 
 interface PwdResetForm {
@@ -97,37 +97,39 @@ export class AuthService {
     if (this.isLoading) return;
     this.isLoading = true;
 
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, form.email, form.password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        this.isLoading = false;
-        this.isAuthenticated = true;
-        this.router.navigate(['store']);
-      //   // Create a reference to our database
-      //   const reference = ref(database, 'users/' + user.uid);
-      //   // Write to our database using the created reference
-      //   update(reference, {
-      //     email: form.email,
-      //     password: form.password,
-      //   })
-      //     .then(() => {
-      //       this.isLoading = false;
-      //       this.isAuthenticated = true;
-      //       this.router.navigate(['store']);
-      //     })
-      //     .catch((error) => {
-      //       console.log(error);
-      //     })
-      // })
-      })
-      .catch((error) => {
-        this.isLoading = false;
-        this.isAuthenticated = false;
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      })
+    const reference = ref(database, 'users/' + 1);
+    set(reference, {
+      email: form.email,
+      password: form.password
+    });
+    // const auth = getAuth();
+    // createUserWithEmailAndPassword(auth, form.email, form.password)
+    //   .then((userCredential) => {
+    //     const user = userCredential.user;
+
+    //     // Create a reference to our database
+    //     const reference = ref(database, 'users/' + user.uid);
+    //     // Write to our database using the created reference
+    //     update(reference, {
+    //       email: form.email,
+    //       password: form.password,
+    //     })
+    //       .then(() => {
+    //         this.isLoading = false;
+    //         this.isAuthenticated = true;
+    //         this.router.navigate(['store']);
+    //       })
+    //       .catch((error) => {
+    //         console.log(error);
+    //       })
+    //   })
+    //   .catch((error) => {
+    //     this.isLoading = false;
+    //     this.isAuthenticated = false;
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     console.log(errorMessage);
+    //   })
   }
 
   reauthenticate() {

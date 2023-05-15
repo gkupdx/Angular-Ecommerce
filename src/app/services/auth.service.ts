@@ -93,43 +93,38 @@ export class AuthService {
     return this.isPasswordUpdated;
   }
 
+  async registerUserInDatabase(form: RegForm, uid: string) {
+    const id = Number(uid);
+    // create a reference to the database
+    const reference = ref(database, 'users/' + id);
+    // wait for the write to complete before proceeding
+    await set(reference, {
+      email: form.email,
+      password: form.password,
+    });
+  }
+
   register(form: RegForm) {
     if (this.isLoading) return;
     this.isLoading = true;
 
-    const reference = ref(database, 'users/' + 1);
-    set(reference, {
-      email: form.email,
-      password: form.password
-    });
-    // const auth = getAuth();
-    // createUserWithEmailAndPassword(auth, form.email, form.password)
-    //   .then((userCredential) => {
-    //     const user = userCredential.user;
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, form.email, form.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
 
-    //     // Create a reference to our database
-    //     const reference = ref(database, 'users/' + user.uid);
-    //     // Write to our database using the created reference
-    //     update(reference, {
-    //       email: form.email,
-    //       password: form.password,
-    //     })
-    //       .then(() => {
-    //         this.isLoading = false;
-    //         this.isAuthenticated = true;
-    //         this.router.navigate(['store']);
-    //       })
-    //       .catch((error) => {
-    //         console.log(error);
-    //       })
-    //   })
-    //   .catch((error) => {
-    //     this.isLoading = false;
-    //     this.isAuthenticated = false;
-    //     const errorCode = error.code;
-    //     const errorMessage = error.message;
-    //     console.log(errorMessage);
-    //   })
+        this.registerUserInDatabase(form, user.uid);
+        this.isLoading = false;
+        this.isAuthenticated = true;
+        this.router.navigate(['store']);
+      })
+      .catch((error) => {
+        this.isLoading = false;
+        this.isAuthenticated = false;
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      })
   }
 
   reauthenticate() {

@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { LoginForm, RegForm, UpdatePassForm } from '../interfaces/Forms';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { incrementCounter } from '../state/uid.actions';
 import { Router } from '@angular/router';
 
 interface PwdResetForm {
@@ -19,8 +16,6 @@ import { ref, set, update } from 'firebase/database';
   providedIn: 'root'
 })
 export class AuthService {
-  uidState$: Observable<number>;
-  uidVal: number = 1;
   isAuthenticated: boolean = false;
   isLoginSuccess: boolean = true;
   isLoading: boolean = false;
@@ -28,12 +23,7 @@ export class AuthService {
   isPasswordUpdated: boolean = false;
   isMembershipActive: boolean = true;
 
-  constructor(private store: Store<{ uidState: number}>, private router: Router) {
-    this.uidState$ = store.select('uidState');
-    this.uidState$.subscribe((value: number) => {
-      this.uidVal = value;
-    });
-  }
+  constructor(private router: Router) {}
 
   getUserEmail(): string | null | undefined {
     const auth = getAuth();
@@ -104,9 +94,9 @@ export class AuthService {
     return this.isPasswordUpdated;
   }
 
-  registerUserInDatabase(form: RegForm) {
+  registerUserInDatabase(form: RegForm, uid: string) {
     // create a reference to the "users" collection
-    const reference = ref(database, 'users/' + this.uidVal);
+    const reference = ref(database, 'users/' + uid);
     // write new user data to the "users" collection
     set(reference, {
       email: form.email,
@@ -117,14 +107,13 @@ export class AuthService {
   register(form: RegForm) {
     if (this.isLoading) return;
     this.isLoading = true;
-    this.store.dispatch(incrementCounter());
 
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, form.email, form.password)
       .then((userCredential) => {
         const user = userCredential.user;
 
-        this.registerUserInDatabase(form);
+        this.registerUserInDatabase(form, user.uid);
         this.isLoading = false;
         this.isAuthenticated = true;
         this.router.navigate(['store']);

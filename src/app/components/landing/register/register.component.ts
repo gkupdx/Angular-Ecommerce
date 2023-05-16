@@ -20,6 +20,7 @@ export class RegisterComponent {
     password: '',
     passConfirm: '',
   }
+  isPasswordLengthValid: boolean = true;
   doPasswordsMatch: boolean = true;
   arrowLeft = faArrowLeft;
 
@@ -32,6 +33,10 @@ export class RegisterComponent {
   regSubmit() {
     if (this.form.password !== this.form.passConfirm) {
       this.doPasswordsMatch = false;
+      return;
+    }
+    if (this.form.password.length < 6) {
+      this.isPasswordLengthValid = false;
       return;
     }
     this.authService.register(this.form);

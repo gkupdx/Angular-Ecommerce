@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LoginForm, RegForm, UpdatePassForm } from '../interfaces/Forms';
-import { database } from 'firebase.config';
-import { ref, set, update } from 'firebase/database';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 interface PwdResetForm {
@@ -10,11 +10,16 @@ interface PwdResetForm {
 
 // Firebase imports
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updatePassword, signOut, sendPasswordResetEmail } from 'firebase/auth';
+import { database } from 'firebase.config';
+import { ref, set, update } from 'firebase/database';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  uidState$: Observable<number>;
+  uidVal: number = 1;
   isAuthenticated: boolean = false;
   isLoginSuccess: boolean = true;
   isLoading: boolean = false;
@@ -22,7 +27,12 @@ export class AuthService {
   isPasswordUpdated: boolean = false;
   isMembershipActive: boolean = true;
 
-  constructor(private router: Router) { }
+  constructor(private store: Store<{ uidState: number}>, private router: Router) {
+    this.uidState$ = store.select('uidState');
+    this.uidState$.subscribe((value: number) => {
+      this.uidVal = value;
+    });
+  }
 
   getUserEmail(): string | null | undefined {
     const auth = getAuth();
@@ -93,11 +103,10 @@ export class AuthService {
     return this.isPasswordUpdated;
   }
 
-  async registerUserInDatabase(form: RegForm, uid: string) {
-    const id = Number(uid);
-    // create a reference to the database
-    const reference = ref(database, 'users/' + id);
-    // wait for the write to complete before proceeding
+  async registerUserInDatabase(form: RegForm) {
+    // create a reference to the "users" collection
+    const reference = ref(database, 'users/' + this.uidVal);
+    // write new user data to the "users" collection
     await set(reference, {
       email: form.email,
       password: form.password,
@@ -113,7 +122,7 @@ export class AuthService {
       .then((userCredential) => {
         const user = userCredential.user;
 
-        this.registerUserInDatabase(form, user.uid);
+        this.registerUserInDatabase(form);
         this.isLoading = false;
         this.isAuthenticated = true;
         this.router.navigate(['store']);

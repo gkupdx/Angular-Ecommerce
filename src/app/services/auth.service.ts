@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { LoginForm, RegForm, UpdatePassForm } from '../interfaces/Forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { incrementCounter } from '../state/uid.actions';
 import { Router } from '@angular/router';
 
 interface PwdResetForm {
@@ -103,19 +104,20 @@ export class AuthService {
     return this.isPasswordUpdated;
   }
 
-  async registerUserInDatabase(form: RegForm) {
+  registerUserInDatabase(form: RegForm) {
     // create a reference to the "users" collection
     const reference = ref(database, 'users/' + this.uidVal);
     // write new user data to the "users" collection
-    await set(reference, {
+    set(reference, {
       email: form.email,
       password: form.password,
-    });
+    })
   }
 
   register(form: RegForm) {
     if (this.isLoading) return;
     this.isLoading = true;
+    this.store.dispatch(incrementCounter());
 
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, form.email, form.password)

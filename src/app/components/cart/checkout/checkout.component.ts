@@ -88,7 +88,7 @@ export class CheckoutComponent {
     this.validateCvv();
 
     if (this.isCardNumValid && this.isExpDateValid && this.isCvvValid) {
-      this.router.navigate(['revieworder']);
+      this.router.navigate(['review-order']);
     }
   }
 

@@ -32,7 +32,7 @@ export class AccountComponent {
   }
 
   changePassword() {
-    this.router.navigate(['pwdchange']);
+    this.router.navigate(['password-change']);
   }
 
   requestMembershipChange() {

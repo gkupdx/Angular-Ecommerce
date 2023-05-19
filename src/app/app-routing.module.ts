@@ -15,11 +15,11 @@ const routes: Routes = [
   { path: 'store', component: StoreComponent },
   { path: 'account', component: AccountComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'pwdchange', component: PasswordchangeComponent },
+  { path: 'password-change', component: PasswordchangeComponent },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
-  { path: 'revieworder', component: RevieworderComponent },
-  { path: 'ordercomplete', component: OrdercompleteComponent },
+  { path: 'review-order', component: RevieworderComponent },
+  { path: 'order-complete', component: OrdercompleteComponent },
 ];
 
 @NgModule({

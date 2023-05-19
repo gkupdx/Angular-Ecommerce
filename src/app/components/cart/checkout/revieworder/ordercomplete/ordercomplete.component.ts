@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { slideIn } from 'src/app/utilities/animations';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -12,14 +12,10 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
   ]
 })
 export class OrdercompleteComponent {
-  orderNumber: number = 0;
+  @Input() orderKey: string | null;
   backArrow = faArrowLeft;
 
-  constructor(private router: Router) {
-    let min = Math.ceil(10000);
-    let max = Math.floor(20000);
-    this.orderNumber = Math.floor(Math.random() * (max - min) + min);
-  }
+  constructor(private router: Router) {}
 
   goToStore() {
     this.router.navigate(['store']);

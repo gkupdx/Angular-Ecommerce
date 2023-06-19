@@ -35,6 +35,10 @@ export class AccountComponent {
     this.router.navigate(['password-change']);
   }
 
+  viewOrderHistory() {
+    this.router.navigate(['order-history']);
+  }
+
   requestMembershipChange() {
     this.openModal();
   }

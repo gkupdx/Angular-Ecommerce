@@ -12,6 +12,7 @@
         </div>
 
         <div class="container">
+            <button (click)="viewOrderHistory()" class="primaryBtn">View Order History</button>
             <button (click)="changePassword()" class="primaryBtn">Change Password</button>
             <button (click)="requestMembershipChange()" [ngClass]="membershipVal ? 'dangerBtn' : 'primaryBtn'">{{ membershipVal ? 'Deactivate Membership' : 'Activate Membership'}}</button>
         </div>

@@ -1,0 +1,23 @@
+<div class="orderhistory" @slideIn>
+    <section class="cardTall">
+        <div [ngStyle]="{'text-align': 'center'}">
+            <h2>주문 내역</h2>
+            <h4>[Order History]</h4>
+        </div>
+    
+        <section *ngIf="orderKeys.length > 0" id="orderhistory">
+            <ng-container *ngFor="let key of orderKeys;">
+                <p>Order Key: {{ key }}</p>
+                <!-- if current order key matches the key in the Map, display products -->
+                <!-- else, don't display anything -->
+                <div *ngFor="let item of orderProducts | keyvalue">
+                    <ng-container *ngIf="key === item.key">
+                        {{ item.value }}
+                    </ng-container>
+                </div>
+            </ng-container>
+        </section>
+    
+        <button (click)="goToPrev()" class="backBtn"><fa-icon [icon]="arrowLeft"></fa-icon> 계정으로 이동 [Back to Account]</button>
+    </section>
+</div>

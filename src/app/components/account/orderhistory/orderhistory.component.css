@@ -1,0 +1,25 @@
+@media screen and (min-width: 390px) {
+    .orderhistory {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        color: #222;
+    }
+
+    .cardTall {
+        position: relative;
+        width: 80vw;
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+        box-shadow: 0 0 2px #000;
+        margin: 40px 20px;
+    }
+}

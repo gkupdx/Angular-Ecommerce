@@ -28,6 +28,7 @@ import { PanelComponent } from './components/navbar/panel/panel.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PasswordresetComponent } from './components/landing/passwordreset/passwordreset.component';
+import { OrderhistoryComponent } from './components/account/orderhistory/orderhistory.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PasswordresetComponent } from './components/landing/passwordreset/passw
     ModalComponent,
     ContactComponent,
     PasswordresetComponent,
+    OrderhistoryComponent,
   ],
   imports: [
     BrowserModule,

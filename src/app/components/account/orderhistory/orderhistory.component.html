@@ -4,20 +4,28 @@
             <h2>주문 내역</h2>
             <h4>[Order History]</h4>
         </div>
-    
-        <section *ngIf="orderKeys.length > 0" id="orderhistory">
-            <ng-container *ngFor="let key of orderKeys;">
-                <p>Order Key: {{ key }}</p>
-                <!-- if current order key matches the key in the Map, display products -->
-                <!-- else, don't display anything -->
-                <div *ngFor="let item of orderProducts | keyvalue">
-                    <ng-container *ngIf="key === item.key">
-                        {{ item.value }}
-                    </ng-container>
+
+        <div>
+            <h5>Order Keys:</h5>
+            <section *ngIf="orderKeys.length > 0" id="orderHistoryList">
+                <div *ngFor="let key of orderKeys; let i = index;">
+                    <button (click)="viewOrderContents(i)">{{ key }} <fa-icon [icon]="caretDown"></fa-icon></button>
+                    <!-- if current order key matches the key in the Map, display products -->
+                    <!-- else, don't display anything -->
+                    <div *ngIf="isOrderReq(i)" class="orderContents">
+                        <ng-container *ngFor="let item of orderProducts | keyvalue">
+                            {{ key === item.key ? "-" + item.value : "" }}
+                        </ng-container>
+                    </div>
                 </div>
-            </ng-container>
-        </section>
-    
-        <button (click)="goToPrev()" class="backBtn"><fa-icon [icon]="arrowLeft"></fa-icon> 계정으로 이동 [Back to Account]</button>
+            </section>
+
+            <section *ngIf="orderKeys.length === 0">
+                <p>No orders were placed.<br />Please place an order first.</p>
+            </section>
+        </div>
+
+        <button (click)="goToPrev()" class="backBtn"><fa-icon [icon]="arrowLeft"></fa-icon> 계정으로 이동 [Back to
+            Account]</button>
     </section>
 </div>

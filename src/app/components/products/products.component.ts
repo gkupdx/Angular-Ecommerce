@@ -28,6 +28,7 @@ export class ProductsComponent implements OnChanges {
     this.doesProductExist = false;
   }
 
+  // Detects filter button clicks and product name searches
   ngOnChanges(changes: SimpleChanges): void {
     for(let prop in changes) {
       if (changes.hasOwnProperty(prop)) {
